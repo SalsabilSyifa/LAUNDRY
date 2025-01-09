@@ -15,12 +15,11 @@
         android:text="Selamat Pagi, Zenith"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#000000"
         app:layout_constraintStart_toEndOf="@id/greeting"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="12dp"/>
 
     <!-- Tanggal -->
     <TextView
@@ -28,8 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="08 Januari 2025"
-        android:textSize="14sp"
-        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/fitur"
         android:layout_marginEnd="30dp"
@@ -40,6 +38,7 @@
     <!-- Panel Estimasi Hari Ini -->
     <androidx.cardview.widget.CardView
         android:id="@+id/estimasi_panel"
+        android:backgroundTint="@color/orange"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
@@ -47,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/greeting"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="25dp"
         app:layout_constraintWidth_percent="0.9">
 
         <LinearLayout
@@ -118,6 +117,7 @@
                 android:gravity="center"
                 android:layout_marginTop="20dp"
                 android:text="Akun"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -144,6 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:textColor="@color/black"
                 android:text="Pegawai"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -169,6 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:textColor="@color/black"
                 android:text="Cabang"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -191,6 +193,7 @@
         android:columnCount="3"
         android:rowCount="2"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintTop_toBottomOf="@id/greeting"
         app:layout_constraintStart_toEndOf="@id/estimasi_panel">
 
@@ -207,6 +210,7 @@
                 android:layout_height="130dp"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -238,6 +242,7 @@
                 android:layout_height="130dp"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -270,6 +275,7 @@
                 android:layout_height="130dp"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -302,6 +308,7 @@
                 android:layout_height="130dp"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -334,6 +341,7 @@
                 android:layout_height="130dp"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -366,6 +374,7 @@
                 android:layout_height="130dp"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
