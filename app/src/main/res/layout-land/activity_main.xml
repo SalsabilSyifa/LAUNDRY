@@ -32,7 +32,7 @@
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/fitur"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"/>
 
@@ -100,7 +100,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             >
@@ -109,15 +108,17 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginStart="70dp"
                 android:layout_gravity="start"
-                android:src="@drawable/ic_akun" />
+                android:src="@drawable/ic_customer1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="20dp"
                 android:text="Akun"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -125,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="140dp"
-            android:gravity="center"
+
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_akun"
@@ -136,14 +137,15 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_pegawai" />
+                android:layout_marginStart="70dp"
+                android:src="@drawable/ic_pegawai1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginTop="20dp"
                 android:text="Pegawai"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -152,7 +154,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="210dp"
             android:layout_marginBottom="10dp"
-            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             >
@@ -160,15 +161,16 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginStart="70dp"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_cabang" />
+                android:src="@drawable/ic_cabang1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginTop="20dp"
                 android:text="Cabang"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
 
@@ -242,7 +244,7 @@
                     android:id="@+id/icon_layanan"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_layanan"
+                    android:src="@drawable/ic_layanan1"
                     android:contentDescription="Layanan" />
 
                 <TextView
@@ -274,7 +276,7 @@
                     android:id="@+id/icon_tambahan"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_tambahan"
+                    android:src="@drawable/ic_tambahan1"
                     android:contentDescription="Tambahan" />
 
                 <TextView
@@ -306,8 +308,8 @@
                     android:id="@+id/icon_pegawai"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_pegawai"
-                    android:contentDescription="Pegawai" />
+                    android:src="@drawable/ic_pelanggan"
+                    android:contentDescription="Pelanggan" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -338,8 +340,8 @@
                     android:id="@+id/icon_cabang"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_cabang"
-                    android:contentDescription="Cabang" />
+                    android:src="@drawable/ic_laporan"
+                    android:contentDescription="Laporan" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -370,7 +372,7 @@
                     android:id="@+id/icon_printer"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_printer"
+                    android:src="@drawable/ic_printer1"
                     android:contentDescription="Printer" />
 
                 <TextView

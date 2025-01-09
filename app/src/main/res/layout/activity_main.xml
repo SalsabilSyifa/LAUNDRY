@@ -226,7 +226,7 @@
                     android:id="@+id/icon_akun"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_akun"
+                    android:src="@drawable/ic_customer1"
                     android:contentDescription="Akun" />
 
                 <TextView
@@ -257,7 +257,7 @@
                     android:id="@+id/icon_layanan"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_layanan"
+                    android:src="@drawable/ic_layanan1"
                     android:contentDescription="Layanan" />
 
                 <TextView
@@ -289,7 +289,7 @@
                     android:id="@+id/icon_tambahan"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_tambahan"
+                    android:src="@drawable/ic_tambahan1"
                     android:contentDescription="Tambahan" />
 
                 <TextView
@@ -321,7 +321,7 @@
                     android:id="@+id/icon_pegawai"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_pegawai"
+                    android:src="@drawable/ic_pegawai1"
                     android:contentDescription="Pegawai" />
 
                 <TextView
@@ -353,7 +353,7 @@
                     android:id="@+id/icon_cabang"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_cabang"
+                    android:src="@drawable/ic_cabang1"
                     android:contentDescription="Cabang" />
 
                 <TextView
@@ -385,7 +385,7 @@
                     android:id="@+id/icon_printer"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_printer"
+                    android:src="@drawable/ic_printer1"
                     android:contentDescription="Printer" />
 
                 <TextView
