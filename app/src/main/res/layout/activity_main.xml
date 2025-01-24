@@ -84,7 +84,7 @@
         <View
             android:layout_width="350dp"
             android:layout_height="2dp"
-            android:background="@color/grey"
+            android:background="@color/white"
             android:layout_marginTop="50dp"
             />
 
@@ -113,7 +113,7 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_transaction" />
+                    android:src="@drawable/ic_transaksi2" />
 
                 <TextView
                     android:layout_width="wrap_content"

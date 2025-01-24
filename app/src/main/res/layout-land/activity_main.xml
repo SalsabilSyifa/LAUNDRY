@@ -89,7 +89,7 @@
             android:id="@+id/garis"
             android:layout_width="330dp"
             android:layout_height="2dp"
-            android:background="@color/grey"
+            android:background="@color/white"
             android:layout_marginTop="50dp"
 
             />
@@ -217,14 +217,14 @@
                     android:id="@+id/icon_transaksi"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_transaction"
+                    android:src="@drawable/ic_transaksi2"
                     android:contentDescription="Akun" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Transaksi"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="8dp"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -256,7 +256,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Layanan"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="8dp"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -289,7 +289,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tambahan"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="8dp"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -322,7 +322,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pegawai"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="8dp"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -355,7 +355,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cabang"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="8dp"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -388,7 +388,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Printer"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="8dp"
                     android:textColor="#000000" />
             </LinearLayout>
