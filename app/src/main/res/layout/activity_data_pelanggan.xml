@@ -10,7 +10,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_data_pelanggan"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:listitem="@layout/activity_card_data_pelanggan">
     </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
@@ -20,11 +21,12 @@
             android:id="@+id/bt_data_pengguna_tambah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="/baseline_add_24"
+            android:src="@drawable/baseline_add_24"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:contentDescription="+"/>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
