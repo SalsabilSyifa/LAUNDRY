@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tambah_pegawai">
+    tools:context=".tambah_layanan">
 
     <TextView
         android:id="@+id/tv_tambah_pengguna"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text= "@string/tambah_pegawai"
+        android:text= "@string/tambah_layanan"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -122,7 +122,7 @@
         android:id="@+id/bt_simpan"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="@string/tambah_pelanggan_simpan"
+        android:text="Simpan"
         android:textColor="@color/black"
         android:backgroundTint="@color/yellow"
         android:layout_marginTop="45dp"
@@ -133,3 +133,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -12,7 +12,7 @@
     <string name="tambah_pelanggan_namalengkap">Nama Lengkap</string>
     <string name="tambah_pelanggan_cabang">Nama Cabang</string>
     <string name="tambah_pelanggan_nohpaktif">No HP Aktif</string>
-    <string name="tambah_pelanggan_tvtbhpelanggan">TAMBAH PELANGGAN</string>
+    <string name="tambah_pelanggan">TAMBAH PELANGGAN</string>
     <string name="tambah_pelanggan_simpan">Simpan</string>
     <string name="card_pegawai_cabang">Cabang</string>
     <string name="card_pegawai_id">ID Pegawai</string>
@@ -20,4 +20,5 @@
     <string name="card_layanan_id">ID Layanan</string>
     <string name="card_layanan_nama">Nama Layanan</string>
     <string name="card_layanan_harga">Harga</string>
+    <string name="tambah_layanan">TAMBAH LAYANAN</string>
 </resources>
