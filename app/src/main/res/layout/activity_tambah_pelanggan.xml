@@ -8,7 +8,7 @@
     android:background="@drawable/bg5"
     android:padding="30dp"
 
-    tools:context=".TambahPelanggan">
+    tools:context=".pelanggan.TambahPelanggan">
 
 
     <TextView
@@ -97,6 +97,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tv_namacabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No HP Aktif"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/et_nohp"
+        />
+    <EditText
+        android:id="@+id/et_namacabang"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="No HP Aktif"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_border"
+        app:layout_constraintTop_toBottomOf="@id/tv_namacabang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp" />
+
     <Button
         android:id="@+id/bt_simpan"
         android:layout_width="300dp"
@@ -104,7 +129,7 @@
         android:text="Simpan"
         android:backgroundTint="@color/yellow"
         android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/et_nohp"
+        app:layout_constraintTop_toBottomOf="@id/et_namacabang"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />

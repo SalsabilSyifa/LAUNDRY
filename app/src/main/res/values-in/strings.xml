@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">LAUNDRY</string>
     <string name="card_pelanggan_id">ID Pelanggan</string>
+    <string name="card_pelanggan_nama">Nama Pelanggan</string>
+    <string name="card_pelanggan_nohp">No HP</string>
+    <string name="card_pelanggan_terdaftar">Terdaftar</string>
+    <string name="card_pelanggan_hubungi">Hubungi</string>
+    <string name="card_pelanggan_lihat">Lihat</string>
+    <string name="card_pelanggan_alamat">Alamat</string>
+    <string name="card_pegawai_nama">Nama Pegawai</string>
 </resources>
