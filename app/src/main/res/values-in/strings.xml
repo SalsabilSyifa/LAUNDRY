@@ -17,4 +17,7 @@
     <string name="card_pegawai_cabang">Cabang</string>
     <string name="card_pegawai_id">ID Pegawai</string>
     <string name="tambah_pegawai">TAMBAH PELANGGAN</string>
+    <string name="card_layanan_id">ID Layanan</string>
+    <string name="card_layanan_nama">Nama Layanan</string>
+    <string name="card_layanan_harga">Harga</string>
 </resources>

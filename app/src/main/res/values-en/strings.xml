@@ -17,4 +17,7 @@
     <string name="card_pegawai_cabang">Branch</string>
     <string name="card_pegawai_id">Employee ID</string>
     <string name="tambah_pegawai">ADD EMPLOYEE</string>
+    <string name="card_layanan_id">Service ID</string>
+    <string name="card_layanan_nama">Service Name</string>
+    <string name="card_layanan_harga">Price</string>
 </resources>
