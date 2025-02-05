@@ -78,90 +78,124 @@
 
         </LinearLayout>
 
+
+
         <View
+            android:id="@+id/garis"
             android:layout_width="350dp"
             android:layout_height="2dp"
-            android:background="@color/white"
+            android:background="@color/grey"
             android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_estimasi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-        </LinearLayout>
 
-        <LinearLayout
+        <GridLayout
+            android:id="@+id/bawah_estimasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="10dp"
-            android:weightSum="3">
+            android:columnCount="3"
+            android:rowCount="2"
+            android:layout_marginTop="50dp"
+            >
 
-            <!-- Transaksi -->
-            <LinearLayout
-                android:layout_width="0dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_transaksi"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:cardElevation="0dp"
+                android:layout_margin="8dp">
 
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_transaksi2" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:text="Transaksi"
-                    android:textSize="14sp"
-                    android:gravity="center" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
 
-            <!-- Pelanggan -->
-            <LinearLayout
-                android:layout_width="0dp"
+                    <ImageView
+                        android:id="@+id/icon_transaksi"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_transaksi2"
+                        android:contentDescription="Akun" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transaksi"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_pelanggan"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:cardElevation="0dp"
+                android:layout_margin="8dp">
 
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_pelanggan" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:text="Pelanggan"
-                    android:textSize="14sp"
-                    android:gravity="center" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
 
-            <!-- Laporan -->
-            <LinearLayout
-                android:layout_width="0dp"
+                    <ImageView
+                        android:id="@+id/icon_pelanggan"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_pelanggan"
+                        android:contentDescription="Akun" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pelanggan"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_laporan"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:cardElevation="0dp"
+                android:layout_margin="8dp">
 
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_laporan" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:text="Laporan"
-                    android:textSize="14sp"
-                    android:gravity="center" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/icon_laporan"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_laporan"
+                        android:contentDescription="Akun" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transaksi"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
 
 
     </androidx.cardview.widget.CardView>

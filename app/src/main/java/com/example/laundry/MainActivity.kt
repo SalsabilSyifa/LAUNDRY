@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.laundry.pelanggan.DataPelanggan
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -16,6 +17,9 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
     lateinit var cv_layanan : CardView
     lateinit var cv_tambahan : CardView
+    lateinit var cv_pegawai : CardView
+    lateinit var cv_pelanggan : CardView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         }
         cv_layanan = findViewById(R.id.cv_layanan)
         cv_tambahan = findViewById(R.id.cv_tambahan)
+        cv_pegawai = findViewById(R.id.cv_pegawai)
+        cv_pelanggan = findViewById(R.id.cv_pelanggan)
 
         cv_layanan.setOnClickListener {
             val intent = Intent(this, Layanan_Pelanggan::class.java)
@@ -39,11 +45,22 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, activity_tambahan_pelanggan::class.java)
             startActivity(intent)
         }
+        cv_pegawai.setOnClickListener{
+            val intent = Intent(this, data_pegawai::class.java)
+            startActivity(intent)
+        }
+
+        cv_pelanggan.setOnClickListener{
+            val intent = Intent(this, DataPelanggan::class.java)
+            startActivity(intent)
+        }
+
         val greetingTextView: TextView = findViewById(R.id.greeting)
         greetingTextView.text = getGreetingMessage()
 
         val dateTextView: TextView = findViewById(R.id.date)
         dateTextView.text = getCurrentDate()
+
     }
 
     private fun getGreetingMessage(): String {

@@ -5,16 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg5"
-    android:padding="30dp"
-    tools:context=".pelanggan.TambahPelanggan">
-
+    tools:context=".tambah_pegawai">
 
     <TextView
         android:id="@+id/tv_tambah_pengguna"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text= "@string/tambah_pelanggan_tvtbhpelanggan"
+        android:text= "TAMBAH PEGAWAI"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -133,5 +130,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

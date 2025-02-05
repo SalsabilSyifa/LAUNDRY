@@ -9,8 +9,12 @@
     <string name="card_pelanggan_lihat">See</string>
     <string name="card_pelanggan_alamat">Address</string>
     <string name="card_pegawai_nama">Employee Name</string>
-    <string name="tambah_pelanggan_tvnamalengkap">Full Name</string>
-    <string name="tambah_pelanggan_tvcabang">Branch Name</string>
+    <string name="tambah_pelanggan_namalengkap">Full Name</string>
+    <string name="tambah_pelanggan_cabang">Branch Name</string>
     <string name="tambah_pelanggan_nohpaktif">Active No Handphone</string>
     <string name="tambah_pelanggan_tvtbhpelanggan">ADD CUSTOMER</string>
+    <string name="tambah_pelanggan_simpan">Save</string>
+    <string name="card_pegawai_cabang">Branch</string>
+    <string name="card_pegawai_id">Employee ID</string>
+    <string name="tambah_pegawai">ADD EMPLOYEE</string>
 </resources>

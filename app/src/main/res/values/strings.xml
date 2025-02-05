@@ -8,8 +8,12 @@
     <string name="card_pelanggan_lihat">Lihat</string>
     <string name="card_pelanggan_alamat">Alamat</string>
     <string name="card_pegawai_nama">Nama Pegawai</string>
-    <string name="tambah_pelanggan_tvnamalengkap">Nama Lengkap</string>
-    <string name="tambah_pelanggan_tvcabang">Nama Cabang</string>
+    <string name="tambah_pelanggan_namalengkap">Nama Lengkap</string>
+    <string name="tambah_pelanggan_cabang">Nama Cabang</string>
     <string name="tambah_pelanggan_nohpaktif">No HP Aktif</string>
     <string name="tambah_pelanggan_tvtbhpelanggan">TAMBAH PELANGGAN</string>
+    <string name="tambah_pelanggan_simpan">Simpan</string>
+    <string name="card_pegawai_cabang">Cabang</string>
+    <string name="card_pegawai_id">ID Pegawai</string>
+    <string name="tambah_pegawai">TAMBAH PEGAWAI</string>
 </resources>

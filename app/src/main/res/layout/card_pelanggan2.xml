@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    android:padding="10dp"
     app:cardCornerRadius="20dp">
 
     <androidx.cardview.widget.CardView
@@ -39,6 +40,8 @@
         android:layout_marginTop="35dp"
         android:textStyle="bold"
         android:textSize="18dp"
+        android:paddingTop="5dp"
+
         />
 
 
@@ -48,7 +51,6 @@
         android:layout_height="wrap_content"
         android:text="@string/card_pelanggan_nohp"
         android:paddingStart="15dp"
-        android:textStyle="bold"
         android:textSize="18dp"
         android:layout_marginTop="5dp"
         />
@@ -59,7 +61,6 @@
         android:layout_height="wrap_content"
         android:text="Terdaftar"
         android:paddingStart="15dp"
-        android:textStyle="bold"
         android:textSize="18dp"
         android:layout_marginTop="5dp"
         />
@@ -70,7 +71,6 @@
         android:layout_height="wrap_content"
         android:text="@string/card_pelanggan_alamat"
         android:paddingStart="15dp"
-        android:textStyle="bold"
         android:textSize="18dp"
         android:layout_marginTop="5dp"
         />
@@ -82,7 +82,7 @@
         android:rowCount="2"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         >
