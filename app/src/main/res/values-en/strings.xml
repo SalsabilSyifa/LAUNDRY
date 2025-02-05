@@ -9,4 +9,8 @@
     <string name="card_pelanggan_lihat">See</string>
     <string name="card_pelanggan_alamat">Address</string>
     <string name="card_pegawai_nama">Employee Name</string>
+    <string name="tambah_pelanggan_tvnamalengkap">Full Name</string>
+    <string name="tambah_pelanggan_tvcabang">Branch Name</string>
+    <string name="tambah_pelanggan_nohpaktif">Active No Handphone</string>
+    <string name="tambah_pelanggan_tvtbhpelanggan">ADD CUSTOMER</string>
 </resources>

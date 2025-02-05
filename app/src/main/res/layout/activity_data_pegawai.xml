@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pelanggan.DataPelanggan">
+    tools:context=".data_pegawai">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_data_pelanggan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/card_pelanggan2">
+        tools:listitem="@layout/card_pegawai">
     </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
