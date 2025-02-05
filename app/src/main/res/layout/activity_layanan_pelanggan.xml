@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg5"
     tools:context=".Layanan_Pelanggan">
         <!-- Welcome Text -->
         <TextView
@@ -13,11 +14,10 @@
             android:layout_height="wrap_content"
             android:text="Welcome Back,"
             android:textSize="20sp"
-            android:textColor="#000000"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp" />
+            android:layout_marginStart="40dp" />
 
         <!-- User Name -->
         <TextView
@@ -27,7 +27,6 @@
             android:text="Zenith"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#000000"
             app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
             app:layout_constraintStart_toStartOf="@+id/tv_welcome" />
 
@@ -38,9 +37,33 @@
         android:text="08 Januari 2025"
         android:textSize="14sp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="40dp"
         app:layout_constraintTop_toTopOf="@+id/tv_welcome"
         app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/img_layanan"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_layanan1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_layanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LAYANAN"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_layanan"
         />
 
     <GridLayout
@@ -48,8 +71,8 @@
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:rowCount="3"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_username"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_layanan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <androidx.cardview.widget.CardView
@@ -64,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/yellow"
                 android:padding="8dp">
 
                 <ImageView
@@ -76,9 +100,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Wash and iron"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -94,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:background="@color/yellow"
                 android:padding="8dp">
 
                 <ImageView
@@ -107,8 +132,9 @@
                     android:layout_height="wrap_content"
                     android:text="Dry Cleaning"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/black"
+                    android:shadowRadius="4"
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -137,8 +163,7 @@
                     android:layout_height="wrap_content"
                     android:text="Ironing Only"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -167,8 +192,7 @@
                     android:layout_height="wrap_content"
                     android:text="shoe Cleaning"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -197,8 +221,7 @@
                     android:layout_height="wrap_content"
                     android:text="Bed Cover Cleaning"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -227,8 +250,7 @@
                     android:layout_height="wrap_content"
                     android:text="Carpet Cleaning"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -258,8 +280,7 @@
                     android:layout_height="wrap_content"
                     android:text="Express Laundry"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -287,10 +308,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Per Piece Laundryg"
+                    android:text="Per Piece Laundry"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

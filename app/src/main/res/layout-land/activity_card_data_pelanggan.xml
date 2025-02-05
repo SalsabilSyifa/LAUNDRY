@@ -30,7 +30,7 @@
               android:layout_height="wrap_content"
               android:text="ID Pelanggan"
               android:textStyle="bold"
-              android:paddingStart="10dp"
+              android:paddingStart="40dp"
               android:layout_marginTop="5dp"
               android:paddingTop="5dp"/>
           <TextView
@@ -40,8 +40,9 @@
               android:text="Nama"
               android:paddingStart="10dp"
               android:layout_marginTop="15dp"
+              android:layout_marginStart="40dp"
               android:textStyle="bold"
-              android:textSize="18dp"
+              android:textSize="20dp"
               />
 
           <TextView
@@ -50,8 +51,9 @@
               android:layout_height="wrap_content"
               android:text="Alamat"
               android:paddingStart="10dp"
+              android:layout_marginStart="40dp"
               android:textStyle="bold"
-              android:textSize="18dp"
+              android:textSize="20dp"
               android:layout_marginTop="5dp"
               />
           <TextView
@@ -60,8 +62,9 @@
               android:layout_height="wrap_content"
               android:text="No Hp"
               android:paddingStart="10dp"
+              android:layout_marginStart="40dp"
               android:textStyle="bold"
-              android:textSize="18dp"
+              android:textSize="20dp"
               android:layout_marginTop="5dp"
               />
 
@@ -81,16 +84,17 @@
 
               <Button
                   android:id="@+id/bt_hubungi"
-                  android:layout_width="175dp"
+                  android:layout_width="300dp"
                   android:layout_height="wrap_content"
                   android:text="Hubungi"
-                  android:layout_marginEnd="5dp"
+                  android:layout_marginEnd="20dp"
                   android:layout_marginStart="5dp"
                   android:backgroundTint="@color/black"
+
                   />
               <Button
                   android:id="@+id/bt_lihat"
-                  android:layout_width="175dp"
+                  android:layout_width="300dp"
                   android:layout_height="wrap_content"
                   android:text="Lihat"
                   android:layout_marginEnd="5dp"

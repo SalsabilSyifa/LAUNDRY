@@ -1,16 +1,22 @@
 package com.example.laundry
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
+
 class MainActivity : AppCompatActivity() {
+    lateinit var cv_layanan : CardView
+    lateinit var cv_tambahan : CardView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,7 +27,18 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        cv_layanan = findViewById(R.id.cv_layanan)
+        cv_tambahan = findViewById(R.id.cv_tambahan)
 
+        cv_layanan.setOnClickListener {
+            val intent = Intent(this, Layanan_Pelanggan::class.java)
+            startActivity(intent)
+        }
+
+        cv_tambahan.setOnClickListener{
+            val intent = Intent(this, activity_tambahan_pelanggan::class.java)
+            startActivity(intent)
+        }
         val greetingTextView: TextView = findViewById(R.id.greeting)
         greetingTextView.text = getGreetingMessage()
 

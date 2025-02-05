@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
+    android:background="@drawable/bg5"
     tools:context=".MainActivity">
 
     <TextView
@@ -33,7 +34,6 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/estimasi_panel"
-        android:backgroundTint="@color/orange"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
@@ -58,8 +58,7 @@
                 android:text="Estimasi Hari Ini"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:layout_marginStart="8dp"
-                android:textColor="#000000" />
+                android:layout_marginStart="8dp"/>
 
             <TextView
                 android:id="@+id/Rp_text"
@@ -67,16 +66,14 @@
                 android:layout_height="wrap_content"
                 android:text="Rp."
                 android:textSize="12sp"
-                android:layout_marginStart="8dp"
-                android:textColor="#000000" />
+                android:layout_marginStart="8dp"/>
 
             <TextView
                 android:id="@+id/estimation_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" 40.000,-"
-                android:textSize="18sp"
-                android:textColor="#000000" />
+                android:textSize="18sp"/>
 
 
         </LinearLayout>
@@ -118,7 +115,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
                     android:text="Transaksi"
                     android:textSize="14sp"
                     android:gravity="center" />
@@ -141,7 +137,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pelanggan"
-                    android:textColor="@color/black"
                     android:textSize="14sp"
                     android:gravity="center" />
             </LinearLayout>
@@ -163,7 +158,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Laporan"
-                    android:textColor="@color/black"
                     android:textSize="14sp"
                     android:gravity="center" />
             </LinearLayout>
@@ -208,6 +202,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_akun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -219,7 +214,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -234,12 +228,12 @@
                     android:layout_height="wrap_content"
                     android:text="Akun"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_layanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -251,7 +245,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -266,13 +259,13 @@
                     android:layout_height="wrap_content"
                     android:text="Layanan"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Menu Tambahan -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_tambahan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -284,7 +277,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -299,13 +291,13 @@
                     android:layout_height="wrap_content"
                     android:text="Tambahan"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Menu Pegawai -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_pegawai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -317,7 +309,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -332,13 +323,13 @@
                     android:layout_height="wrap_content"
                     android:text="Pegawai"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Menu Cabang -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_cabang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -350,7 +341,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -365,13 +355,13 @@
                     android:layout_height="wrap_content"
                     android:text="Cabang"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Menu Printer -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_printer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -383,7 +373,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="@color/orange"
                 android:padding="8dp">
 
                 <ImageView
@@ -398,8 +387,7 @@
                     android:layout_height="wrap_content"
                     android:text="Printer"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="#000000" />
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </GridLayout>
