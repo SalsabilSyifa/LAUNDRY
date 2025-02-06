@@ -14,6 +14,7 @@
         android:elevation="12dp">
 
         <TextView
+            android:id="@+id/id_layanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
@@ -31,7 +32,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_layanan"
+            android:id="@+id/tv_nama_layanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_layanan_nama"

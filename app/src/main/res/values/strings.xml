@@ -20,4 +20,11 @@
     <string name="card_layanan_nama">Nama Layanan</string>
     <string name="card_layanan_harga">Harga</string>
     <string name="tambah_layanan">TAMBAH LAYANAN</string>
+    <string name="validasi_nama_pelanggan">nama tidak boleh kosong</string>
+    <string name="validasi_alamat_pelanggan">alamat tidak boleh kosong</string>
+    <string name="sukses_simpan_pelanggan">Berhasil</string>
+    <string name="gagal_simpan_pelanggan">Gagal</string>
+    <string name="validasi_nohp_pelanggan">no HP tidak boleh kosong</string>
+    <string name="validasi_cabang_pelanggan">cabang tidak boleh kosong</string>
+
 </resources>
