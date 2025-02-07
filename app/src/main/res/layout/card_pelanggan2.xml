@@ -59,7 +59,7 @@
         android:id="@+id/tv_terdaftar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Terdaftar"
+        android:text="@string/card_pelanggan_terdaftar"
         android:paddingStart="15dp"
         android:textSize="18dp"
         android:layout_marginTop="5dp"
@@ -89,7 +89,7 @@
 
         <Button
             android:id="@+id/bt_hubungi"
-            android:layout_width="175dp"
+            android:layout_width="165dp"
             android:layout_height="wrap_content"
             android:text="@string/card_pelanggan_hubungi"
             android:layout_marginEnd="5dp"
@@ -98,7 +98,7 @@
             />
         <Button
             android:id="@+id/bt_lihat"
-            android:layout_width="175dp"
+            android:layout_width="165dp"
             android:layout_height="wrap_content"
             android:text="@string/card_pelanggan_lihat"
             android:layout_marginEnd="5dp"

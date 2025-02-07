@@ -43,10 +43,10 @@
             android:paddingTop="5dp"/>
 
         <TextView
-            android:id="@+id/tv_alamat"
+            android:id="@+id/tv_alamat_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/card_pelanggan_alamat"
+            android:text="@string/card_pegawai_alamat"
             android:paddingStart="15dp"
             android:textSize="18dp"
             android:layout_marginTop="5dp"
@@ -54,20 +54,20 @@
 
 
         <TextView
-            android:id="@+id/tv_nohp"
+            android:id="@+id/tv_nohp_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/card_pelanggan_nohp"
+            android:text="@string/card_pegawai_nohp"
             android:paddingStart="15dp"
             android:textSize="18dp"
             android:layout_marginTop="5dp"
             />
 
         <TextView
-            android:id="@+id/tv_terdaftar"
+            android:id="@+id/tv_terdaftar_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/card_pelanggan_terdaftar"
+            android:text="@string/card_pegawai_terdaftar"
             android:paddingStart="15dp"
             android:textSize="18dp"
             android:layout_marginTop="5dp"
@@ -75,7 +75,7 @@
 
 
         <TextView
-            android:id="@+id/tv_cabang"
+            android:id="@+id/tv_cabang_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_cabang"
@@ -98,19 +98,19 @@
             >
 
             <Button
-                android:id="@+id/bt_hubungi"
-                android:layout_width="175dp"
+                android:id="@+id/bt_hubungi_pegawai"
+                android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:text="@string/card_pelanggan_hubungi"
+                android:text="@string/card_pegawai_hubungi"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="@color/yellow"
                 />
             <Button
-                android:id="@+id/bt_lihat"
-                android:layout_width="175dp"
+                android:id="@+id/bt_lihat_pegawai"
+                android:layout_width="165dp"
                 android:layout_height="wrap_content"
-                android:text="@string/card_pelanggan_lihat"
+                android:text="@string/card_pegawai_lihat"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="@color/black"

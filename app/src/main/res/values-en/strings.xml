@@ -27,4 +27,22 @@
     <string name="gagal_simpan_pelanggan">Failled</string>
     <string name="validasi_nohp_pelanggan">no handphone cannot be empty</string>
     <string name="validasi_cabang_pelanggan">branch cannot be empty</string>
+    <string name="validasi_nama_pegawai">name cannot be empty</string>
+    <string name="validasi_alamat_pegawai">address cannot be empty</string>
+    <string name="validasi_nohp_pegawai">no handphone cannot be empty</string>
+    <string name="validasi_terdaftar_pegawai">register cannot be empty</string>
+    <string name="validasi_namacabang_pegawai">branch cannot be empty</string>
+    <string name="card_pegawai_terdaftar">Register</string>
+
+    <string name="tambah_pegawai_cabang">Branch</string>
+    <string name="card_pegawai_alamat">Address</string>
+    <string name="card_pegawai_nohp">No Handphone</string>
+    <string name="card_pegawai_hubungi">Contact</string>
+    <string name="card_pegawai_lihat">See</string>
+    <string name="tambah_pegawai_simpan">Save</string>
+    <string name="tambah_pegawai_namalengkap">Full Name</string>
+    <string name="tambah_pegawai_nohpaktif">Active No Handphone</string>
+    <string name="tambah_pelanggan_alamat">Address</string>
+    <string name="tambah_pegawai_terdaftar">Register</string>
+    <string name="tambah_pegawai_alamat">Address</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="card_pelanggan_id">ID Pelanggan</string>
     <string name="card_pelanggan_nama">Nama Pelanggan</string>
     <string name="card_pelanggan_nohp">No HP</string>
-    <string name="card_pelanggan_terdaftar">Terdaftar</string>
+    <string name="card_pegawai_terdaftar">Terdaftar</string>
     <string name="card_pelanggan_hubungi">Hubungi</string>
     <string name="card_pelanggan_lihat">Lihat</string>
     <string name="card_pelanggan_alamat">Alamat</string>
@@ -26,5 +26,23 @@
     <string name="gagal_simpan_pelanggan">Gagal</string>
     <string name="validasi_nohp_pelanggan">no HP tidak boleh kosong</string>
     <string name="validasi_cabang_pelanggan">cabang tidak boleh kosong</string>
+    <string name="validasi_nama_pegawai">nama tidak boleh kosong</string>
+    <string name="validasi_alamat_pegawai">alamat tidak boleh kosong</string>
+    <string name="validasi_nohp_pegawai">no HP tidak boleh kosong</string>
+    <string name="validasi_terdaftar_pegawai">terdaftar_tidak boleh kosong</string>
+    <string name="validasi_namacabang_pegawai">cabang tidak boleh kosong</string>
+
+    <string name="card_pelanggan_terdaftar">Terdaftar</string>
+    <string name="tambah_pegawai_cabang">Cabang</string>
+    <string name="card_pegawai_alamat">Alamat</string>
+    <string name="card_pegawai_nohp">No HP</string>
+    <string name="card_pegawai_hubungi">Hubungi</string>
+    <string name="card_pegawai_lihat">Lihat</string>
+    <string name="tambah_pegawai_simpan">Simpan</string>
+    <string name="tambah_pegawai_namalengkap">Nama Lengkap</string>
+    <string name="tambah_pegawai_nohpaktif">No HP Aktif</string>
+    <string name="tambah_pelanggan_alamat">Alamat</string>
+    <string name="tambah_pegawai_terdaftar">Terdaftar</string>
+    <string name="tambah_pegawai_alamat">Alamat</string>
 
 </resources>

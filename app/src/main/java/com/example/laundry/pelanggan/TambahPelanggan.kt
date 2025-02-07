@@ -56,14 +56,14 @@ class TambahPelanggan : AppCompatActivity() {
     }
 
     fun cekValidasi(){
-        val namalengkap = et_namalengkap.text.toString()
+        val nama = et_namalengkap.text.toString()
         val alamat = et_alamat.text.toString()
         val nohp = et_nohp.text.toString()
-        val cabang = et_namacabang.text.toString()
+        val branch = et_namacabang.text.toString()
         //validasi data
 
 
-            if (namalengkap.isEmpty()) {
+            if (nama.isEmpty()) {
                 et_namalengkap.error = getString(R.string.validasi_nama_pelanggan)
                 Toast.makeText(this, getString(R.string.validasi_nama_pelanggan), Toast.LENGTH_SHORT).show()
                 et_namalengkap.requestFocus()
@@ -84,7 +84,7 @@ class TambahPelanggan : AppCompatActivity() {
                 return
         }
 
-            if (cabang.isEmpty()) {
+            if (branch.isEmpty()) {
                 et_namacabang.error = getString(R.string.validasi_cabang_pelanggan)
                 Toast.makeText(this, getString(R.string.validasi_cabang_pelanggan), Toast.LENGTH_SHORT).show()
                 et_namacabang.requestFocus()

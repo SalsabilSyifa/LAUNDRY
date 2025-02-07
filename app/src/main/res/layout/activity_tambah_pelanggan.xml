@@ -64,7 +64,7 @@
         android:id="@+id/et_alamat"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="@string/card_pelanggan_alamat"
+        android:hint="@string/tambah_pelanggan_alamat"
         android:background="@drawable/edittext_border"
         android:padding="12dp"
         android:layout_marginTop="16dp"
