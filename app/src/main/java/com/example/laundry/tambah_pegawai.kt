@@ -18,7 +18,7 @@ class tambah_pegawai : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("pegawai")
     lateinit var tv_tambah_pegawai : TextView
-    lateinit var et_nama_lengkap_pegawai : EditText
+    lateinit var et_namalengkap_pegawai : EditText
     lateinit var et_alamat_pegawai : EditText
     lateinit var et_nohp_pegawai : EditText
     lateinit var et_terdaftar_pegawai : EditText
@@ -45,7 +45,7 @@ class tambah_pegawai : AppCompatActivity() {
 
     fun init(){
         tv_tambah_pegawai = findViewById(R.id.tv_tambah_pegawai)
-        et_nama_lengkap_pegawai = findViewById(R.id.et_namalengkap_pegawai)
+        et_namalengkap_pegawai = findViewById(R.id.et_namalengkap_pegawai)
         et_alamat_pegawai = findViewById(R.id.et_alamat_pegawai)
         et_nohp_pegawai = findViewById(R.id.et_nohp_pegawai)
         et_terdaftar_pegawai = findViewById(R.id.et_terdaftar_pegawai)
@@ -54,7 +54,7 @@ class tambah_pegawai : AppCompatActivity() {
     }
 
     fun cekValidasi() {
-        val nama = et_nama_lengkap_pegawai.text.toString()
+        val nama = et_namalengkap_pegawai.text.toString()
         val alamat = et_alamat_pegawai.text.toString()
         val nohp = et_nohp_pegawai.text.toString()
         val terdaftar = et_terdaftar_pegawai.text.toString()
@@ -63,9 +63,9 @@ class tambah_pegawai : AppCompatActivity() {
 
 
             if (nama.isEmpty()) {
-                et_nama_lengkap_pegawai.error = getString(R.string.validasi_nama_pegawai)
+                et_namalengkap_pegawai.error = getString(R.string.validasi_nama_pegawai)
                 Toast.makeText(this, getString(R.string.validasi_nama_pegawai), Toast.LENGTH_SHORT).show()
-                et_nama_lengkap_pegawai.requestFocus()
+                et_namalengkap_pegawai.requestFocus()
                 return
             }
             if (alamat.isEmpty()) {
@@ -104,7 +104,7 @@ class tambah_pegawai : AppCompatActivity() {
         val pegawaiId = pegawaiBaru.key
         val data = modelpegawai(
             pegawaiId.toString(),
-            et_nama_lengkap_pegawai.text.toString(),
+            et_namalengkap_pegawai.text.toString(),
             et_alamat_pegawai.text.toString(),
             et_nohp_pegawai.text.toString(),
             et_terdaftar_pegawai.text.toString(),

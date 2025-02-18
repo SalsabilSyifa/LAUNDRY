@@ -22,7 +22,7 @@ class adapter_data_pelanggan(
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: adapter_data_pelanggan.ViewHolder, position: Int) {
         val item = listPelanggan[position]
         holder.id_pelanggan.text = item.id_pelanggan ?: ""
         holder.tv_nama.text = item.tv_nama ?: ""
@@ -47,7 +47,7 @@ class adapter_data_pelanggan(
         val tv_nama: TextView = itemView.findViewById(R.id.tv_nama)
         val tv_alamat: TextView = itemView.findViewById(R.id.tv_alamat)
         val tv_nohp: TextView = itemView.findViewById(R.id.tv_nohp)
-        val tv_terdaftar: TextView = itemView.findViewById(R.id.tv_terdaftar)
+        val tv_terdaftar: TextView= itemView.findViewById(R.id.tv_terdaftar)
         val bt_hubungi: Button = itemView.findViewById(R.id.bt_hubungi)
         val bt_lihat: Button = itemView.findViewById(R.id.bt_lihat)
     }

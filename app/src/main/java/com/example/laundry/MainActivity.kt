@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         cv_pelanggan = findViewById(R.id.cv_pelanggan)
 
         cv_layanan.setOnClickListener {
-            val intent = Intent(this, tambah_layanan::class.java)
+            val intent = Intent(this, data_layanan::class.java)
             startActivity(intent)
         }
 

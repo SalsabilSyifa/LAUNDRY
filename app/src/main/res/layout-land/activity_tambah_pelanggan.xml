@@ -13,7 +13,7 @@
         android:id="@+id/tv_tambah_pengguna"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="tambah pegawai"
+        android:text="@string/tambah_pegawai"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"

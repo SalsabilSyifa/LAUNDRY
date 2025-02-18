@@ -104,7 +104,8 @@
                 android:text="@string/card_pegawai_hubungi"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
-                android:backgroundTint="@color/yellow"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/amber"
                 />
             <Button
                 android:id="@+id/bt_lihat_pegawai"
@@ -113,6 +114,7 @@
                 android:text="@string/card_pegawai_lihat"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
+                android:textColor="@color/white"
                 android:backgroundTint="@color/black"
                 />
 

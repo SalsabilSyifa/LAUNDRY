@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg5"
     tools:context=".data_pegawai">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -26,8 +25,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/yellow"
+            android:backgroundTint="@color/amber"
             android:layout_marginBottom="16dp"
+            app:backgroundTint="@color/yellow"
             android:contentDescription="+"/>
     </RelativeLayout>
 

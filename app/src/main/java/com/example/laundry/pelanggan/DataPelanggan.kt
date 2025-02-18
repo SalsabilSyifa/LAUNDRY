@@ -24,13 +24,10 @@ import com.google.firebase.database.ValueEventListener
 
 class DataPelanggan : AppCompatActivity() {
     lateinit var bt_data_pelanggan_tambah : FloatingActionButton
-    val database = FirebaseDatabase.getInstance()
-    val myRef = database.getReference("pelanggan")
     lateinit var rv_data_pelanggan: RecyclerView
     lateinit var pelangganList : ArrayList<modelpelanggan>
-
-
-
+    val database = FirebaseDatabase.getInstance()
+    val myRef = database.getReference("pelanggan")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +63,8 @@ class DataPelanggan : AppCompatActivity() {
     fun init (){
         rv_data_pelanggan = findViewById(R.id.rv_data_pelanggan)
         bt_data_pelanggan_tambah = findViewById(R.id.bt_data_pelanggan_tambah)
+
+
     }
 
     fun getData(){
@@ -88,8 +87,4 @@ class DataPelanggan : AppCompatActivity() {
             }
         })
     }
-
-
-
-
 }

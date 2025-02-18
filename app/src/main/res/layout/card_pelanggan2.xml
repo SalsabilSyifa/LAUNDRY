@@ -94,6 +94,7 @@
             android:text="@string/card_pelanggan_hubungi"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
+            android:textColor="@color/white"
             android:backgroundTint="@color/black"
             />
         <Button
@@ -103,7 +104,8 @@
             android:text="@string/card_pelanggan_lihat"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:backgroundTint="@color/yellow"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/amber"
             />
 
     </GridLayout>

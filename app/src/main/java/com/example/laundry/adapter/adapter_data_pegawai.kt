@@ -12,7 +12,6 @@ import com.example.laundry.modeldata.modelpegawai
 class adapter_data_pegawai (
     private val listPegawai: ArrayList<modelpegawai>) :
     RecyclerView.Adapter<adapter_data_pegawai.ViewHolder>() {
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

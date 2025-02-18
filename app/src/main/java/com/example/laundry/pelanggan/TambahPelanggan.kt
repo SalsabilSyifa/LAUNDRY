@@ -24,7 +24,7 @@ class TambahPelanggan : AppCompatActivity() {
     lateinit var et_namalengkap : EditText
     lateinit var et_alamat : EditText
     lateinit var et_nohp : EditText
-    lateinit var et_namacabang : EditText
+    lateinit var et_terdaftar : EditText
     lateinit var bt_simpan : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +51,7 @@ class TambahPelanggan : AppCompatActivity() {
         et_namalengkap = findViewById(R.id.et_namalengkap)
         et_alamat = findViewById(R.id.et_alamat)
         et_nohp = findViewById(R.id.et_nohp)
-        et_namacabang = findViewById(R.id.et_namacabang)
+        et_terdaftar = findViewById(R.id.et_terdaftar)
         bt_simpan = findViewById(R.id.bt_simpan)
     }
 
@@ -59,7 +59,7 @@ class TambahPelanggan : AppCompatActivity() {
         val nama = et_namalengkap.text.toString()
         val alamat = et_alamat.text.toString()
         val nohp = et_nohp.text.toString()
-        val branch = et_namacabang.text.toString()
+        val terdaftar = et_terdaftar.text.toString()
         //validasi data
 
 
@@ -84,10 +84,10 @@ class TambahPelanggan : AppCompatActivity() {
                 return
         }
 
-            if (branch.isEmpty()) {
-                et_namacabang.error = getString(R.string.validasi_cabang_pelanggan)
-                Toast.makeText(this, getString(R.string.validasi_cabang_pelanggan), Toast.LENGTH_SHORT).show()
-                et_namacabang.requestFocus()
+            if (terdaftar.isEmpty()) {
+                et_terdaftar.error = getString(R.string.validasi_terdaftar_pelanggan)
+                Toast.makeText(this, getString(R.string.validasi_terdaftar_pelanggan), Toast.LENGTH_SHORT).show()
+                et_terdaftar.requestFocus()
                 return
         }
     simpan()
@@ -102,7 +102,7 @@ class TambahPelanggan : AppCompatActivity() {
                 et_namalengkap.text.toString(),
                 et_alamat.text.toString(),
                 et_nohp.text.toString(),
-                et_namacabang.text.toString(),
+                et_terdaftar.text.toString(),
                 "timestamp"
             )
             pelangganBaru.setValue(data)

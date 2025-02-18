@@ -86,7 +86,7 @@
             android:id="@+id/garis"
             android:layout_width="330dp"
             android:layout_height="2dp"
-            android:background="@color/white"
+            android:background="#F4BB23"
             android:layout_marginTop="50dp"
 
             />

@@ -11,7 +11,7 @@
         android:id="@+id/rv_data_pelanggan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/activity_card_data_pelanggan">
+        tools:listitem="@layout/card_pelanggan2">
     </androidx.recyclerview.widget.RecyclerView>
 
     <RelativeLayout
@@ -26,6 +26,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/yellow"
             android:contentDescription="+"/>
     </RelativeLayout>
 

@@ -44,5 +44,17 @@
     <string name="tambah_pelanggan_alamat">Alamat</string>
     <string name="tambah_pegawai_terdaftar">Terdaftar</string>
     <string name="tambah_pegawai_alamat">Alamat</string>
+    <string name="tambah_pelanggan_terdaftar">Terdaftar</string>
+    <string name="validasi_terdaftar_pelanggan">terdaftar tidak boleh kosong</string>
+    <string name="tambah_layanan_namalayanan">Nama layanan</string>
+    <string name="card_layanan_cabang">Cabang</string>
+    <string name="tambah_layanan_harga">Harga</string>
+    <string name="tambah_layanan_cabang">Nama Cabang</string>
+    <string name="tambah_layanan_simpan">Simpan</string>
+    <string name="validasi_nama_layanan">nama layanan tidak boleh kosong</string>
+    <string name="validasi_harga_layanan">harga tidak boleh kosong</string>
+    <string name="validasi_cabang_layanan">cabang tidak boleh kosong</string>
+    <string name="sukses_simpan_layanan">Berhasil</string>
+    <string name="gagal_simpan_layanan">Gagal</string>
 
 </resources>
