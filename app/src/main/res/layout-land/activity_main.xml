@@ -91,87 +91,111 @@
 
             />
 
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="1"
+    android:rowCount="3"
+    android:layout_marginTop="70dp"
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        android:layout_margin="8dp">
+
         <LinearLayout
             android:id="@+id/item_akun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
             >
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginStart="70dp"
-                android:layout_gravity="start"
                 android:src="@drawable/ic_customer1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="20dp"
                 android:text="Akun"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_pegawai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        android:layout_margin="8dp">
+
 
         <LinearLayout
             android:id="@+id/item_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_akun"
-
+            android:gravity="center"
             >
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginStart="70dp"
                 android:src="@drawable/ic_pegawai1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="Pegawai"
                 android:textSize="16sp" />
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        android:layout_margin="8dp">
 
         <LinearLayout
             android:id="@+id/item_cabang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="210dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
             >
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="70dp"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_cabang1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:text="Cabang"
                 android:textSize="16sp" />
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
-
+    </GridLayout>
 
 
 
@@ -224,6 +248,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_layanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -286,6 +311,7 @@
 
         <!-- Menu Pegawai -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_pelanggan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -309,7 +335,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pegawai"
+                    android:text="Pelanggan"
                     android:textSize="16sp"
                     android:layout_marginTop="8dp"/>
             </LinearLayout>
