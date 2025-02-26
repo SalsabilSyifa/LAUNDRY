@@ -16,6 +16,9 @@ import com.example.laundry.modeldata.modelpelanggan
 import com.google.firebase.Firebase
 import com.google.firebase.database.FirebaseDatabase
 import org.w3c.dom.Text
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class TambahPelanggan : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
@@ -59,7 +62,8 @@ class TambahPelanggan : AppCompatActivity() {
         val nama = et_namalengkap.text.toString()
         val alamat = et_alamat.text.toString()
         val nohp = et_nohp.text.toString()
-        val terdaftar = et_terdaftar.text.toString()
+        val terdaftar = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        et_terdaftar.setText(terdaftar)
         //validasi data
 
 
@@ -85,9 +89,8 @@ class TambahPelanggan : AppCompatActivity() {
         }
 
             if (terdaftar.isEmpty()) {
-                et_terdaftar.error = getString(R.string.validasi_terdaftar_pelanggan)
-                Toast.makeText(this, getString(R.string.validasi_terdaftar_pelanggan), Toast.LENGTH_SHORT).show()
-                et_terdaftar.requestFocus()
+                et_terdaftar.isFocusable = false
+                et_terdaftar.isClickable = false
                 return
         }
     simpan()

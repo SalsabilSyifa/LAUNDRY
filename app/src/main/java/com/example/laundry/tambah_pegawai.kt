@@ -13,6 +13,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.laundry.modeldata.modelpegawai
 import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class tambah_pegawai : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
@@ -57,8 +60,9 @@ class tambah_pegawai : AppCompatActivity() {
         val nama = et_namalengkap_pegawai.text.toString()
         val alamat = et_alamat_pegawai.text.toString()
         val nohp = et_nohp_pegawai.text.toString()
-        val terdaftar = et_terdaftar_pegawai.text.toString()
-        val branch = et_namacabang_pegawai.text.toString()
+        val terdaftar = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        et_terdaftar_pegawai.setText(terdaftar)
+        val cabang = et_namacabang_pegawai.text.toString()
         //validasi data
 
 
@@ -83,13 +87,12 @@ class tambah_pegawai : AppCompatActivity() {
             }
 
             if (terdaftar.isEmpty()) {
-                et_terdaftar_pegawai.error = getString(R.string.validasi_terdaftar_pegawai)
-                Toast.makeText(this, getString(R.string.validasi_terdaftar_pegawai), Toast.LENGTH_SHORT).show()
-                et_terdaftar_pegawai.requestFocus()
+                et_terdaftar_pegawai.isFocusable = false
+                et_terdaftar_pegawai.isClickable = false
                 return
             }
 
-            if (branch.isEmpty()) {
+            if (cabang.isEmpty()) {
                 et_namacabang_pegawai.error = getString(R.string.validasi_namacabang_pegawai)
                 Toast.makeText(this, getString(R.string.validasi_namacabang_pegawai), Toast.LENGTH_SHORT).show()
                 et_namacabang_pegawai.requestFocus()
