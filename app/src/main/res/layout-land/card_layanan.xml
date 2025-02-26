@@ -28,7 +28,7 @@
             android:layout_marginStart="10dp"
             android:textColor="@color/black"
             android:text="ID Layanan :"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/id_layanan"
@@ -38,7 +38,7 @@
             android:padding="5dp"
             android:textColor="@color/black"
             android:text="@string/card_layanan_id"
-            android:textSize="16sp"
+            android:textSize="20sp"
             />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -58,11 +58,11 @@
             android:id="@+id/tv_nama_layanan_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Layanan :"
-            android:paddingStart="15dp"
+            android:text="Nama Layanan     :"
+            android:layout_marginStart="50dp"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:paddingTop="5dp"
+            android:textSize="22sp"
+            android:padding="5dp"
             />
 
         <TextView
@@ -70,10 +70,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_layanan_nama"
-            android:paddingStart="15dp"
+            android:layout_marginStart="40dp"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:paddingTop="5dp"
+            android:textSize="22sp"
+            android:padding="5dp"
             />
     </LinearLayout>
 
@@ -88,16 +88,18 @@
             android:id="@+id/tv_harga_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Harga :"
-            android:paddingStart="15dp"
-            android:textSize="18sp"/>
+            android:text="Harga                        :"
+            android:layout_marginStart="50dp"
+            android:padding="5dp"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/tv_harga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_layanan_harga"
-            android:paddingStart="15dp"
-            android:textSize="18sp"/>
+            android:padding="5dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
@@ -112,9 +114,10 @@
             android:id="@+id/tv_cabang_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cabang :"
-            android:paddingStart="15dp"
-            android:textSize="18sp"
+            android:text="Cabang                     :"
+            android:layout_marginStart="50dp"
+            android:padding="5dp"
+            android:textSize="20sp"
             />
 
 
@@ -123,8 +126,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_layanan_cabang"
-            android:paddingStart="15dp"
-            android:textSize="18sp"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            android:padding="5dp"
 
             />
     </LinearLayout>

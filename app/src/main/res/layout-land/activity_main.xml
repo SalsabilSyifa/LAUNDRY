@@ -5,8 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="@drawable/bg7"
     tools:context=".MainActivity">
 
     <TextView
@@ -19,8 +17,7 @@
         app:layout_constraintStart_toEndOf="@id/greeting"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginStart="30dp"/>
 
     <!-- Tanggal -->
     <TextView
@@ -46,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@id/greeting"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintWidth_percent="0.9">
 
         <LinearLayout
@@ -96,7 +93,7 @@
     android:layout_height="wrap_content"
     android:columnCount="1"
     android:rowCount="3"
-    android:layout_marginTop="70dp"
+    android:layout_marginTop="45dp"
 
     >
 
@@ -108,7 +105,6 @@
         android:layout_margin="8dp">
 
         <LinearLayout
-            android:id="@+id/item_akun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -126,7 +122,6 @@
                 android:layout_height="wrap_content"
                 android:text="Akun"
                 android:gravity="center"
-                android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -142,7 +137,6 @@
 
 
         <LinearLayout
-            android:id="@+id/item_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -172,7 +166,6 @@
         android:layout_margin="8dp">
 
         <LinearLayout
-            android:id="@+id/item_cabang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -232,7 +225,6 @@
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/icon_transaksi"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/ic_transaksi2"
@@ -263,7 +255,6 @@
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/icon_layanan"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/ic_layanan1"
@@ -294,7 +285,6 @@
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/icon_tambahan"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/ic_tambahan1"
@@ -326,7 +316,6 @@
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/icon_pegawai"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/ic_pelanggan"
@@ -357,7 +346,6 @@
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/icon_cabang"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/ic_laporan"
@@ -388,7 +376,6 @@
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/icon_printer"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/ic_printer1"

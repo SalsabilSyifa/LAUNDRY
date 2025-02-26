@@ -16,7 +16,6 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     lateinit var cv_layanan : CardView
-    lateinit var cv_tambahan : CardView
     lateinit var cv_pegawai : CardView
     lateinit var cv_pelanggan : CardView
 
@@ -32,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         cv_layanan = findViewById(R.id.cv_layanan)
-        cv_tambahan = findViewById(R.id.cv_tambahan)
         cv_pegawai = findViewById(R.id.cv_pegawai)
         cv_pelanggan = findViewById(R.id.cv_pelanggan)
 
@@ -41,10 +39,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        cv_tambahan.setOnClickListener{
-            val intent = Intent(this, activity_tambahan_pelanggan::class.java)
-            startActivity(intent)
-        }
         cv_pegawai.setOnClickListener{
             val intent = Intent(this, data_pegawai::class.java)
             startActivity(intent)

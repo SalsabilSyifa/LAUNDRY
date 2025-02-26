@@ -39,7 +39,7 @@ class data_layanan : AppCompatActivity() {
         layoutManager.stackFromEnd = true
         rv_data_layanan.layoutManager = layoutManager
         rv_data_layanan.setHasFixedSize(true)
-        layananList = arrayListOf<modellayanan>()
+        layananList = arrayListOf<modellayanan> ()
 
         getData()
 

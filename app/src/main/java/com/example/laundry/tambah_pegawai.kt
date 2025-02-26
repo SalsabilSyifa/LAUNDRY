@@ -75,10 +75,10 @@ class tambah_pegawai : AppCompatActivity() {
                 return
             }
 
-            if (nohp.isEmpty()) {
-                et_nohp_pegawai.error = getString(R.string.validasi_nohp_pegawai)
-                Toast.makeText(this, getString(R.string.validasi_nohp_pegawai), Toast.LENGTH_SHORT).show()
-                et_nohp_pegawai.requestFocus()
+             if (!nohp.matches(Regex("^[0-9]+$"))) {
+                 et_nohp_pegawai.error = "Nomor HP harus berupa angka"
+                 Toast.makeText(this, "Nomor HP harus berupa angka", Toast.LENGTH_SHORT).show()
+                 et_nohp_pegawai.requestFocus()
                 return
             }
 

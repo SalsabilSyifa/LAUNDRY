@@ -77,11 +77,11 @@ class TambahPelanggan : AppCompatActivity() {
                 return
             }
 
-             if (nohp.isEmpty()) {
-                et_nohp.error = getString(R.string.validasi_nohp_pelanggan)
-                Toast.makeText(this, getString(R.string.validasi_nohp_pelanggan), Toast.LENGTH_SHORT).show()
-                et_nohp.requestFocus()
-                return
+        if (!nohp.matches(Regex("^[0-9]+$"))) {
+            et_nohp.error = "Nomor HP harus berupa angka"
+            Toast.makeText(this, "Nomor HP harus berupa angka", Toast.LENGTH_SHORT).show()
+            et_nohp.requestFocus()
+            return
         }
 
             if (terdaftar.isEmpty()) {

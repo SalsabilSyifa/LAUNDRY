@@ -28,7 +28,7 @@
             android:layout_marginStart="10dp"
             android:textColor="@color/white"
             android:text="ID Pegawai :"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/id_pegawai"
@@ -38,7 +38,7 @@
                 android:padding="5dp"
                 android:textColor="@color/white"
                 android:text="@string/card_pegawai_id"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -58,11 +58,12 @@
             android:id="@+id/tv_nama_pegawai_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Pegawai :"
+            android:text="Nama Pegawai      :"
             android:textStyle="bold"
             android:padding="5dp"
-            android:textSize="18sp"
-            android:paddingTop="5dp"/>
+            android:textSize="22sp"
+            android:layout_marginStart="50dp"
+            />
         <TextView
             android:id="@+id/tv_nama_pegawai"
             android:layout_width="match_parent"
@@ -70,8 +71,9 @@
             android:text="@string/card_pegawai_nama"
             android:textStyle="bold"
             android:padding="5dp"
-            android:textSize="18sp"
-            android:paddingTop="5dp"/>
+            android:layout_marginStart="40dp"
+            android:textSize="22sp"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -83,10 +85,12 @@
             android:id="@+id/tv_alamat_pegawai_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alamat :"
+            android:text="Alamat                        :"
             android:padding="5dp"
-            android:textSize="18sp"
-            />
+            android:textSize="20sp"
+        android:layout_marginStart="50dp"
+
+        />
 
         <TextView
             android:id="@+id/tv_alamat_pegawai"
@@ -94,7 +98,9 @@
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_alamat"
             android:padding="5dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:layout_marginStart="40dp"
+
             />
     </LinearLayout>
 
@@ -107,10 +113,12 @@
             android:id="@+id/tv_nohp_pegawai_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No HP :"
+            android:text="No HP                         :"
             android:padding="5dp"
-            android:textSize="18sp"
-            />
+            android:textSize="20sp"
+        android:layout_marginStart="50dp"
+
+        />
         <TextView
             android:id="@+id/tv_nohp_pegawai"
             android:layout_width="match_parent"
@@ -118,6 +126,8 @@
             android:text="@string/card_pegawai_nohp"
             android:padding="5dp"
             android:textSize="18sp"
+            android:layout_marginStart="40dp"
+
             />
 
     </LinearLayout>
@@ -131,17 +141,21 @@
             android:id="@+id/tv_terdaftar_pegawai_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Terdaftar :"
+            android:text="Terdaftar                    :"
             android:padding="5dp"
-            android:textSize="18sp"
-            />
+            android:textSize="20sp"
+        android:layout_marginStart="50dp"
+
+        />
         <TextView
             android:id="@+id/tv_terdaftar_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_terdaftar"
             android:padding="5dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:layout_marginStart="40dp"
+
             />
     </LinearLayout>
 
@@ -154,17 +168,21 @@
             android:id="@+id/tv_cabang_pegawai_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cabang :"
+            android:text="Cabang                       :"
             android:padding="5dp"
-            android:textSize="18sp"
-            />
+            android:textSize="20sp"
+        android:layout_marginStart="50dp"
+
+        />
         <TextView
             android:id="@+id/tv_cabang_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_cabang"
             android:padding="5dp"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:layout_marginStart="40dp"
+
             />
     </LinearLayout>
 
@@ -172,18 +190,18 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:rowCount="2"
+            android:columnCount="2"
+            android:rowCount="1"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             >
 
             <Button
                 android:id="@+id/bt_hubungi_pegawai"
-                android:layout_width="165dp"
+                android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:text="@string/card_pegawai_hubungi"
                 android:layout_marginEnd="5dp"
@@ -193,7 +211,7 @@
                 />
             <Button
                 android:id="@+id/bt_lihat_pegawai"
-                android:layout_width="165dp"
+                android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:text="@string/card_pegawai_lihat"
                 android:layout_marginEnd="5dp"
