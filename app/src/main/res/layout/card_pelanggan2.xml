@@ -50,17 +50,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="34dp"
         android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_nama_judul"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Nama Pelanggan :"
+        android:text="Nama Pelanggan"
         android:padding="5dp"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="18sp"
         />
+        <TextView
+            android:id="@+id/tv_titik_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            />
         <TextView
             android:id="@+id/tv_nama"
             android:layout_width="match_parent"
@@ -68,7 +77,7 @@
             android:text="@string/card_pelanggan_nama"
             android:padding="5dp"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="18sp"
             />
     </LinearLayout>
 
@@ -80,18 +89,27 @@
 
         <TextView
             android:id="@+id/tv_nohp_judul"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="match_parent"
             android:padding="5dp"
-            android:text="No HP :"
+            android:text="No HP"
             android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_titik_nohp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            />
         <TextView
             android:id="@+id/tv_nohp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pelanggan_nohp"
             android:padding="5dp"
-            android:textSize="18dp"
+            android:textSize="18sp"
             />
     </LinearLayout>
 
@@ -102,12 +120,21 @@
         android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_terdaftar_judul"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Terdaftar :"
+        android:text="Terdaftar"
         android:padding="5dp"
         android:textSize="18sp"
         />
+        <TextView
+            android:id="@+id/tv_titik_terdaftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            />
         <TextView
             android:id="@+id/tv_terdaftar"
             android:layout_width="match_parent"
@@ -125,12 +152,21 @@
         android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_alamat_judul"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Alamat :"
+        android:text="Alamat"
         android:padding="5dp"
         android:textSize="18sp"
         />
+        <TextView
+            android:id="@+id/tv_titik_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            />
         <TextView
             android:id="@+id/tv_alamat"
             android:layout_width="match_parent"

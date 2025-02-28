@@ -40,37 +40,14 @@
         android:hint="@string/tambah_pelanggan_namalengkap"
         android:background="@drawable/edittext_border"
         android:padding="12dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_namalengkap"
         android:layout_marginBottom="12dp" />
 
 
-    <TextView
-        android:id="@+id/tv_terdaftar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tambah_pelanggan_terdaftar"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_namalengkap"
-        />
-    <EditText
-        android:id="@+id/et_terdaftar"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/tambah_pelanggan_terdaftar"
-        android:background="@drawable/edittext_border"
-        android:padding="12dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_terdaftar"
-        android:layout_marginBottom="12dp" />
+
 
     <TextView
         android:id="@+id/tv_nohp"
@@ -90,7 +67,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/tambah_pelanggan_nohpaktif"
         android:padding="12dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="80dp"
         android:background="@drawable/edittext_border"
         app:layout_constraintTop_toBottomOf="@id/tv_nohp"
@@ -105,8 +82,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="80dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_nohp"
 
 
@@ -119,10 +96,10 @@
         android:hint="@string/tambah_pelanggan_alamat"
         android:padding="12dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="80dp"
         android:background="@drawable/edittext_border"
         app:layout_constraintTop_toBottomOf="@id/tv_alamat"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="12dp" />
 
     <Button
