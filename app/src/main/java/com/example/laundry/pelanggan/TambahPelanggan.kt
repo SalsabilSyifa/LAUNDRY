@@ -27,7 +27,6 @@ class TambahPelanggan : AppCompatActivity() {
     lateinit var et_namalengkap : EditText
     lateinit var et_alamat : EditText
     lateinit var et_nohp : EditText
-    lateinit var et_terdaftar : EditText
     lateinit var bt_simpan : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +53,6 @@ class TambahPelanggan : AppCompatActivity() {
         et_namalengkap = findViewById(R.id.et_namalengkap)
         et_alamat = findViewById(R.id.et_alamat)
         et_nohp = findViewById(R.id.et_nohp)
-        et_terdaftar = findViewById(R.id.et_terdaftar)
         bt_simpan = findViewById(R.id.bt_simpan)
     }
 
@@ -63,7 +61,6 @@ class TambahPelanggan : AppCompatActivity() {
         val alamat = et_alamat.text.toString()
         val nohp = et_nohp.text.toString()
         val terdaftar = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
-        et_terdaftar.setText(terdaftar)
         //validasi data
 
 
@@ -88,16 +85,12 @@ class TambahPelanggan : AppCompatActivity() {
             return
         }
 
-            if (terdaftar.isEmpty()) {
-                et_terdaftar.isFocusable = false
-                et_terdaftar.isClickable = false
-                return
-        }
-    simpan()
+
+    simpan(terdaftar)
     }
 
 
-        fun simpan() {
+        fun simpan(terdaftar: String) {
             val pelangganBaru = myRef.push()
             val pelangganId = pelangganBaru.key
             val data = modelpelanggan(
@@ -105,7 +98,7 @@ class TambahPelanggan : AppCompatActivity() {
                 et_namalengkap.text.toString(),
                 et_alamat.text.toString(),
                 et_nohp.text.toString(),
-                et_terdaftar.text.toString(),
+                terdaftar,
                 "timestamp"
             )
             pelangganBaru.setValue(data)

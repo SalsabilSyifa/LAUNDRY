@@ -24,7 +24,6 @@ class tambah_pegawai : AppCompatActivity() {
     lateinit var et_namalengkap_pegawai : EditText
     lateinit var et_alamat_pegawai : EditText
     lateinit var et_nohp_pegawai : EditText
-    lateinit var et_terdaftar_pegawai : EditText
     lateinit var et_namacabang_pegawai : EditText
     lateinit var bt_simpan_pegawai : Button
 
@@ -51,7 +50,6 @@ class tambah_pegawai : AppCompatActivity() {
         et_namalengkap_pegawai = findViewById(R.id.et_namalengkap_pegawai)
         et_alamat_pegawai = findViewById(R.id.et_alamat_pegawai)
         et_nohp_pegawai = findViewById(R.id.et_nohp_pegawai)
-        et_terdaftar_pegawai = findViewById(R.id.et_terdaftar_pegawai)
         et_namacabang_pegawai = findViewById(R.id.et_namacabang_pegawai)
         bt_simpan_pegawai = findViewById(R.id.bt_simpan_pegawai)
     }
@@ -61,7 +59,6 @@ class tambah_pegawai : AppCompatActivity() {
         val alamat = et_alamat_pegawai.text.toString()
         val nohp = et_nohp_pegawai.text.toString()
         val terdaftar = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
-        et_terdaftar_pegawai.setText(terdaftar)
         val cabang = et_namacabang_pegawai.text.toString()
         //validasi data
 
@@ -86,11 +83,7 @@ class tambah_pegawai : AppCompatActivity() {
                 return
             }
 
-            if (terdaftar.isEmpty()) {
-                et_terdaftar_pegawai.isFocusable = false
-                et_terdaftar_pegawai.isClickable = false
-                return
-            }
+
 
             if (cabang.isEmpty()) {
                 et_namacabang_pegawai.error = getString(R.string.validasi_namacabang_pegawai)
@@ -98,11 +91,11 @@ class tambah_pegawai : AppCompatActivity() {
                 et_namacabang_pegawai.requestFocus()
                 return
         }
-    simpan()
+    simpan(terdaftar)
     }
 
 
-    fun simpan() {
+    fun simpan(terdaftar: String) {
         val pegawaiBaru = myRef.push()
         val pegawaiId = pegawaiBaru.key
         val data = modelpegawai(
@@ -110,7 +103,7 @@ class tambah_pegawai : AppCompatActivity() {
             et_namalengkap_pegawai.text.toString(),
             et_alamat_pegawai.text.toString(),
             et_nohp_pegawai.text.toString(),
-            et_terdaftar_pegawai.text.toString(),
+            terdaftar,
             et_namacabang_pegawai.text.toString(),
             "timestamp"
         )
