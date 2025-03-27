@@ -27,9 +27,16 @@
             android:padding="5dp"
             android:layout_marginStart="10dp"
             android:textColor="@color/black"
-            android:text="ID Layanan :"
+            android:text="@string/tv_id_layanan"
             android:textSize="20sp" />
-
+            <TextView
+                android:id="@+id/tv_titik_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:padding="5dp"
+                android:textSize="22sp"
+                />
         <TextView
             android:id="@+id/id_layanan"
             android:layout_width="match_parent"
@@ -58,7 +65,7 @@
             android:id="@+id/tv_nama_layanan_judul"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:text="Nama Layanan"
+            android:text="@string/tv_namalayanan"
             android:layout_marginStart="50dp"
             android:textStyle="bold"
             android:textSize="22sp"
@@ -95,7 +102,7 @@
             android:id="@+id/tv_harga_judul"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:text="Harga"
+            android:text="@string/tv_harga"
             android:layout_marginStart="50dp"
             android:padding="5dp"
             android:textSize="20sp"/>
@@ -128,7 +135,7 @@
             android:id="@+id/tv_cabang_judul"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:text="Cabang"
+            android:text="@string/tv_cabang"
             android:layout_marginStart="50dp"
             android:padding="5dp"
             android:textSize="20sp"

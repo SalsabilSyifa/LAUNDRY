@@ -57,4 +57,15 @@
     <string name="validasi_cabang_layanan">branch cannot be empty</string>
     <string name="sukses_simpan_layanan">Succeed</string>
     <string name="gagal_simpan_layanan">Failled</string>
+    <string name="tv_id_layanan">Service ID</string>
+    <string name="tv_namalayanan">Service Name</string>
+    <string name="tv_harga">Price</string>
+    <string name="tv_cabang">Branch</string>
+    <string name="tv_namapegawai">Employee Name</string>
+    <string name="tv_id_pegawai">Employee ID</string>
+    <string name="tv_alamat">Address</string>
+    <string name="tv_nohp">no Handphone</string>
+    <string name="tv_terdaftar">Registered</string>
+    <string name="tv_id_pelanggan">Customer ID</string>
+    <string name="tv_namapelanggan">Customer Name</string>
 </resources>

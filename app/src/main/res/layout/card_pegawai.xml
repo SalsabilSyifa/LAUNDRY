@@ -26,16 +26,26 @@
             android:gravity="start"
             android:padding="5dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="1dp"
             android:textColor="@color/white"
-            android:text="ID Pegawai :"
+            android:text="@string/tv_id_pegawai"
             android:textSize="16sp" />
-
+            <TextView
+                android:id="@+id/tv_titik_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:padding="3dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                />
             <TextView
                 android:id="@+id/id_pegawai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="start"
                 android:padding="5dp"
+                android:layout_marginTop="1dp"
                 android:textColor="@color/white"
                 android:text="@string/card_pegawai_id"
                 android:textSize="16sp" />
@@ -51,34 +61,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical"
         android:layout_marginTop="34dp"
         android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tv_nama_pegawai_judul"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Nama Pegawai"
-            android:textStyle="bold"
-            android:padding="5dp"
-            android:textSize="18sp"/>
-        <TextView
-            android:id="@+id/tv_titik_nama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=":"
-            android:padding="5dp"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            />
         <TextView
             android:id="@+id/tv_nama_pegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_nama"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             android:padding="5dp"
-            android:textSize="18sp"/>
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -88,18 +81,19 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_alamat_pegawai_judul"
-            android:layout_width="150dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:text="Alamat "
-            android:padding="5dp"
+            android:text="@string/tv_alamat"
+            android:padding="3dp"
             android:textSize="18sp"
+            android:layout_marginStart="10dp"
             />
         <TextView
             android:id="@+id/tv_titik_alamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -109,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_alamat"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textSize="18sp"
             />
     </LinearLayout>
@@ -121,10 +115,11 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_nohp_pegawai_judul"
-            android:layout_width="150dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:text="No HP "
-            android:padding="5dp"
+            android:text="@string/tv_nohp"
+            android:padding="3dp"
+            android:layout_marginStart="10dp"
             android:textSize="18sp"
             />
         <TextView
@@ -132,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -141,7 +136,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_nohp"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textSize="18sp"
             />
 
@@ -154,18 +149,19 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_terdaftar_pegawai_judul"
-            android:layout_width="150dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:text="Terdaftar"
-            android:padding="5dp"
+            android:text="@string/tv_terdaftar"
+            android:padding="3dp"
             android:textSize="18sp"
+            android:layout_marginStart="10dp"
             />
         <TextView
             android:id="@+id/tv_titik_terdaftar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -174,7 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_terdaftar"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textSize="18sp"
             />
     </LinearLayout>
@@ -186,18 +182,19 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_cabang_pegawai_judul"
-            android:layout_width="150dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:text="Cabang"
-            android:padding="5dp"
+            android:text="@string/tv_cabang"
+            android:padding="3dp"
             android:textSize="18sp"
+            android:layout_marginStart="10dp"
             />
         <TextView
             android:id="@+id/tv_titik_cabang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -206,7 +203,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pegawai_cabang"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textSize="18sp"
             />
     </LinearLayout>

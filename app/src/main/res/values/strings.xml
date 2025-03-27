@@ -56,5 +56,16 @@
     <string name="validasi_cabang_layanan">cabang tidak boleh kosong</string>
     <string name="sukses_simpan_layanan">Berhasil</string>
     <string name="gagal_simpan_layanan">Gagal</string>
+    <string name="tv_id_layanan">ID Layanan</string>
+    <string name="tv_namalayanan">Nama Layanan</string>
+    <string name="tv_harga">Harga</string>
+    <string name="tv_cabang">Cabang</string>
+    <string name="tv_namapegawai">Nama Pegawai</string>
+    <string name="tv_id_pegawai">ID Pegawai</string>
+    <string name="tv_alamat">Alamat</string>
+    <string name="tv_nohp">No HP</string>
+    <string name="tv_terdaftar">Terdaftar</string>
+    <string name="tv_id_pelanggan">ID Pelanggan</string>
+    <string name="tv_namapelanggan">Nama Pelanggan</string>
 
 </resources>

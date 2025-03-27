@@ -60,7 +60,7 @@ class TambahPelanggan : AppCompatActivity() {
         val nama = et_namalengkap.text.toString()
         val alamat = et_alamat.text.toString()
         val nohp = et_nohp.text.toString()
-        val terdaftar = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        val terdaftar = SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(Date())
         //validasi data
 
 

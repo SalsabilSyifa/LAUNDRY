@@ -9,7 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:backgroundTint="@color/black"
         android:elevation="12dp">
 
@@ -27,9 +27,18 @@
             android:padding="5dp"
             android:layout_marginStart="10dp"
             android:textColor="@color/white"
-            android:text="ID Pelanggan :"
+            android:text="@string/tv_id_pelanggan"
             android:textSize="20sp" />
-
+            <TextView
+                android:id="@+id/tv_titik_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                />
             <TextView
                 android:id="@+id/id_pelanggan"
                 android:layout_width="match_parent"
@@ -49,29 +58,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical"
         android:layout_marginTop="40dp"
         android:orientation="horizontal">
-    <TextView
-        android:id="@+id/tv_nama_judul"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Nama Pelanggan"
-        android:padding="5dp"
-        android:layout_marginStart="50dp"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        />
-
-        <TextView
-            android:id="@+id/tv_titik_nama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=":"
-            android:padding="5dp"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            />
 
         <TextView
             android:id="@+id/tv_nama"
@@ -79,6 +67,7 @@
             android:layout_height="wrap_content"
             android:text="@string/card_pelanggan_nama"
             android:padding="5dp"
+            android:layout_marginStart="50dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -92,10 +81,10 @@
 
         <TextView
             android:id="@+id/tv_nohp_judul"
-            android:layout_width="240dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:padding="5dp"
-            android:text="No HP"
+            android:padding="3dp"
+            android:text="@string/tv_nohp"
             android:layout_marginStart="50dp"
             android:textSize="20sp" />
 
@@ -104,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -113,7 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pelanggan_nohp"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textSize="20sp"
             />
     </LinearLayout>
@@ -125,10 +114,10 @@
         android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_terdaftar_judul"
-        android:layout_width="240dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Terdaftar"
-        android:padding="5dp"
+        android:text="@string/tv_terdaftar"
+        android:padding="3dp"
         android:layout_marginStart="50dp"
         android:textSize="20sp"
         />
@@ -137,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -146,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pelanggan_terdaftar"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textSize="20sp"
             />
     </LinearLayout>
@@ -158,10 +147,10 @@
         android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_alamat_judul"
-        android:layout_width="240dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Alamat"
-        android:padding="5dp"
+        android:text="@string/tv_alamat"
+        android:padding="3dp"
         android:layout_marginStart="50dp"
         android:textSize="20sp"
         />
@@ -170,7 +159,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=":"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textStyle="bold"
             android:textSize="22sp"
             />
@@ -179,7 +168,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/card_pelanggan_alamat"
-            android:padding="5dp"
+            android:padding="3dp"
             android:textSize="20sp"
             />
     </LinearLayout>

@@ -2,12 +2,14 @@ package com.example.laundry
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -27,12 +29,14 @@ class tambah_pegawai : AppCompatActivity() {
     lateinit var et_namacabang_pegawai : EditText
     lateinit var bt_simpan_pegawai : Button
 
+    var id_pegawai:String=""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_tambah_pegawai)
         init ()
-
+        getData()
         bt_simpan_pegawai.setOnClickListener{
             cekValidasi()
         }
@@ -54,15 +58,68 @@ class tambah_pegawai : AppCompatActivity() {
         bt_simpan_pegawai = findViewById(R.id.bt_simpan_pegawai)
     }
 
-    fun cekValidasi() {
+    fun getData(){
+        id_pegawai = intent.getStringExtra("id") ?: ""
+        val judul = intent.getStringExtra("judul") ?: ""
+        val nama = intent.getStringExtra("nama") ?: ""
+        val alamat = intent.getStringExtra("alamat") ?: ""
+        val hp = intent.getStringExtra("nohp") ?: ""
+        val cabang = intent.getStringExtra("cabang") ?: ""
+        tv_tambah_pegawai.text = judul
+        et_namalengkap_pegawai.setText(nama)
+        et_alamat_pegawai.setText(alamat)
+        et_nohp_pegawai.setText(hp)
+        et_namacabang_pegawai.setText(cabang)
+        if(!tv_tambah_pegawai.text.equals("Tambah")){
+            if(judul.equals(" edit")){
+                mati()
+                bt_simpan_pegawai.text="Edit"
+            }
+        }else{
+            hidup()
+            et_namalengkap_pegawai.requestFocus()
+            bt_simpan_pegawai.text="Simpan"
+        }
+    }
+
+    fun mati(){
+        et_namalengkap_pegawai.isEnabled=false
+        et_alamat_pegawai.isEnabled=false
+        et_nohp_pegawai.isEnabled=false
+        et_namacabang_pegawai.isEnabled=false
+    }
+    fun hidup(){
+        et_namalengkap_pegawai.isEnabled=true
+        et_alamat_pegawai.isEnabled=true
+        et_nohp_pegawai.isEnabled=true
+        et_namacabang_pegawai.isEnabled=true
+    }
+
+    fun update(){
+        val pegawaiRef = database.getReference("pegawai").child(id_pegawai)
+        //Buat Map untuk update data
+        val updateData = mutableMapOf<String, Any>()
+        updateData["nama"]= et_namalengkap_pegawai.text.toString()
+        updateData["alamat"]= et_alamat_pegawai.text.toString()
+        updateData["nohp"]= et_nohp_pegawai.text.toString()
+        updateData["cabang"]= et_namacabang_pegawai.text.toString()
+        pegawaiRef.updateChildren(updateData).addOnSuccessListener {
+            Toast.makeText(this@tambah_pegawai, "Data Pegawai Berhasil Diperbarui",Toast.LENGTH_SHORT).show()
+            finish()
+        }.addOnFailureListener{
+            Toast.makeText(this@tambah_pegawai, "Data Pegawai Gagal Diperbarui",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun cekValidasi(){
         val nama = et_namalengkap_pegawai.text.toString()
         val alamat = et_alamat_pegawai.text.toString()
         val nohp = et_nohp_pegawai.text.toString()
-        val terdaftar = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        val terdaftar = SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(Date())
         val cabang = et_namacabang_pegawai.text.toString()
+        val data = modelpegawai(nama, nohp, alamat, cabang)
+
         //validasi data
-
-
             if (nama.isEmpty()) {
                 et_namalengkap_pegawai.error = getString(R.string.validasi_nama_pegawai)
                 Toast.makeText(this, getString(R.string.validasi_nama_pegawai), Toast.LENGTH_SHORT).show()
@@ -75,51 +132,50 @@ class tambah_pegawai : AppCompatActivity() {
                 et_alamat_pegawai.requestFocus()
                 return
             }
-
              if (!nohp.matches(Regex("^[0-9]+$"))) {
                  et_nohp_pegawai.error = "Nomor HP harus berupa angka"
                  Toast.makeText(this, "Nomor HP harus berupa angka", Toast.LENGTH_SHORT).show()
                  et_nohp_pegawai.requestFocus()
                 return
             }
-
-
-
             if (cabang.isEmpty()) {
                 et_namacabang_pegawai.error = getString(R.string.validasi_namacabang_pegawai)
                 Toast.makeText(this, getString(R.string.validasi_namacabang_pegawai), Toast.LENGTH_SHORT).show()
                 et_namacabang_pegawai.requestFocus()
                 return
         }
-    simpan(terdaftar)
+            if(bt_simpan_pegawai.text.equals("Simpan")){
+                simpan(terdaftar)
+            }else if (bt_simpan_pegawai.text.equals("Edit")){
+                hidup()
+                et_namalengkap_pegawai.requestFocus()
+                bt_simpan_pegawai.text="Perbarui"
+            }else if (bt_simpan_pegawai.text.equals("Perbarui")){
+                update()
+            }
     }
 
 
     fun simpan(terdaftar: String) {
         val pegawaiBaru = myRef.push()
-        val pegawaiId = pegawaiBaru.key
+        val pegawaiId = pegawaiBaru.key ?: return
         val data = modelpegawai(
-            pegawaiId.toString(),
-            et_namalengkap_pegawai.text.toString(),
-            et_alamat_pegawai.text.toString(),
-            et_nohp_pegawai.text.toString(),
-            terdaftar,
-            et_namacabang_pegawai.text.toString(),
-            "timestamp"
+            id_pegawai = pegawaiId,
+            tv_nama_pegawai = et_namalengkap_pegawai.text.toString(),
+            tv_alamat_pegawai = et_alamat_pegawai.text.toString(),
+            tv_nohp_pegawai = et_nohp_pegawai.text.toString(),
+            tv_terdaftar_pegawai = terdaftar,  // Sebelumnya mungkin kosong
+            tv_cabang_pegawai = et_namacabang_pegawai.text.toString()
         )
 
-        pegawaiBaru.setValue(data)
+        pegawaiBaru.setValue(data) // Simpan sebagai objek, bukan String
             .addOnSuccessListener {
-                Toast.makeText(this, getString(R.string.sukses_simpan_pelanggan), Toast.LENGTH_SHORT).show()
-
-                val resultIntent = Intent()
-                resultIntent.putExtra("pegawai_id", pegawaiId)
-                setResult(Activity.RESULT_OK, resultIntent)
+                Toast.makeText(this, "Pegawai berhasil disimpan", Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener{
-                Toast.makeText(this,getString(R.string.gagal_simpan_pelanggan), Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this, "Gagal menyimpan pegawai", Toast.LENGTH_SHORT).show()
             }
     }
+
 }
