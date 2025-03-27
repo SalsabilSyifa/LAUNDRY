@@ -50,10 +50,10 @@ class data_pegawai : AppCompatActivity() {
             val intent = Intent(this, tambah_pegawai::class.java)
             intent.putExtra("judul", this.getString(R.string.tambah_pegawai))
             intent.putExtra("id", "")
-            intent.putExtra("nama", "")
-            intent.putExtra("nohp", "")
-            intent.putExtra("alamat", "")
-            intent.putExtra("cabang", "")
+            intent.putExtra("namapegawai", "")
+            intent.putExtra("nohppegawai", "")
+            intent.putExtra("alamatpegawai", "")
+            intent.putExtra("cabangpegawai", "")
             startActivity(intent)
         }
 
@@ -73,7 +73,7 @@ class data_pegawai : AppCompatActivity() {
     fun getData() {
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                pegawaiList.clear() // supaya tidak double data saat refresh
+                pegawaiList.clear()
 
                 if (snapshot.exists()) {
                     for (pegawaiSnap in snapshot.children) {
@@ -83,7 +83,7 @@ class data_pegawai : AppCompatActivity() {
                         }
                     }
 
-                    // setelah list nya keisi, set ke adapter
+
                     val adapter = adapter_data_pegawai(pegawaiList)
                     rv_data_pegawai.adapter = adapter
 

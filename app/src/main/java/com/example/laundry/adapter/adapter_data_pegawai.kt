@@ -29,11 +29,11 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = listPegawai[position]
         holder.id_pegawai.text = item.id_pegawai
-        holder.tv_nama_pegawai.text = item.tv_nama_pegawai
-        holder.tv_alamat_pegawai.text = item.tv_alamat_pegawai
-        holder.tv_nohp_pegawai.text = item.tv_nohp_pegawai
-        holder.tv_terdaftar_pegawai.text = item.tv_terdaftar_pegawai
-        holder.tv_cabang_pegawai.text = item.tv_cabang_pegawai
+        holder.namapegawai.text = item.namapegawai
+        holder.alamatpegawai.text = item.alamatpegawai
+        holder.nohppegawai.text = item.nohppegawai
+        holder.terdaftarpegawai.text = item.terdaftarpegawai
+        holder.cabangpegawai.text = item.cabangpegawai
         holder.bthubungipegawai.setOnClickListener{
 
         }
@@ -43,12 +43,12 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
 
         holder.cvcardpegawai.setOnClickListener {
             val intent = Intent(appContext, tambah_pegawai::class.java)
-            intent.putExtra("judul", "edit")
-            intent.putExtra("id_pegawai", item.id_pegawai)
-            intent.putExtra("tv_nama_pegawai", item.tv_nama_pegawai)
-            intent.putExtra("tv_nohp_pegawai", item.tv_nohp_pegawai)
-            intent.putExtra("tv_alamat_pegawai", item.tv_alamat_pegawai)
-            intent.putExtra("tv_cabang_pegawai", item.tv_cabang_pegawai)
+            intent.putExtra("judul", "Edit Pegawai")
+            intent.putExtra("id", item.id_pegawai)
+            intent.putExtra("namapegawai", item.namapegawai)
+            intent.putExtra("nohppegawai", item.nohppegawai)
+            intent.putExtra("alamatpegawai", item.alamatpegawai)
+            intent.putExtra("cabangpegawai", item.cabangpegawai)
             appContext.startActivity(intent)
 
         }
@@ -62,11 +62,11 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cvcardpegawai: CardView = itemView.findViewById(R.id.cv_card_pegawai)
         val id_pegawai: TextView = itemView.findViewById(R.id.id_pegawai)
-        val tv_nama_pegawai: TextView = itemView.findViewById(R.id.tv_nama_pegawai)
-        val tv_alamat_pegawai: TextView = itemView.findViewById(R.id.tv_alamat_pegawai)
-        val tv_nohp_pegawai: TextView = itemView.findViewById(R.id.tv_nohp_pegawai)
-        val tv_terdaftar_pegawai: TextView = itemView.findViewById(R.id.tv_terdaftar_pegawai)
-        val tv_cabang_pegawai: TextView = itemView.findViewById(R.id.tv_cabang_pegawai)
+        val namapegawai: TextView = itemView.findViewById(R.id.tv_nama_pegawai)
+        val alamatpegawai: TextView = itemView.findViewById(R.id.tv_alamat_pegawai)
+        val nohppegawai: TextView = itemView.findViewById(R.id.tv_nohp_pegawai)
+        val terdaftarpegawai: TextView = itemView.findViewById(R.id.tv_terdaftar_pegawai)
+        val cabangpegawai: TextView = itemView.findViewById(R.id.tv_cabang_pegawai)
         val bthubungipegawai: Button = itemView.findViewById(R.id.bt_hubungi_pegawai)
         val btlihatpegawai: Button = itemView.findViewById(R.id.bt_lihat_pegawai)
     }

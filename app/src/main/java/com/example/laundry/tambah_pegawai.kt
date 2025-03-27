@@ -60,27 +60,36 @@ class tambah_pegawai : AppCompatActivity() {
 
     fun getData(){
         id_pegawai = intent.getStringExtra("id") ?: ""
+
+        if(id_pegawai.isNotEmpty()){
+            database.getReference("pegawai").child(id_pegawai).get()
+                .addOnSuccessListener { snapshot ->
+                    val data = snapshot.getValue(modelpegawai::class.java)
+                    if(data != null){
+                        et_namalengkap_pegawai.setText(data.namapegawai)
+                        et_alamat_pegawai.setText(data.alamatpegawai)
+                        et_nohp_pegawai.setText(data.nohppegawai)
+                        et_namacabang_pegawai.setText(data.cabangpegawai)
+                    }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Gagal memuat data pegawai", Toast.LENGTH_SHORT).show()
+                }
+        }
+
         val judul = intent.getStringExtra("judul") ?: ""
-        val nama = intent.getStringExtra("nama") ?: ""
-        val alamat = intent.getStringExtra("alamat") ?: ""
-        val hp = intent.getStringExtra("nohp") ?: ""
-        val cabang = intent.getStringExtra("cabang") ?: ""
         tv_tambah_pegawai.text = judul
-        et_namalengkap_pegawai.setText(nama)
-        et_alamat_pegawai.setText(alamat)
-        et_nohp_pegawai.setText(hp)
-        et_namacabang_pegawai.setText(cabang)
-        if(!tv_tambah_pegawai.text.equals("Tambah")){
-            if(judul.equals(" edit")){
-                mati()
-                bt_simpan_pegawai.text="Edit"
-            }
-        }else{
+
+        if(judul.equals(" Edit Pegawai", ignoreCase = true)){
+            mati()
+            bt_simpan_pegawai.text="Edit"
+        } else {
             hidup()
             et_namalengkap_pegawai.requestFocus()
             bt_simpan_pegawai.text="Simpan"
         }
     }
+
 
     fun mati(){
         et_namalengkap_pegawai.isEnabled=false
@@ -97,12 +106,11 @@ class tambah_pegawai : AppCompatActivity() {
 
     fun update(){
         val pegawaiRef = database.getReference("pegawai").child(id_pegawai)
-        //Buat Map untuk update data
         val updateData = mutableMapOf<String, Any>()
-        updateData["nama"]= et_namalengkap_pegawai.text.toString()
-        updateData["alamat"]= et_alamat_pegawai.text.toString()
-        updateData["nohp"]= et_nohp_pegawai.text.toString()
-        updateData["cabang"]= et_namacabang_pegawai.text.toString()
+        updateData["namapegawai"]= et_namalengkap_pegawai.text.toString()
+        updateData["alamatpegawai"]= et_alamat_pegawai.text.toString()
+        updateData["nohppegawai"]= et_nohp_pegawai.text.toString()
+        updateData["cabangpegawai"]= et_namacabang_pegawai.text.toString()
         pegawaiRef.updateChildren(updateData).addOnSuccessListener {
             Toast.makeText(this@tambah_pegawai, "Data Pegawai Berhasil Diperbarui",Toast.LENGTH_SHORT).show()
             finish()
@@ -161,14 +169,14 @@ class tambah_pegawai : AppCompatActivity() {
         val pegawaiId = pegawaiBaru.key ?: return
         val data = modelpegawai(
             id_pegawai = pegawaiId,
-            tv_nama_pegawai = et_namalengkap_pegawai.text.toString(),
-            tv_alamat_pegawai = et_alamat_pegawai.text.toString(),
-            tv_nohp_pegawai = et_nohp_pegawai.text.toString(),
-            tv_terdaftar_pegawai = terdaftar,  // Sebelumnya mungkin kosong
-            tv_cabang_pegawai = et_namacabang_pegawai.text.toString()
+            namapegawai = et_namalengkap_pegawai.text.toString(),
+            alamatpegawai = et_alamat_pegawai.text.toString(),
+            nohppegawai = et_nohp_pegawai.text.toString(),
+            terdaftarpegawai = terdaftar,
+            cabangpegawai = et_namacabang_pegawai.text.toString()
         )
 
-        pegawaiBaru.setValue(data) // Simpan sebagai objek, bukan String
+        pegawaiBaru.setValue(data)
             .addOnSuccessListener {
                 Toast.makeText(this, "Pegawai berhasil disimpan", Toast.LENGTH_SHORT).show()
                 finish()
