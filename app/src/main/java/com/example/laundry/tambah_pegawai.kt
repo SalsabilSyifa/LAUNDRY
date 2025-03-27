@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -28,6 +29,9 @@ class tambah_pegawai : AppCompatActivity() {
     lateinit var et_nohp_pegawai : EditText
     lateinit var et_namacabang_pegawai : EditText
     lateinit var bt_simpan_pegawai : Button
+
+    var isEdit = false
+
 
     var id_pegawai:String=""
 
@@ -60,8 +64,13 @@ class tambah_pegawai : AppCompatActivity() {
 
     fun getData(){
         id_pegawai = intent.getStringExtra("id") ?: ""
+        Log.d("DEBUG", "id_pegawai: $id_pegawai")
 
         if(id_pegawai.isNotEmpty()){
+            isEdit = true
+            tv_tambah_pegawai.text = "Edit Pegawai"
+            bt_simpan_pegawai.text = "Edit"
+            hidup()
             database.getReference("pegawai").child(id_pegawai).get()
                 .addOnSuccessListener { snapshot ->
                     val data = snapshot.getValue(modelpegawai::class.java)
@@ -75,19 +84,15 @@ class tambah_pegawai : AppCompatActivity() {
                 .addOnFailureListener {
                     Toast.makeText(this, "Gagal memuat data pegawai", Toast.LENGTH_SHORT).show()
                 }
-        }
-
-        val judul = intent.getStringExtra("judul") ?: ""
-        tv_tambah_pegawai.text = judul
-
-        if(judul.equals(" Edit Pegawai", ignoreCase = true)){
-            mati()
-            bt_simpan_pegawai.text="Edit"
-        } else {
+        }else {
+            isEdit = false
+            tv_tambah_pegawai.text = "Tambah Pegawai"
+            bt_simpan_pegawai.text = "Simpan"
             hidup()
             et_namalengkap_pegawai.requestFocus()
-            bt_simpan_pegawai.text="Simpan"
         }
+
+
     }
 
 
@@ -152,15 +157,12 @@ class tambah_pegawai : AppCompatActivity() {
                 et_namacabang_pegawai.requestFocus()
                 return
         }
-            if(bt_simpan_pegawai.text.equals("Simpan")){
-                simpan(terdaftar)
-            }else if (bt_simpan_pegawai.text.equals("Edit")){
-                hidup()
-                et_namalengkap_pegawai.requestFocus()
-                bt_simpan_pegawai.text="Perbarui"
-            }else if (bt_simpan_pegawai.text.equals("Perbarui")){
-                update()
-            }
+        if(isEdit && id_pegawai.isNotEmpty()){
+            update()
+        }else{
+            simpan(terdaftar)
+        }
+
     }
 
 
@@ -185,5 +187,7 @@ class tambah_pegawai : AppCompatActivity() {
                 Toast.makeText(this, "Gagal menyimpan pegawai", Toast.LENGTH_SHORT).show()
             }
     }
+
+
 
 }
