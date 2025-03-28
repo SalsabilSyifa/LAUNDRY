@@ -1,7 +1,6 @@
 package com.example.laundry
 import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,8 +23,6 @@ class data_pegawai : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("pegawai")
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,9 +39,10 @@ class data_pegawai : AppCompatActivity() {
 
         bt_data_pegawai_tambah.setOnClickListener {
             val  intent = Intent(this, tambah_pegawai::class.java)
-            startActivity((intent))
+            startActivity(intent)
         }
         getData()
+
         val fabTambahPegawai: FloatingActionButton = findViewById(R.id.bt_data_pegawai_tambah)
         fabTambahPegawai.setOnClickListener {
             val intent = Intent(this, tambah_pegawai::class.java)
@@ -57,7 +55,6 @@ class data_pegawai : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -67,7 +64,6 @@ class data_pegawai : AppCompatActivity() {
     fun init() {
         rv_data_pegawai = findViewById(R.id.rv_data_pegawai)
         bt_data_pegawai_tambah = findViewById(R.id.bt_data_pegawai_tambah)
-
     }
 
     fun getData() {
@@ -82,7 +78,6 @@ class data_pegawai : AppCompatActivity() {
                             pegawaiList.add(pegawai)
                         }
                     }
-
 
                     val adapter = adapter_data_pegawai(pegawaiList)
                     rv_data_pegawai.adapter = adapter

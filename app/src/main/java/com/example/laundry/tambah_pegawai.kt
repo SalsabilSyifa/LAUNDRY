@@ -1,8 +1,4 @@
 package com.example.laundry
-
-import android.app.Activity
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -10,7 +6,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -32,7 +27,6 @@ class tambah_pegawai : AppCompatActivity() {
 
     var isEdit = false
 
-
     var id_pegawai:String=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +38,6 @@ class tambah_pegawai : AppCompatActivity() {
         bt_simpan_pegawai.setOnClickListener{
             cekValidasi()
         }
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -91,8 +84,6 @@ class tambah_pegawai : AppCompatActivity() {
             hidup()
             et_namalengkap_pegawai.requestFocus()
         }
-
-
     }
 
 
@@ -165,7 +156,6 @@ class tambah_pegawai : AppCompatActivity() {
 
     }
 
-
     fun simpan(terdaftar: String) {
         val pegawaiBaru = myRef.push()
         val pegawaiId = pegawaiBaru.key ?: return
@@ -187,7 +177,4 @@ class tambah_pegawai : AppCompatActivity() {
                 Toast.makeText(this, "Gagal menyimpan pegawai", Toast.LENGTH_SHORT).show()
             }
     }
-
-
-
 }

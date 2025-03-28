@@ -1,7 +1,7 @@
 package com.example.laundry.pelanggan
-
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,25 +10,20 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.R
-import com.example.laundry.activity_tambahan_pelanggan
-import com.example.laundry.adapter.DataPelangganAdapter
 import com.example.laundry.adapter.adapter_data_pelanggan
 import com.example.laundry.modeldata.modelpelanggan
-import com.example.laundry.tambah_pegawai
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.Firebase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class DataPelanggan : AppCompatActivity() {
-    lateinit var bt_data_pelanggan_tambah : FloatingActionButton
+    lateinit var bt_data_pelanggan_tambah: FloatingActionButton
     lateinit var rv_data_pelanggan: RecyclerView
-    lateinit var pelangganList : ArrayList<modelpelanggan>
+    lateinit var pelangganList: ArrayList<modelpelanggan>
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("pelanggan")
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,46 +39,63 @@ class DataPelanggan : AppCompatActivity() {
         rv_data_pelanggan.setHasFixedSize(true)
         pelangganList = arrayListOf<modelpelanggan>()
 
+        bt_data_pelanggan_tambah.setOnClickListener {
+            val intent = Intent(this, TambahPelanggan::class.java)
+            startActivity(intent)
+        }
         getData()
+
+        val fabTambahPelanggan: FloatingActionButton = findViewById(R.id.bt_data_pelanggan_tambah)
+        fabTambahPelanggan.setOnClickListener {
+            val intent = Intent(this, TambahPelanggan::class.java)
+            intent.putExtra("judul", this.getString(R.string.tambah_pelanggan))
+            intent.putExtra("id", "")
+            intent.putExtra("nama", "")
+            intent.putExtra("alamat", "")
+            intent.putExtra("nohp", "")
+            startActivity(intent)
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        bt_data_pelanggan_tambah = findViewById(R.id.bt_data_pelanggan_tambah)
-
-        bt_data_pelanggan_tambah.setOnClickListener {
-            val intent = Intent(this, TambahPelanggan::class.java)
-            startActivity(intent)
-        }
-
     }
-    fun init (){
+
+    fun init() {
         rv_data_pelanggan = findViewById(R.id.rv_data_pelanggan)
         bt_data_pelanggan_tambah = findViewById(R.id.bt_data_pelanggan_tambah)
-
-
     }
 
-    fun getData(){
-        val query = myRef.orderByChild("idPelanggan").limitToLast(100)
-        query.addValueEventListener(object : ValueEventListener {
+    fun getData() {
+        myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                pelangganList.clear()
+
                 if (snapshot.exists()) {
-                    pelangganList.clear()
-                    for (dataSnapshot in snapshot.children) {
-                        val pelanggan = dataSnapshot.getValue(modelpelanggan::class.java)
-                        pelanggan?.let { pelangganList.add(it) }
+                    for (pelangganSnap in snapshot.children) {
+                        val pelanggan = pelangganSnap.getValue(modelpelanggan::class.java)
+                        if (pelanggan != null) {
+                            pelangganList.add(pelanggan)
+                            Log.d("FirebaseData", "Data pelanggan: ${pelanggan.nama}")
+
+                        }
                     }
-                    val adapter = adapter_data_pelanggan(pelangganList)
-                    rv_data_pelanggan.adapter = adapter
-                    adapter.notifyDataSetChanged()
+
+                    rv_data_pelanggan.adapter = adapter_data_pelanggan(pelangganList)
+                } else {
+                    Toast.makeText(this@DataPelanggan, "Data kosong", Toast.LENGTH_SHORT).show()
+                    Log.d("FirebaseData", "Data tidak ditemukan")
                 }
             }
+
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@DataPelanggan, error.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@DataPelanggan,
+                    "Gagal memuat data: ${error.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         })
     }
