@@ -86,13 +86,6 @@ class tambah_pegawai : AppCompatActivity() {
         }
     }
 
-
-    fun mati(){
-        et_namalengkap_pegawai.isEnabled=false
-        et_alamat_pegawai.isEnabled=false
-        et_nohp_pegawai.isEnabled=false
-        et_namacabang_pegawai.isEnabled=false
-    }
     fun hidup(){
         et_namalengkap_pegawai.isEnabled=true
         et_alamat_pegawai.isEnabled=true
@@ -148,11 +141,16 @@ class tambah_pegawai : AppCompatActivity() {
                 et_namacabang_pegawai.requestFocus()
                 return
         }
-        if(isEdit && id_pegawai.isNotEmpty()){
-            update()
-        }else{
+        if (bt_simpan_pegawai.text.equals("Simpan")) {
             simpan(terdaftar)
+        }else if(bt_simpan_pegawai.text.equals("Edit")){
+            hidup()
+            et_namalengkap_pegawai.requestFocus()
+            bt_simpan_pegawai.text="Perbarui"
+        }else if (bt_simpan_pegawai.text.equals("Perbarui")) {
+            update()
         }
+
 
     }
 

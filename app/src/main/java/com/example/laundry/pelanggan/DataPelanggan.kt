@@ -66,6 +66,7 @@ class DataPelanggan : AppCompatActivity() {
     fun init() {
         rv_data_pelanggan = findViewById(R.id.rv_data_pelanggan)
         bt_data_pelanggan_tambah = findViewById(R.id.bt_data_pelanggan_tambah)
+
     }
 
     fun getData() {

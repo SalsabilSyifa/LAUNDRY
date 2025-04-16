@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_card_laporan"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Baris 1: Nama, ID dan Status -->
+            <!-- Baris 1: Angka + Nama dan Status -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Angka di kiri -->
+                <TextView
+                    android:id="@+id/tvAngka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[1]"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="14sp" />
+
+                <!-- Nama dan Status -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvNama"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Jessica"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selesai"
+                            android:background="#D3E671"
+                            android:textColor="#2E7D32"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="2dp"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <!-- Baris 2: Angka kosong + waktu -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="2dp">
+
+                        <!-- Spacer untuk menyamakan posisi angka -->
+
+
+                        <TextView
+                            android:id="@+id/tvWaktu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2025-04-14 14:14:14"
+                            android:textColor="#888888"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- Garis -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                android:layout_marginVertical="8dp" />
+
+            <!-- Icon + Jenis Layanan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_layanan1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/tvLayanan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cuci Setrika 6kg"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTambahan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+2 Layanan Tambahan"
+                        android:textSize="12sp"
+                        android:textColor="#888888" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Garis -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                android:layout_marginVertical="8dp" />
+
+            <!-- Total Bayar dan Tombol / Tanggal Diambil -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <!-- Kolom Kiri: Total Bayar -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTotalBayar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Bayar"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp48.000,00"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Kolom Kanan: Diambil + Tombol Aksi -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <TextView
+                        android:id="@+id/tvDiambil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diambil Pada\n2025-04-14 14:14:14"
+                        android:textAlignment="textEnd"
+                        android:textSize="12sp"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/btnAksi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bayar Sekarang"
+                        android:backgroundTint="#FF3D00"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            </LinearLayout>
+    </androidx.cardview.widget.CardView>

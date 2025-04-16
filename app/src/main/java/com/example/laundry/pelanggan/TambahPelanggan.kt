@@ -143,7 +143,7 @@ class TambahPelanggan : AppCompatActivity() {
             et_alamat.error = getString(R.string.validasi_alamat_pelanggan)
             Toast.makeText(this, getString(R.string.validasi_alamat_pelanggan), Toast.LENGTH_SHORT)
                 .show()
-            et_alamat.requestFocus()
+             et_alamat.requestFocus()
             return
         }
 
@@ -154,11 +154,16 @@ class TambahPelanggan : AppCompatActivity() {
             return
         }
 
-        if (isEdit) {
-            update()
-        } else {
+        if (bt_simpan.text.equals("Simpan")) {
             simpan(terdaftar)
+        }else if(bt_simpan.text.equals("Edit")){
+            hidup()
+            et_namalengkap.requestFocus()
+            bt_simpan.text="Perbarui"
+        }else if (bt_simpan.text.equals("Perbarui")) {
+            update()
         }
+
     }
 
     fun simpan(terdaftar: String) {
