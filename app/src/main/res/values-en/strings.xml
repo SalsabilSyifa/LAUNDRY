@@ -68,4 +68,14 @@
     <string name="tv_terdaftar">Registered</string>
     <string name="tv_id_pelanggan">Customer ID</string>
     <string name="tv_namapelanggan">Customer Name</string>
+    <string name="nohp_login">No Handphone</string>
+    <string name="password_login">Password</string>
+    <string name="button_login">Login</string>
+    <string name="laporannama">Customer Name</string>
+    <string name="laporantanggal">Date</string>
+    <string name="laporanstatuspembayaran">Payment Status</string>
+    <string name="laporannamalayanan">Service Name</string>
+    <string name="laporanlayanantambahan">Additional Services</string>
+    <string name="laporantotal">Rp</string>
+    <string name="laporanbuttonstatuspembayaran">Payment Status</string>
 </resources>
