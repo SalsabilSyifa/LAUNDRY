@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LAUNDRY"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity_login"
             android:exported="false" />
         <activity
@@ -33,16 +36,13 @@
             android:name=".pelanggan.TambahPelanggan"
             android:exported="false" />
         <activity
-            android:name=".Layanan_Pelanggan"
-            android:exported="false" />
-        <activity
             android:name=".activity_tambahan_pelanggan"
             android:exported="false" />
         <activity
             android:name=".pelanggan.DataPelanggan"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity_transaksi"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

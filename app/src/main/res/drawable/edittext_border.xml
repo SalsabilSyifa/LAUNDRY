@@ -3,7 +3,7 @@
         <solid android:color="#FFFFFF" /> <!-- Background warna putih -->
         <stroke
             android:width="2dp"
-            android:color="#FF000000" /> <!-- Border dengan warna abu-abu -->
+            android:color="#F4BB23" /> <!-- Border dengan warna abu-abu -->
         <corners android:radius="8dp" /> <!-- Sudut rounded -->
         <padding
             android:left="8dp"

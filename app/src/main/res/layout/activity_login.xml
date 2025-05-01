@@ -6,14 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
     tools:context=".activity_login">
 
     <!-- Header / Background Section -->
 <LinearLayout
 android:layout_width="match_parent"
-android:layout_height="400dp"
-android:background="@drawable/bg_login"
+android:layout_height="380dp"
+android:background="@drawable/bg_login1"
 android:orientation="vertical">
 
 <TextView
@@ -21,10 +20,11 @@ android:orientation="vertical">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Selamat Datang"
-    android:textSize="24sp"
+    android:textColor="@color/black"
+    android:textSize="28sp"
     android:textStyle="bold"
-    android:layout_marginTop="210dp"
-    android:layout_marginStart="40dp" />
+    android:layout_marginTop="250dp"
+    android:layout_marginStart="30dp" />
 
 <TextView
     android:id="@+id/sub_greeting"
@@ -32,8 +32,9 @@ android:orientation="vertical">
     android:layout_height="wrap_content"
     android:text="Silahkan login untuk melanjutkan"
     android:textSize="18sp"
-    android:layout_marginTop="10dp"
-    android:layout_marginStart="40dp" />
+    android:textColor="@color/black"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="30dp" />
 </LinearLayout>
 
     <!-- Form Section -->

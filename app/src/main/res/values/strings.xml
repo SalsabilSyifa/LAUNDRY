@@ -77,5 +77,9 @@
     <string name="laporanlayanantambahan">Layanan Tambahan</string>
     <string name="laporantotal">Rp</string>
     <string name="laporanbuttonstatuspembayaran">Status Pembayaran</string>
+    <string name="btntransaksi_pilihpelanggan">Pilih Pelanggan</string>
+    <string name="btntransaksi_pilihlayanan">Pilih Layanan</string>
+    <string name="btntransaksi_tambahan">Tambahan</string>
+    <string name="btntransaksi_proses">Proses</string>
 
 </resources>

@@ -78,4 +78,8 @@
     <string name="laporanlayanantambahan">Additional Services</string>
     <string name="laporantotal">Rp</string>
     <string name="laporanbuttonstatuspembayaran">Payment Status</string>
+    <string name="btntransaksi_pilihpelanggan">Select Customer</string>
+    <string name="btntransaksi_pilihlayanan">Select Service</string>
+    <string name="btntransaksi_tambahan">Addition</string>
+    <string name="btntransaksi_proses">Process</string>
 </resources>
