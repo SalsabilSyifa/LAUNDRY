@@ -15,7 +15,16 @@
         android:theme="@style/Theme.LAUNDRY"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity_pilihlayanan"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_pilihpelanggan"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_laporan"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_transaksi"
             android:exported="false" />
         <activity
             android:name=".activity_login"
@@ -42,7 +51,7 @@
             android:name=".pelanggan.DataPelanggan"
             android:exported="false" />
         <activity
-            android:name=".Activity_transaksi"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

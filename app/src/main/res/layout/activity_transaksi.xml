@@ -32,7 +32,6 @@
                 android:text="Data Pelanggan"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="#333333"
                 android:layout_marginTop="8dp"/>
 
             <TextView
@@ -67,8 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="Layanan Utama"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#333333"/>
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/tvTRANSAKSI_layanan_nama"
@@ -103,7 +101,6 @@
                 android:text="Layanan Tambahan"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="#333333"
                 android:layout_marginBottom="16dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

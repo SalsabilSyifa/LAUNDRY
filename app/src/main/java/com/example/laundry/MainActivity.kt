@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var cv_layanan : CardView
     lateinit var cv_pegawai : CardView
     lateinit var cv_pelanggan : CardView
+    lateinit var cv_laporan : CardView
+    lateinit var cv_transaksi : CardView
+    lateinit var cv_akun : CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         cv_layanan = findViewById(R.id.cv_layanan)
         cv_pegawai = findViewById(R.id.cv_pegawai)
         cv_pelanggan = findViewById(R.id.cv_pelanggan)
+        cv_laporan = findViewById(R.id.cv_laporan)
+        cv_transaksi = findViewById(R.id.cv_transaksi)
+        cv_akun = findViewById(R.id.cv_akun)
 
         cv_layanan.setOnClickListener {
             val intent = Intent(this, data_layanan::class.java)
@@ -46,6 +52,21 @@ class MainActivity : AppCompatActivity() {
 
         cv_pelanggan.setOnClickListener{
             val intent = Intent(this, DataPelanggan::class.java)
+            startActivity(intent)
+        }
+
+        cv_transaksi.setOnClickListener{
+            val intent = Intent(this, Activity_transaksi::class.java)
+            startActivity(intent)
+        }
+
+        cv_laporan.setOnClickListener{
+            val intent = Intent(this, Activity_laporan::class.java)
+            startActivity(intent)
+        }
+
+        cv_akun.setOnClickListener{
+            val intent = Intent(this, activity_login::class.java)
             startActivity(intent)
         }
 
