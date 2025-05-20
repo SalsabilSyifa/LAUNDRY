@@ -82,4 +82,9 @@
     <string name="btntransaksi_pilihlayanan">Select Service</string>
     <string name="btntransaksi_tambahan">Addition</string>
     <string name="btntransaksi_proses">Process</string>
+    <string name="transaksi_namapelanggan">Customer Name</string>
+    <string name="transaksi_nohp">No Handphone</string>
+    <string name="transaksi_namalayanan">Service Name</string>
+    <string name="transaksi_harga">Price</string>
+    <string name="tv_kosong">data not found</string>
 </resources>

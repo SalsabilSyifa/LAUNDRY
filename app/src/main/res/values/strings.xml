@@ -81,5 +81,10 @@
     <string name="btntransaksi_pilihlayanan">Pilih Layanan</string>
     <string name="btntransaksi_tambahan">Tambahan</string>
     <string name="btntransaksi_proses">Proses</string>
+    <string name="transaksi_namapelanggan">Nama Pelanggan</string>
+    <string name="transaksi_nohp">No HP</string>
+    <string name="transaksi_namalayanan">Nama Layanan</string>
+    <string name="transaksi_harga">Harga</string>
+    <string name="tv_kosong">Data Tidak Ditemukan</string>
 
 </resources>

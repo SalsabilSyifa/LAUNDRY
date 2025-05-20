@@ -38,7 +38,7 @@
                 android:id="@+id/tvTRANSAKSI_DATA_pelanggan_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Pelanggan:"
+                android:text="@string/transaksi_namapelanggan"
                 android:textSize="18sp"
                 android:layout_marginTop="8dp"/>
 
@@ -46,7 +46,7 @@
                 android:id="@+id/tvTRANSAKSI_DATA_pelanggan_nohp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No HP:"
+                android:text="@string/transaksi_nohp"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
@@ -72,7 +72,7 @@
                 android:id="@+id/tvTRANSAKSI_layanan_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Layanan:"
+                android:text="@string/transaksi_namalayanan"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"/>
 
@@ -80,7 +80,7 @@
                 android:id="@+id/tvTRANSAKSI_layanan_harga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Harga:"
+                android:text="@string/transaksi_harga"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
