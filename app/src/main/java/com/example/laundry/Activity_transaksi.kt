@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.laundry.adapter.adapter_transaksi_tambahan
 import com.example.laundry.modeldata.modelTransaksiTambahan
 import com.example.laundry.modeldata.modelpelanggan
 
@@ -26,6 +27,8 @@ class Activity_transaksi : AppCompatActivity() {
     private lateinit var tvTRANSAKSI_layanan_harga : TextView
     private lateinit var rvTRANSAKSI_LayananTambahan : RecyclerView
     private val dataList = mutableListOf<modelTransaksiTambahan>()
+    private lateinit var adapter: adapter_transaksi_tambahan
+
 
     private val pilihPelanggan = 1
     private val pilihLayanan = 2
@@ -37,6 +40,10 @@ class Activity_transaksi : AppCompatActivity() {
     private var id_layanan: String=""
     private var namaLayanan: String=""
     private var hargaLayanan: String=""
+
+    private var tv_nama_tambahan2: String=""
+    private var tv_harga2: String=""
+
     private var idPegawai: String=""
     private lateinit var sharedPref: SharedPreferences
 
@@ -47,9 +54,13 @@ class Activity_transaksi : AppCompatActivity() {
         setContentView(R.layout.activity_transaksi)
 
         init()
+
+
         val layoutManager = LinearLayoutManager(this)
         layoutManager.reverseLayout = false
         rvTRANSAKSI_LayananTambahan.layoutManager = layoutManager
+
+
         btnPilihPelanggan.setOnClickListener {
             val intent = Intent(this, Activity_pilihpelanggan:: class.java)
             startActivityForResult(intent,pilihPelanggan)
@@ -58,6 +69,9 @@ class Activity_transaksi : AppCompatActivity() {
             val intent = Intent(this, Activity_pilihlayanan:: class.java)
             startActivityForResult(intent,pilihLayanan)
         }
+
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -76,11 +90,23 @@ class Activity_transaksi : AppCompatActivity() {
         rvTRANSAKSI_LayananTambahan = findViewById(R.id.rvTRANSAKSI_LayananTambahan)
 
 
+
+        adapter = adapter_transaksi_tambahan(dataList)
+        rvTRANSAKSI_LayananTambahan.adapter = adapter
+        rvTRANSAKSI_LayananTambahan.layoutManager = LinearLayoutManager(this)
+
         tvTRANSAKSI_DATA_pelanggan_nama.text = "Nama Pelanggan : $namaPelanggan"
         tvTRANSAKSI_DATA_pelanggan_nohp.text = "No HP : $nohp"
 
         tvTRANSAKSI_layanan_nama.text = "Nama Layanan : $namaLayanan"
         tvTRANSAKSI_layanan_harga.text = "Harga : $hargaLayanan"
+
+
+        btnTambahan.setOnClickListener {
+            val intent = Intent(this, activity_pilihtambahan::class.java)
+            startActivityForResult(intent, pilihLayananTambahan)
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -107,6 +133,21 @@ class Activity_transaksi : AppCompatActivity() {
 
                     Toast.makeText(this, "Layanan Dipilih: $namaLayanan", Toast.LENGTH_SHORT).show()
                 }
+                pilihLayananTambahan -> {
+                    tv_nama_tambahan2 = data.getStringExtra("nama_tambahan").toString()
+                    tv_harga2 = data.getStringExtra("harga_tambahan").toString()
+
+                    val hargaTambahan = data.getStringExtra("nama_tambahan")?.toIntOrNull() ?: 0
+                    val namaTambahan = data.getStringExtra("harga_tambahan").toString()
+
+                    val tambahan = modelTransaksiTambahan(namaTambahan, hargaTambahan)
+                    dataList.add(tambahan)
+                    adapter.notifyItemInserted(dataList.size - 1)
+
+
+                    rvTRANSAKSI_LayananTambahan.adapter = adapter_transaksi_tambahan(dataList)
+                }
+
             }
         } else if (resultCode == RESULT_CANCELED) {
             when (requestCode) {
@@ -116,6 +157,9 @@ class Activity_transaksi : AppCompatActivity() {
 
                 pilihLayanan -> {
                     Toast.makeText(this, "Batal Memilih Layanan", Toast.LENGTH_SHORT).show()
+                }
+                pilihLayananTambahan -> {
+                    Toast.makeText(this, "Batal Memilih Tambahan", Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -15,6 +15,15 @@
         android:theme="@style/Theme.LAUNDRY"
         tools:targetApi="31">
         <activity
+            android:name=".activity_pilihtambahan"
+            android:exported="false" />
+        <activity
+            android:name=".activity_tambah_tambahan"
+            android:exported="false" />
+        <activity
+            android:name=".data_tambahan"
+            android:exported="false" />
+        <activity
             android:name=".Activity_pilihlayanan"
             android:exported="false" />
         <activity

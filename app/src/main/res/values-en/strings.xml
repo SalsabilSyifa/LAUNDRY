@@ -87,4 +87,15 @@
     <string name="transaksi_namalayanan">Service Name</string>
     <string name="transaksi_harga">Price</string>
     <string name="tv_kosong">data not found</string>
+    <string name="tv_id_tambahan">Add ID</string>
+    <string name="card_tambahan_id">Add ID</string>
+    <string name="tv_tambahan">Add</string>
+    <string name="card_tambahan">add</string>
+    <string name="card_harga_tambahan">price</string>
+    <string name="judul_tambahan">ADDITIONAL</string>
+    <string name="et_tambah_tambahan">Additional</string>
+    <string name="et_tambahan_harga">Price</string>
+    <string name="tambah_tambahan_simpan">Save</string>
+    <string name="tv_namatambahan">"add "</string>
+    <string name="card_tambahan_harga">price</string>
 </resources>

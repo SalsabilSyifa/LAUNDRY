@@ -118,7 +118,7 @@
             android:id="@+id/rvTRANSAKSI_LayananTambahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/card_pilih_layanan_tambahan">
+            tools:listitem="@layout/card_tambahan2">
         </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.core.widget.NestedScrollView>

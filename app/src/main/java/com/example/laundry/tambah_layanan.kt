@@ -101,7 +101,7 @@ class tambah_layanan : AppCompatActivity() {
                 setResult(Activity.RESULT_OK, resultIntent)
                 finish()
             }
-            .addOnSuccessListener {
+            .addOnFailureListener {
                 Toast.makeText(this, getString(R.string.gagal_simpan_layanan), Toast.LENGTH_SHORT).show()
             }
     }

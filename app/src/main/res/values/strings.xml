@@ -86,5 +86,16 @@
     <string name="transaksi_namalayanan">Nama Layanan</string>
     <string name="transaksi_harga">Harga</string>
     <string name="tv_kosong">Data Tidak Ditemukan</string>
+    <string name="tv_id_tambahan">ID Tambahan</string>
+    <string name="card_tambahan_id">ID Tambahan</string>
+    <string name="tv_tambahan">Tambahan</string>
+    <string name="card_tambahan">tambahan</string>
+    <string name="card_harga_tambahan">harga</string>
+    <string name="judul_tambahan">TAMBAHAN</string>
+    <string name="et_tambah_tambahan">Tambahan</string>
+    <string name="et_tambahan_harga">Harga</string>
+    <string name="tambah_tambahan_simpan">Simpan</string>
+    <string name="tv_namatambahan">nama tambahan</string>
+    <string name="card_tambahan_harga">harga</string>
 
 </resources>
