@@ -20,7 +20,7 @@ import com.example.laundry.modeldata.modelpelanggan
 
 class adapter_pilihlayanan (private val layananList: ArrayList<modellayanan>) :
     RecyclerView.Adapter<adapter_pilihlayanan.ViewHolder>(), Filterable {
-        lateinit var appContext: Context
+    lateinit var appContext: Context
     private var layananListFull: ArrayList<modellayanan> = ArrayList(layananList)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

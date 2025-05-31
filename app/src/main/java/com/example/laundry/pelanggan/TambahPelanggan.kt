@@ -66,7 +66,7 @@ class TambahPelanggan : AppCompatActivity() {
             isEdit = true
             tv_tambah_pengguna.text = "Edit Pelanggan"
             bt_simpan.text = "Edit"
-            hidup()
+            mati()
             database.getReference("pelanggan").child(id_pelanggan).get()
                 .addOnSuccessListener { snapshot ->
                     val data = snapshot.getValue(modelpelanggan::class.java)
@@ -94,6 +94,11 @@ class TambahPelanggan : AppCompatActivity() {
         et_namalengkap.isEnabled = true
         et_alamat.isEnabled = true
         et_nohp.isEnabled = true
+    }
+    fun mati() {
+        et_namalengkap.isEnabled = false
+        et_alamat.isEnabled = false
+        et_nohp.isEnabled = false
     }
 
     fun update() {

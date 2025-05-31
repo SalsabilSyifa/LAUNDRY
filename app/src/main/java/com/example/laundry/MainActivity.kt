@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var cv_transaksi : CardView
     lateinit var cv_akun : CardView
     lateinit var cv_tambahan: CardView
+    lateinit var cv_cabang: CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         cv_transaksi = findViewById(R.id.cv_transaksi)
         cv_akun = findViewById(R.id.cv_akun)
         cv_tambahan = findViewById(R.id.cv_tambahan)
+        cv_cabang = findViewById(R.id.cv_cabang)
 
         cv_layanan.setOnClickListener {
             val intent = Intent(this, data_layanan::class.java)
@@ -73,6 +75,10 @@ class MainActivity : AppCompatActivity() {
         }
         cv_tambahan.setOnClickListener{
             val intent = Intent(this, data_tambahan::class.java)
+            startActivity(intent)
+        }
+        cv_cabang.setOnClickListener{
+            val intent = Intent(this, activity_data_cabang::class.java)
             startActivity(intent)
         }
 

@@ -98,4 +98,10 @@
     <string name="tambah_tambahan_simpan">Save</string>
     <string name="tv_namatambahan">"add "</string>
     <string name="card_tambahan_harga">price</string>
+    <string name="harga_item_tambahan">-</string>
+    <string name="nama_item_tambahan">-</string>
+    <string name="tambah_cabang">ADD BRANCH</string>
+    <string name="tambah_cabang_namacabang">Branch Name</string>
+    <string name="tambah_cabang_alamat">Branch Address</string>
+    <string name="tambah_cabang_layanan">Service</string>
 </resources>

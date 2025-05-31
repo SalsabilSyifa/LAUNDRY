@@ -98,7 +98,7 @@ class activity_pilihtambahan : AppCompatActivity() {
                     } else {
                         tvkosong.visibility = View.VISIBLE
                     }
-                    rvPilihTambahan.adapter = adapter_pilihtambahan(tambahanList)
+                    rvPilihTambahan.adapter = adapter_pilihtambahan(this@activity_pilihtambahan, tambahanList)
                 } else {
                     tvkosong.visibility = View.VISIBLE
                 }

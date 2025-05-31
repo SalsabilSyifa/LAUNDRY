@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.adapter.adapter_transaksi_tambahan
 import com.example.laundry.modeldata.modelTransaksiTambahan
 import com.example.laundry.modeldata.modelpelanggan
+import com.example.laundry.modeldata.modeltambahan
 
 class Activity_transaksi : AppCompatActivity() {
     private lateinit var btnPilihPelanggan : Button
@@ -26,7 +27,7 @@ class Activity_transaksi : AppCompatActivity() {
     private lateinit var tvTRANSAKSI_layanan_nama : TextView
     private lateinit var tvTRANSAKSI_layanan_harga : TextView
     private lateinit var rvTRANSAKSI_LayananTambahan : RecyclerView
-    private val dataList = mutableListOf<modelTransaksiTambahan>()
+    private val dataList = mutableListOf<modeltambahan>()
     private lateinit var adapter: adapter_transaksi_tambahan
 
 
@@ -69,6 +70,33 @@ class Activity_transaksi : AppCompatActivity() {
             val intent = Intent(this, Activity_pilihlayanan:: class.java)
             startActivityForResult(intent,pilihLayanan)
         }
+        btnProses.setOnClickListener {
+            if (namaPelanggan.isEmpty() || namaLayanan.isEmpty()) {
+                Toast.makeText(this, "Lengkapi data pelanggan dan layanan terlebih dahulu", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Konversi harga utama ke integer
+            val hargaUtamaInt = hargaLayanan.replace(".", "").toIntOrNull() ?: 0
+
+            // Format data tambahan
+            val tambahanListStr = dataList.map {
+                "${it.nama_tambahan}|${it.harga_tambahan}|${it.deskripsi_tambahan ?: "-"}"
+            }
+
+            val intent = Intent(this, konfirmasi_data::class.java).apply {
+                putExtra("namaPelanggan", namaPelanggan)
+                putExtra("nohp", nohp)
+                putExtra("namaLayanan", namaLayanan)
+                putExtra("hargaUtama", hargaUtamaInt)
+                putStringArrayListExtra("layananTambahan", ArrayList(tambahanListStr))
+            }
+
+            startActivity(intent)
+        }
+
+
+
 
 
 
@@ -91,7 +119,13 @@ class Activity_transaksi : AppCompatActivity() {
 
 
 
-        adapter = adapter_transaksi_tambahan(dataList)
+        adapter = adapter_transaksi_tambahan(dataList) { itemToDelete ->
+            val index = dataList.indexOf(itemToDelete)
+            if (index != -1) {
+                dataList.removeAt(index)
+                adapter.notifyItemRemoved(index)
+            }
+        }
         rvTRANSAKSI_LayananTambahan.adapter = adapter
         rvTRANSAKSI_LayananTambahan.layoutManager = LinearLayoutManager(this)
 
@@ -137,15 +171,23 @@ class Activity_transaksi : AppCompatActivity() {
                     tv_nama_tambahan2 = data.getStringExtra("nama_tambahan").toString()
                     tv_harga2 = data.getStringExtra("harga_tambahan").toString()
 
-                    val hargaTambahan = data.getStringExtra("nama_tambahan")?.toIntOrNull() ?: 0
-                    val namaTambahan = data.getStringExtra("harga_tambahan").toString()
+                    val namaTambahan = data.getStringExtra("nama_tambahan").toString()
+                    val hargaTambahan = data.getStringExtra("harga_tambahan").toString()
+                    val deskripsiTambahan = data.getStringExtra("deskripsi_tambahan").toString() // Tambahkan ini
 
-                    val tambahan = modelTransaksiTambahan(namaTambahan, hargaTambahan)
+                    val tambahan = modeltambahan(
+                        id_tambahan = null,
+                        nama_tambahan = namaTambahan,
+                        deskripsi_tambahan = deskripsiTambahan, // Tambahkan ke sini juga
+                        harga_tambahan = hargaTambahan
+                    )
+
+
                     dataList.add(tambahan)
                     adapter.notifyItemInserted(dataList.size - 1)
 
 
-                    rvTRANSAKSI_LayananTambahan.adapter = adapter_transaksi_tambahan(dataList)
+
                 }
 
             }

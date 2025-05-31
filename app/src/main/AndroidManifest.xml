@@ -15,6 +15,18 @@
         android:theme="@style/Theme.LAUNDRY"
         tools:targetApi="31">
         <activity
+            android:name=".activity_tambah_cabang"
+            android:exported="false" />
+        <activity
+            android:name=".activity_data_cabang"
+            android:exported="false" />
+        <activity
+            android:name=".pembayaran"
+            android:exported="false" />
+        <activity
+            android:name=".konfirmasi_data"
+            android:exported="false" />
+        <activity
             android:name=".activity_pilihtambahan"
             android:exported="false" />
         <activity

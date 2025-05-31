@@ -63,7 +63,7 @@ class tambah_pegawai : AppCompatActivity() {
             isEdit = true
             tv_tambah_pegawai.text = "Edit Pegawai"
             bt_simpan_pegawai.text = "Edit"
-            hidup()
+            mati()
             database.getReference("pegawai").child(id_pegawai).get()
                 .addOnSuccessListener { snapshot ->
                     val data = snapshot.getValue(modelpegawai::class.java)
@@ -91,6 +91,13 @@ class tambah_pegawai : AppCompatActivity() {
         et_alamat_pegawai.isEnabled=true
         et_nohp_pegawai.isEnabled=true
         et_namacabang_pegawai.isEnabled=true
+    }
+    fun mati() {
+        et_namalengkap_pegawai.isEnabled = false
+        et_alamat_pegawai.isEnabled = false
+        et_nohp_pegawai.isEnabled = false
+        et_namacabang_pegawai.isEnabled = false
+
     }
 
     fun update(){

@@ -97,5 +97,11 @@
     <string name="tambah_tambahan_simpan">Simpan</string>
     <string name="tv_namatambahan">nama tambahan</string>
     <string name="card_tambahan_harga">harga</string>
+    <string name="harga_item_tambahan">Rp</string>
+    <string name="nama_item_tambahan">Nama Tambahan</string>
+    <string name="tambah_cabang">TAMBAH CABANG</string>
+    <string name="tambah_cabang_namacabang">Nama Cabang</string>
+    <string name="tambah_cabang_alamat">Alamat Cabang</string>
+    <string name="tambah_cabang_layanan">Layanan</string>
 
 </resources>

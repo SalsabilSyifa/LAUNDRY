@@ -5,16 +5,19 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.R
 import com.example.laundry.modeldata.modelTransaksiTambahan
+import com.example.laundry.modeldata.modeltambahan
 import com.example.laundry.tambah_pegawai
 
-class adapter_transaksi_tambahan(private val list: List<modelTransaksiTambahan>) :
-
-    RecyclerView.Adapter<adapter_transaksi_tambahan.ViewHolder>() {
+class adapter_transaksi_tambahan(
+    private val list: MutableList<modeltambahan>,
+    private val onDeleteClick: (modeltambahan) -> Unit
+) : RecyclerView.Adapter<adapter_transaksi_tambahan.ViewHolder>() {
     lateinit var appContext: Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,6 +25,7 @@ class adapter_transaksi_tambahan(private val list: List<modelTransaksiTambahan>)
         val tvNama: TextView = itemView.findViewById(R.id.tv_nama_tambahan2)
         val tvHarga: TextView = itemView.findViewById(R.id.tv_harga2)
         val tvNomor: TextView = itemView.findViewById(R.id.tv_tambahan_nomor)
+        val btn_delete: ImageView = itemView.findViewById(R.id.btn_delete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,16 +36,16 @@ class adapter_transaksi_tambahan(private val list: List<modelTransaksiTambahan>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
         holder.tvNomor.text = "[${position + 1}]"
-        holder.tvNama.text = item.nama
-        holder.tvHarga.text = "Rp${item.harga}"
+        holder.tvNama.text = item.nama_tambahan ?: "-"
+        holder.tvHarga.text = "Rp${item.harga_tambahan ?: "0"}"
 
-        holder.cv_tambahan2.setOnClickListener {
-            val intent = Intent(appContext, tambah_pegawai::class.java)
-            intent.putExtra("nama_tambahan", item.nama)
-            intent.putExtra("harga_tambahan", item.harga)
-            appContext.startActivity(intent)
 
+        holder.btn_delete.setOnClickListener {
+            list.removeAt(position)
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, list.size)
         }
+
     }
 
     override fun getItemCount(): Int = list.size
