@@ -55,7 +55,12 @@ class konfirmasi_data : AppCompatActivity() {
                 putExtra("tv_harga", hargaUtama.toDouble())
                 putExtra("total_bayar", total.toDouble())
 
-                putExtra("layanan_tambahan", ArrayList(tambahanModelList))
+                val tambahanListString = tambahanModelList.map {
+                    "${it.id_tambahan}|${it.nama_tambahan}|${it.harga_tambahan}|${it.deskripsi_tambahan}"
+                }
+
+                putStringArrayListExtra("layanan_tambahan", ArrayList(tambahanListString))
+
 
             }
             startActivity(intent)
