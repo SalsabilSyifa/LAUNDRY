@@ -1,4 +1,5 @@
 package com.example.laundry.adapter
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.R
@@ -37,8 +39,42 @@ class adapter_data_pelanggan(private val listPelanggan: ArrayList<modelpelanggan
         holder.bthubungi.setOnClickListener{
 
         }
-        holder.btlihat.setOnClickListener{
+        holder.btlihat.setOnClickListener {
+            val context = holder.itemView.context
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_mod_pelanggan, null)
 
+            // Isi data ke TextView di dalam layout
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_id_isi).text = item.id_pelanggan
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_nama_isi).text = item.nama
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_alamat_isi).text = item.alamat
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_nohp_isi).text = item.nohp
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_terdaftar_isi).text = item.terdaftar
+
+            // Tombol Sunting dan Hapus (jika kamu ingin kasih aksi)
+            val btEdit = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pelanggan_edit)
+            val btHapus = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pelanggan_hapus)
+
+            btEdit.setOnClickListener {
+                // Tindakan edit, bisa buka activity edit misalnya
+                val intent = Intent(context, TambahPelanggan::class.java)
+                intent.putExtra("judul", "Edit Pelanggan")
+                intent.putExtra("id", item.id_pelanggan)
+                intent.putExtra("nama", item.nama)
+                intent.putExtra("alamat", item.alamat)
+                intent.putExtra("nohp", item.nohp)
+                context.startActivity(intent)
+            }
+            btHapus.setOnClickListener {
+                // Tindakan hapus (bisa pakai callback atau show konfirmasi)
+                Toast.makeText(context, "Hapus ${item.nama}", Toast.LENGTH_SHORT).show()
+            }
+
+            // Buat dan tampilkan dialog
+            val dialog = AlertDialog.Builder(context)
+                .setView(dialogView)
+                .create()
+
+            dialog.show()
         }
 
         holder.cvcardpelanggan.setOnClickListener {

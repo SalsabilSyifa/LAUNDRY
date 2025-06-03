@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".activity_login">
+
+    <!-- Kiri: Background + Greeting -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_login1"
+        android:orientation="vertical"
+        android:paddingStart="30dp"
+        android:paddingTop="100dp"
+        android:paddingEnd="30dp">
+
+        <TextView
+            android:id="@+id/greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang"
+            android:layout_marginTop="140dp"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sub_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silahkan login untuk melanjutkan"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- Kanan: Form Login -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nohp_login"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp" />
+
+            <EditText
+                android:id="@+id/et_nohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nohp_login"
+                android:background="@drawable/edittext_border"
+                android:padding="12dp"
+                android:inputType="phone"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/password_login"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_login"
+                android:background="@drawable/edittext_border"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/bt_simpan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_login"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/amber"
+                android:layout_marginTop="45dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

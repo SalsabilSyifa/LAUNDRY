@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:padding="16dp"
     tools:context=".pembayaran">
 
 
@@ -38,10 +38,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tvLokasi"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toStartOf="@+id/layoutTambahan"
+            android:layout_marginRight="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -126,45 +128,62 @@
                     android:text="Binar"
                     android:gravity="end" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvLayananUtama"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cuci Setrika 5kg"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/layoutDetail"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHargaUtama"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Rp40.000,00"
+                    android:gravity="end"
+                    app:layout_constraintTop_toTopOf="@id/tvLayananUtama"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </LinearLayout>
         </LinearLayout>
 
-        <!-- Layanan Utama -->
-        <TextView
-            android:id="@+id/tvLayananUtama"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Cuci Setrika 5kg"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/layoutDetail"
-            app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:id="@+id/layoutTambahan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/layoutDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="8dp">
 
-        <TextView
-            android:id="@+id/tvHargaUtama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rp40.000,00"
-            app:layout_constraintTop_toTopOf="@id/tvLayananUtama"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Tambahan -->
         <TextView
             android:id="@+id/tvTambahan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rincian Tambahan"
             android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tvLayananUtama"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginBottom="8dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_tambahan_pembayaran"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTambahan"
-        tools:listitem="@layout/cv_item_konfirmasi_tambahan">
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tambahan_pembayaran"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            tools:listitem="@layout/cv_item_konfirmasi_tambahan" />
+    </LinearLayout>
 
 
     <!-- Subtotal & Total -->
@@ -174,7 +193,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@id/rv_tambahan_pembayaran"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 

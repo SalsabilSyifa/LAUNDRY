@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Activity_transaksi::class.java)
             startActivity(intent)
         }
-
         cv_laporan.setOnClickListener{
             val intent = Intent(this, Activity_laporan::class.java)
             startActivity(intent)

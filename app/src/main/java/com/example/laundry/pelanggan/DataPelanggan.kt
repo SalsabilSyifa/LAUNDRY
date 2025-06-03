@@ -45,8 +45,7 @@ class DataPelanggan : AppCompatActivity() {
         }
         getData()
 
-        val fabTambahPelanggan: FloatingActionButton = findViewById(R.id.bt_data_pelanggan_tambah)
-        fabTambahPelanggan.setOnClickListener {
+        bt_data_pelanggan_tambah.setOnClickListener {
             val intent = Intent(this, TambahPelanggan::class.java)
             intent.putExtra("judul", this.getString(R.string.tambah_pelanggan))
             intent.putExtra("id", "")
@@ -55,6 +54,7 @@ class DataPelanggan : AppCompatActivity() {
             intent.putExtra("nohp", "")
             startActivity(intent)
         }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

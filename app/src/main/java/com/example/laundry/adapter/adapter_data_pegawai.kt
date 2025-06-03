@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -37,9 +38,44 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
         holder.bthubungipegawai.setOnClickListener{
 
         }
-        holder.btlihatpegawai.setOnClickListener{
+        holder.btlihatpegawai.setOnClickListener {
+            val context = holder.itemView.context
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_mod_pegawai, null)
 
+            // Mengisi data ke TextView
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pegawai_id_isi).text = item.id_pegawai
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pegawai_nama_isi).text = item.namapegawai
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_alamat_isi).text = item.alamatpegawai
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_nohp_isi).text = item.nohppegawai
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_terdaftar_isi).text = item.terdaftarpegawai
+            dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_cabang_isi).text = item.cabangpegawai
+
+            val btnEdit = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pegawai_edit)
+            val btnHapus = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pegawai_hapus)
+
+            btnEdit.setOnClickListener {
+                val intent = Intent(context, tambah_pegawai::class.java)
+                intent.putExtra("judul", "Edit Pegawai")
+                intent.putExtra("id", item.id_pegawai)
+                intent.putExtra("nama", item.namapegawai)
+                intent.putExtra("alamat", item.alamatpegawai)
+                intent.putExtra("nohp", item.nohppegawai)
+                intent.putExtra("terdaftar", item.terdaftarpegawai)
+                intent.putExtra("cabang", item.cabangpegawai)
+                context.startActivity(intent)
+            }
+
+            btnHapus.setOnClickListener {
+                Toast.makeText(context, "Hapus ${item.namapegawai}", Toast.LENGTH_SHORT).show()
+            }
+
+            val dialog = AlertDialog.Builder(context)
+                .setView(dialogView)
+                .create()
+
+            dialog.show()
         }
+
 
         holder.cvcardpegawai.setOnClickListener {
             val intent = Intent(appContext, tambah_pegawai::class.java)

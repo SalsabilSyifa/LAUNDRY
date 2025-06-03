@@ -1,7 +1,6 @@
 package com.example.laundry.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.R
-import com.example.laundry.modeldata.modelTransaksiTambahan
 import com.example.laundry.modeldata.modeltambahan
-import com.example.laundry.tambah_pegawai
 
 class adapter_transaksi_tambahan(
     private val list: MutableList<modeltambahan>,

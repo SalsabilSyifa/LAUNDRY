@@ -2,16 +2,16 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/svmodpelanggan"
+    android:id="@+id/svmodpegawai"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools">
-    
-    
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             android:padding="10dp"
             card_view:cardPreventCornerOverLap="false"
             tools:ignore="MissingConstraints">
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -35,44 +35,44 @@
                     android:paddingEnd="10dp"
                     android:paddingBottom="5dp"
                     android:textSize="24dp"
-                    android:text="Detail Pelanggan"/>
+                    android:text="Detail Pegawai"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:background="?android:attr/colorButtonNormal"
-                android:padding="3dp"
-                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:background="?android:attr/colorButtonNormal"
+                    android:padding="3dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="3dp"
-                    android:layout_weight="1.35"
-                    android:textSize="16dp"
-                    android:gravity="start"
-                    android:text="ID Pelanggan"/>
-
-
-                <TextView
-                    android:id="@+id/tv_dialog_mod_pelanggan_id_isi"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="3dp"
-                    android:layout_weight="1.35"
-                    android:textSize="16dp"
-                    android:gravity="end"
-                    android:text="ID Pelanggan"/>
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1.35"
+                        android:textSize="16dp"
+                        android:gravity="start"
+                        android:text="ID Pegawai"/>
 
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_dialog_mod_pegawai_id_isi"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1.35"
+                        android:textSize="16dp"
+                        android:gravity="end"
+                        android:text="ID Pelanggan"/>
+
+
+                </LinearLayout>
 
 
                 <LinearLayout
@@ -92,11 +92,11 @@
                         android:layout_weight="1.35"
                         android:textSize="16dp"
                         android:gravity="start"
-                        android:text="Nama Pelanggan"/>
+                        android:text="Nama Pegawai"/>
 
 
                     <TextView
-                        android:id="@+id/tv_dialog_mod_pelanggan_nama_isi"
+                        android:id="@+id/tv_dialog_mod_pegawai_nama_isi"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginStart="10dp"
@@ -215,13 +215,47 @@
                         android:text="Terdaftar"/>
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1.35"
+                        android:textSize="16dp"
+                        android:gravity="start"
+                        android:text="Cabang"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_dialog_mod_pelanggan_cabang_isi"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1.35"
+                        android:textSize="16dp"
+                        android:gravity="end"
+                        android:text="Cabang"/>
+                </LinearLayout>
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp">
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/bt_dialog_mod_pelanggan_edit"
+                        android:id="@+id/bt_dialog_mod_pegawai_edit"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_marginEnd="3dp"
@@ -230,10 +264,10 @@
                         app:icon="@drawable/edit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/bt_dialog_mod_pelanggan_hapus"
+                        app:layout_constraintEnd_toStartOf="@+id/bt_dialog_mod_pegawai_hapus"
                         app:layout_constraintTop_toTopOf="parent"/>
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/bt_dialog_mod_pelanggan_hapus"
+                        android:id="@+id/bt_dialog_mod_pegawai_hapus"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_marginEnd="3dp"
@@ -242,16 +276,16 @@
                         android:backgroundTint="@color/amber"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/bt_dialog_mod_pelanggan_edit"
+                        app:layout_constraintStart_toEndOf="@+id/bt_dialog_mod_pegawai_edit"
                         app:layout_constraintTop_toTopOf="parent"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
-            
+
         </androidx.cardview.widget.CardView>
 
-        
-        
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

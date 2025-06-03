@@ -2,6 +2,7 @@ package com.example.laundry
 
 import android.content.Intent
 import android.icu.text.NumberFormat
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -13,12 +14,19 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.adapter.adapter_konfirmasi_data
+import com.example.laundry.modeldata.modelLaporan
 import com.example.laundry.modeldata.modeltambahan
+import com.google.firebase.database.FirebaseDatabase
+import java.sql.Date
 import java.util.Locale
 
 class konfirmasi_data : AppCompatActivity() {
     private var hargaUtama: Int = 0
     private var total: Int = 0
+
+    object DataLaporan {
+        val list: MutableList<modelLaporan> = mutableListOf()
+    }
 
     fun formatRupiah(number: Int): String {
         val localeID = Locale("in", "ID")
@@ -37,16 +45,43 @@ class konfirmasi_data : AppCompatActivity() {
             val nama = textNama.text.toString()
             val hp = textHp.text.toString()
             val layanan = textLayanan.text.toString()
-            val tambahanList = intent.getStringArrayListExtra("layananTambahan")
+            val tambahanList = intent.getStringArrayListExtra("layananTambahan") ?: arrayListOf()
 
-            // Konversi ke model_tambahkan
-            val tambahanModelList = tambahanList?.mapNotNull {
+
+            val currentDate = SimpleDateFormat("dd-MM-yyyy  HH:mm:ss", Locale("in", "ID")).format(java.util.Date())
+            val tanggalSekarang = currentDate.format(java.util.Date())
+            val idTransaksi = "TRX" + System.currentTimeMillis().toString().takeLast(6)
+
+            val tambahanGabung = tambahanList.joinToString {
                 val parts = it.split("|")
-                if (parts.size == 3) {
-                    modeltambahan(parts[0], parts[0], parts[1])
-                } else null
-            } ?: arrayListOf()
+                if (parts.size >= 2) parts[1] else ""
+            }
 
+
+            val statusBaru = if (metode.equals("Bayar Nanti", ignoreCase = true)) "Belum Dibayar" else "Sudah Dibayar"
+
+            val laporan = modelLaporan(
+                idTransaksi = idTransaksi,
+                namaPelanggan = nama,
+                tanggal = tanggalSekarang,
+                layananUtama = layanan,
+                tambahan = tambahanList,
+                totalBayar = total.toString(),
+                metodePembayaran = metode,
+                status = statusBaru
+
+            )
+
+            DataLaporan.list.add(laporan)
+
+            val tambahanModelList = tambahanList.mapNotNull {
+                val parts = it.split("|")
+                if (parts.size >= 3) {
+                    modeltambahan(parts[0], parts[1])
+                } else null
+            }
+
+            // Kirim ke halaman pembayaran
             val intent = Intent(this, pembayaran::class.java).apply {
                 putExtra("metode_pembayaran", metode)
                 putExtra("nama_pelanggan", nama)
@@ -56,17 +91,20 @@ class konfirmasi_data : AppCompatActivity() {
                 putExtra("total_bayar", total.toDouble())
 
                 val tambahanListString = tambahanModelList.map {
-                    "${it.id_tambahan}|${it.nama_tambahan}|${it.harga_tambahan}|${it.deskripsi_tambahan}"
+                    "${it.id_tambahan}|${it.nama_tambahan}|${it.harga_tambahan}|${it.deskripsi_tambahan ?: "-"}"
                 }
 
+
                 putStringArrayListExtra("layanan_tambahan", ArrayList(tambahanListString))
-
-
             }
+            val laporanRef = FirebaseDatabase.getInstance().getReference("laporan")
+            laporanRef.child(idTransaksi).setValue(laporan)
+
             startActivity(intent)
             dialog.dismiss()
             finish()
         }
+
 
         dialogView.findViewById<Button>(R.id.buttonBayarNanti).setOnClickListener {
             pindahKeStruk("Bayar Nanti")
@@ -144,8 +182,7 @@ class konfirmasi_data : AppCompatActivity() {
                 modeltambahan(
                     id_tambahan = parts[0],
                     nama_tambahan = parts[0],
-                    harga_tambahan = parts[1],
-                    deskripsi_tambahan = null
+                    harga_tambahan = parts[1]
                 )
             } else {
                 Log.e("KONVERSI_ERROR", "Format tidak sesuai: $it")

@@ -10,4 +10,9 @@
     <color name="beaver">#9C8A6F</color>
     <color name="khaki2">#C6B191</color>
     <color name="amber">#F4BB23</color>
+    <color name="red">#FF3D00</color>
+    <color name="blue">#00CFFF</color>
+    <color name="green_soft">#D0F0C0</color>
+    <color name="yellow_soft">#FFFACD</color>
+
 </resources>

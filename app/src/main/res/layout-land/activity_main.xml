@@ -98,6 +98,7 @@
     >
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_akun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
@@ -159,6 +160,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_cabang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
@@ -211,6 +213,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_transaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -271,6 +274,7 @@
 
         <!-- Menu Tambahan -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_tambahan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -332,6 +336,7 @@
 
         <!-- Menu Cabang -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_laporan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -354,7 +359,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cabang"
+                    android:text="Laporan"
                     android:textSize="16sp"
                     android:layout_marginTop="8dp"/>
             </LinearLayout>
@@ -362,6 +367,7 @@
 
         <!-- Menu Printer -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_printer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"

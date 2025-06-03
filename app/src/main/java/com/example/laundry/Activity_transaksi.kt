@@ -13,8 +13,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.adapter.adapter_transaksi_tambahan
-import com.example.laundry.modeldata.modelTransaksiTambahan
-import com.example.laundry.modeldata.modelpelanggan
 import com.example.laundry.modeldata.modeltambahan
 
 class Activity_transaksi : AppCompatActivity() {
@@ -154,6 +152,9 @@ class Activity_transaksi : AppCompatActivity() {
 
                     tvTRANSAKSI_DATA_pelanggan_nama.text = "Nama Pelanggan : $namaPelanggan"
                     tvTRANSAKSI_DATA_pelanggan_nohp.text = "No HP : $nohp"
+
+                    Toast.makeText(this, "Pelanggan Dipilih: $namaPelanggan", Toast.LENGTH_SHORT).show()
+
                 }
 
                 pilihLayanan -> {
@@ -185,9 +186,7 @@ class Activity_transaksi : AppCompatActivity() {
 
                     dataList.add(tambahan)
                     adapter.notifyItemInserted(dataList.size - 1)
-
-
-
+                    Toast.makeText(this, "Tambahan Dipilih: $namaTambahan", Toast.LENGTH_SHORT).show()
                 }
 
             }
