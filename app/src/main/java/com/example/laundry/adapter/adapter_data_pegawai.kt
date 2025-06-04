@@ -1,6 +1,7 @@
 package com.example.laundry.adapter
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,9 +36,38 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
         holder.nohppegawai.text = item.nohppegawai
         holder.terdaftarpegawai.text = item.terdaftarpegawai
         holder.cabangpegawai.text = item.cabangpegawai
-        holder.bthubungipegawai.setOnClickListener{
+        holder.bthubungipegawai.setOnClickListener {
+            val context = holder.itemView.context
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.activity_dialog_hubungi, null)
 
+            val dialog = AlertDialog.Builder(context)
+                .setView(dialogView)
+                .create()
+
+            // Aksi WhatsApp
+            dialogView.findViewById<Button>(R.id.buttonHubungiWA).setOnClickListener {
+                val nomor = item.nohppegawai
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse("https://wa.me/$nomor")
+                context.startActivity(intent)
+            }
+
+            // Aksi Telepon
+            dialogView.findViewById<Button>(R.id.buttonHubungiTelepon).setOnClickListener {
+                val nomor = item.nohppegawai
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse("tel:$nomor")
+                context.startActivity(intent)
+            }
+
+            // Aksi Batal
+            dialogView.findViewById<TextView>(R.id.buttonBatal).setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.show()
         }
+
         holder.btlihatpegawai.setOnClickListener {
             val context = holder.itemView.context
             val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_mod_pegawai, null)

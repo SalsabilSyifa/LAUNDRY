@@ -2,7 +2,7 @@ package com.example.laundry.adapter
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.util.Log
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.R
-import com.example.laundry.activity_tambahan_pelanggan
 import com.example.laundry.modeldata.modelpelanggan
 import com.example.laundry.pelanggan.TambahPelanggan
 
@@ -36,9 +35,38 @@ class adapter_data_pelanggan(private val listPelanggan: ArrayList<modelpelanggan
         holder.alamat.text = item.alamat
         holder.nohp.text = item.nohp
         holder.terdaftar.text = item.terdaftar
-        holder.bthubungi.setOnClickListener{
+        holder.bthubungi.setOnClickListener {
+            val context = holder.itemView.context
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.activity_dialog_hubungi, null)
 
+            val dialog = AlertDialog.Builder(context)
+                .setView(dialogView)
+                .create()
+
+            // Aksi untuk tombol WhatsApp
+            dialogView.findViewById<Button>(R.id.buttonHubungiWA).setOnClickListener {
+                val nomor = item.nohp
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse("https://wa.me/$nomor")
+                context.startActivity(intent)
+            }
+
+            // Aksi untuk tombol Telepon
+            dialogView.findViewById<Button>(R.id.buttonHubungiTelepon).setOnClickListener {
+                val nomor = item.nohp
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse("tel:$nomor")
+                context.startActivity(intent)
+            }
+
+            // Aksi untuk tombol Batal
+            dialogView.findViewById<TextView>(R.id.buttonBatal).setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.show()
         }
+
         holder.btlihat.setOnClickListener {
             val context = holder.itemView.context
             val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_mod_pelanggan, null)

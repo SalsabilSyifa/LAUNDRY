@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.icu.text.NumberFormat
 import android.icu.text.SimpleDateFormat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.R
 import com.example.laundry.konfirmasi_data
 import com.example.laundry.modeldata.modelLaporan
+import com.example.laundry.modeldata.modeltambahan
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.Date
 import java.util.Locale
 
@@ -62,11 +67,21 @@ class adapter_laporan(
         holder.tvLayanan.text = laporan.layananUtama
 
 
-        val tambahanText = if (laporan.tambahan.isNotEmpty())
-            laporan.tambahan.joinToString(", ")
-        else
-            "Tidak ada tambahan"
-        holder.tvLayananTambahan.text = tambahanText
+        val tambahanModelList = laporan.tambahan.mapNotNull { tambahanStr ->
+            val parts = tambahanStr.split("|")
+            if (parts.size >= 2) modeltambahan(
+                nama_tambahan = parts[0],
+                harga_tambahan = parts[1]
+            ) else null
+        }
+
+        val tambahanText = tambahanModelList.joinToString(", ") {
+            val hargaInt = it.harga_tambahan?.replace(".", "")?.toIntOrNull() ?: 0
+            "${it.nama_tambahan} (${formatRupiah(hargaInt)})"
+        }
+
+        holder.tvLayananTambahan.text = if (tambahanText.isNotEmpty()) tambahanText else "-"
+
 
         val totalBayarInt = laporan.totalBayar.toIntOrNull() ?: 0
         holder.tvTotal.text = formatRupiah(totalBayarInt)
@@ -87,6 +102,8 @@ class adapter_laporan(
                 holder.tvStatus.setTextColor(context.getColor(R.color.white))
 
                 holder.btnAksi.visibility = View.VISIBLE
+                holder.btnAksi.text = "DEBUG"
+
                 holder.btnAksi.text = "Bayar Sekarang"
                 holder.btnAksi.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
                 holder.btnAksi.setOnClickListener {
@@ -96,7 +113,7 @@ class adapter_laporan(
                 holder.tvDiambil.visibility = View.GONE
             }
 
-            "Lunas" -> {
+            "Sudah Dibayar" -> {
                 holder.tvStatus.text = "Sudah Dibayar"
                 holder.tvStatus.setBackgroundColor(context.getColor(R.color.blue))
                 holder.tvStatus.setTextColor(context.getColor(R.color.white))
@@ -108,15 +125,18 @@ class adapter_laporan(
                     val waktuAmbil = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale("in", "ID")).format(Date())
                     val ref = FirebaseDatabase.getInstance().getReference("laporan").child(laporan.idTransaksi)
 
-                    ref.updateChildren(
-                        mapOf(
-                            "status" to "Selesai",
-                            "diambilPada" to waktuAmbil
-                        )
-                    ).addOnSuccessListener {
+                    val updates = mapOf(
+                        "status" to "Selesai",
+                        "diambilPada" to waktuAmbil
+                    )
+
+                    ref.updateChildren(updates).addOnSuccessListener {
                         laporan.status = "Selesai"
                         laporan.diambilPada = waktuAmbil
                         notifyItemChanged(position)
+                        Toast.makeText(context, "Pesanan sudah diambil", Toast.LENGTH_SHORT).show()
+                    }.addOnFailureListener {
+                        Toast.makeText(context, "Gagal memperbarui status ambil", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -168,26 +188,41 @@ class adapter_laporan(
     }
 
     private fun updateStatusPembayaran(transaksiId: String, metode: String, position: Int) {
-        val ref = FirebaseDatabase.getInstance().getReference("laporan").child(transaksiId)
-        val statusBaru = if (metode.equals("Bayar Nanti", ignoreCase = true)) "Belum Dibayar" else "Lunas"
+        val statusBaru = if (metode.equals("Bayar Nanti", ignoreCase = true)) "Belum Dibayar" else "Sudah Dibayar"
 
         val updates = mapOf(
             "metodePembayaran" to metode,
             "status" to statusBaru
         )
 
+        val ref = FirebaseDatabase.getInstance().getReference("laporan")
+        ref.orderByChild("idTransaksi").equalTo(transaksiId)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        for (data in snapshot.children) {
+                            data.ref.updateChildren(updates).addOnSuccessListener {
+                                val laporan = listLaporan[position]
+                                laporan.metodePembayaran = metode
+                                laporan.status = statusBaru
 
-        ref.updateChildren(updates).addOnSuccessListener {
-            val laporan = listLaporan[position]
-            laporan.metodePembayaran = metode
-            laporan.status = statusBaru
+                                notifyItemChanged(position)
+                                Toast.makeText(context, "Pembayaran $metode berhasil", Toast.LENGTH_SHORT).show()
+                            }.addOnFailureListener {
+                                Toast.makeText(context, "Gagal memperbarui status pembayaran", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    } else {
+                        Toast.makeText(context, "Data transaksi tidak ditemukan", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
-            notifyItemChanged(position)
-            Toast.makeText(context, "Pembayaran $metode berhasil", Toast.LENGTH_SHORT).show()
-        }.addOnFailureListener {
-            Toast.makeText(context, "Gagal memperbarui status pembayaran", Toast.LENGTH_SHORT).show()
-        }
-
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
+
+
 
 }

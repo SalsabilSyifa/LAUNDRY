@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.laundry.R
@@ -34,23 +36,7 @@ class adapter_data_cabang (private val listCabang: ArrayList<modelcabang>) :
         holder.namacabang.text = item.tv_nama_cabang
         holder.alamatcabang.text = item.tv_alamat_cabang
         holder.layanancabang.text = item.tv_layanan_cabang
-        holder.bthubungicabang.setOnClickListener{
 
-        }
-        holder.btlihatcabang.setOnClickListener{
-
-        }
-
-        holder.cvcabang.setOnClickListener {
-            val intent = Intent(appContext, activity_tambah_cabang::class.java)
-            intent.putExtra("judul", "Edit Cabang")
-            intent.putExtra("id", item.id_cabang)
-            intent.putExtra("tv_nama_cabang", item.tv_nama_cabang)
-            intent.putExtra("tv_alamat_cabang", item.tv_alamat_cabang)
-            intent.putExtra("tv_layanan_cabang", item.tv_layanan_cabang)
-            appContext.startActivity(intent)
-
-        }
     }
 
     override fun getItemCount(): Int {
@@ -64,8 +50,6 @@ class adapter_data_cabang (private val listCabang: ArrayList<modelcabang>) :
         val namacabang: TextView = itemView.findViewById(R.id.tv_nama_cabang)
         val alamatcabang: TextView = itemView.findViewById(R.id.tv_alamat_cabang)
         val layanancabang: TextView = itemView.findViewById(R.id.tv_layanan_cabang)
-        val bthubungicabang: Button = itemView.findViewById(R.id.bt_hubungi_cabang)
-        val btlihatcabang: Button = itemView.findViewById(R.id.bt_lihat_cabang)
     }
 }
 

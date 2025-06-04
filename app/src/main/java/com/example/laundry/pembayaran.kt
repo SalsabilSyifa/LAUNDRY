@@ -76,12 +76,10 @@ class pembayaran : AppCompatActivity() {
                 modeltambahan(
                     id_tambahan = parts[0],
                     nama_tambahan = parts[0],
-                    harga_tambahan = parts[1],
-                    deskripsi_tambahan = if (parts.size > 3) parts[3] else null
+                    harga_tambahan = parts[1]
                 )
-            } else {
-                null
-            }
+            } else null
+
         }
 
         // Hitung subtotal tambahan

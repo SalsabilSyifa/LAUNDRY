@@ -96,7 +96,7 @@ class Activity_laporan : AppCompatActivity() {
                             val statusBaru = if (laporan.metodePembayaran.equals("Bayar Nanti", true)) {
                                 "Belum Dibayar"
                             } else {
-                                "Lunas"
+                                "Sudah Dibayar"
                             }
                             database.child(id).child("status").setValue(statusBaru)
                             Log.d("FIREBASE_DEBUG", "Jumlah data: ${snapshot.childrenCount}")

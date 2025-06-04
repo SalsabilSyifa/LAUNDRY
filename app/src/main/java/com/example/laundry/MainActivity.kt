@@ -1,16 +1,23 @@
 package com.example.laundry
 
 import android.content.Intent
+import android.icu.text.NumberFormat
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.laundry.pelanggan.DataPelanggan
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 
 
@@ -29,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
+        getEstimasiHarian()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -104,4 +111,46 @@ class MainActivity : AppCompatActivity() {
         val dateFormat = SimpleDateFormat("dd MMMM yyyy", Locale("id", "ID"))
         return dateFormat.format(calendar.time)
     }
+
+    private fun formatRupiah(number: Int): String {
+        val localeID = Locale("in", "ID")
+        val format = NumberFormat.getCurrencyInstance(localeID)
+        return format.format(number)
+    }
+
+
+    private fun getEstimasiHarian() {
+        val estimationText = findViewById<TextView>(R.id.estimation_text)
+        val today = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date()) // Sesuaikan format
+
+        val dbRef = FirebaseDatabase.getInstance().getReference("laporan") // Ganti ke 'laporan'
+
+        dbRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var totalPendapatan = 0
+
+                for (data in snapshot.children) {
+                    val status = data.child("status").getValue(String::class.java) ?: ""
+                    val tanggalFull = data.child("tanggal").getValue(String::class.java) ?: ""
+                    val totalBayarStr = data.child("totalBayar").getValue(String::class.java) ?: "0"
+
+                    val tanggal = tanggalFull.split(" ")[0] // Ambil "04-06-2025" saja
+
+                    if (status == "Selesai" && tanggal == today) {
+                        val total = totalBayarStr.replace(".", "").toIntOrNull() ?: 0
+                        totalPendapatan += total
+                    }
+                }
+
+                val formatted = formatRupiah(totalPendapatan)
+                estimationText.text = formatted
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@MainActivity, "Gagal mengambil data", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+
 }
