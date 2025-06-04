@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LAUNDRY"
         tools:targetApi="31">
         <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
             android:name=".register"
             android:exported="false" />
         <activity

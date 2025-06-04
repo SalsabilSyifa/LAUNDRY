@@ -100,6 +100,9 @@ class activity_login : AppCompatActivity() {
                 if (snapshot.exists()) {
                     val savedPassword = snapshot.child("password").getValue(String::class.java)
                     if (savedPassword == password) {
+                        val prefs = getSharedPreferences("users", MODE_PRIVATE)
+                        prefs.edit().putString("nohp", nohp).apply()
+
                         startActivity(Intent(this@activity_login, MainActivity::class.java))
                         finish()
                     } else {
@@ -115,4 +118,5 @@ class activity_login : AppCompatActivity() {
             }
         })
     }
+
 }

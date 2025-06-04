@@ -8,6 +8,16 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/iv_logout"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/ic_logout"
+        android:contentDescription="Logout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp" />
+
     <TextView
         android:id="@+id/greeting"
         android:layout_width="wrap_content"
@@ -18,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="60dp"/>
 
     <TextView
         android:id="@+id/date"

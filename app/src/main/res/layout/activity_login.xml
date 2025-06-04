@@ -85,7 +85,7 @@ android:paddingHorizontal="20dp">
     <Button
     android:id="@+id/bt_Masuk"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
     android:text="@string/button_login"
     android:textColor="@color/white"
     android:backgroundTint="@color/amber"

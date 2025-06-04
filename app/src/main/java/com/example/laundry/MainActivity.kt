@@ -3,6 +3,7 @@ package com.example.laundry
 import android.content.Intent
 import android.icu.text.NumberFormat
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -75,9 +76,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        cv_akun.setOnClickListener{
-            val intent = Intent(this, activity_login::class.java)
-            startActivity(intent)
+        cv_akun.setOnClickListener {
+            startActivity(Intent(this, profile::class.java))
         }
         cv_tambahan.setOnClickListener{
             val intent = Intent(this, data_tambahan::class.java)
@@ -86,6 +86,13 @@ class MainActivity : AppCompatActivity() {
         cv_cabang.setOnClickListener{
             val intent = Intent(this, activity_data_cabang::class.java)
             startActivity(intent)
+        }
+
+        findViewById<ImageView>(R.id.iv_logout).setOnClickListener {
+            getSharedPreferences("users", MODE_PRIVATE).edit().clear().apply()
+            Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, activity_login::class.java))
+            finish()
         }
 
         val greetingTextView: TextView = findViewById(R.id.greeting)
@@ -151,6 +158,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Gagal mengambil data", Toast.LENGTH_SHORT).show()
             }
         })
+        Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show()
+
     }
 
 

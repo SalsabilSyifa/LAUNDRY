@@ -58,7 +58,7 @@ class register : AppCompatActivity() {
                 Toast.makeText(this, "Isi semua field", Toast.LENGTH_SHORT).show()
             } else {
                 val user = mapOf(
-                    "nama" to nama,
+                    "username" to nama,
                     "password" to password
                 )
 
