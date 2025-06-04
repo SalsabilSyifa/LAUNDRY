@@ -35,7 +35,7 @@
                     android:paddingEnd="10dp"
                     android:paddingBottom="5dp"
                     android:textSize="24dp"
-                    android:text="Detail Pelanggan"/>
+                    android:text="@string/detailpelanggan"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                     android:layout_weight="1.35"
                     android:textSize="16dp"
                     android:gravity="start"
-                    android:text="ID Pelanggan"/>
+                    android:text="@string/tv_id_pelanggan"/>
 
 
                 <TextView
@@ -92,7 +92,7 @@
                         android:layout_weight="1.35"
                         android:textSize="16dp"
                         android:gravity="start"
-                        android:text="Nama Pelanggan"/>
+                        android:text="@string/tv_namapelanggan"/>
 
 
                     <TextView
@@ -128,7 +128,7 @@
                         android:layout_weight="1.35"
                         android:textSize="16dp"
                         android:gravity="start"
-                        android:text="Alamat"/>
+                        android:text="@string/tv_alamat"/>
 
 
                     <TextView
@@ -163,7 +163,7 @@
                         android:layout_weight="1.35"
                         android:textSize="16dp"
                         android:gravity="start"
-                        android:text="No HP"/>
+                        android:text="@string/tv_nohp"/>
 
 
                     <TextView
@@ -198,7 +198,7 @@
                         android:layout_weight="1.35"
                         android:textSize="16dp"
                         android:gravity="start"
-                        android:text="Terdaftar"/>
+                        android:text="@string/tv_terdaftar"/>
 
 
                     <TextView
@@ -226,7 +226,7 @@
                         android:layout_height="50dp"
                         android:layout_marginEnd="3dp"
                         android:backgroundTint="@color/amber"
-                        android:text="Sunting"
+                        android:text="@string/edit"
                         app:icon="@drawable/edit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -237,7 +237,7 @@
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_marginEnd="3dp"
-                        android:text="Hapus"
+                        android:text="@string/hapus"
                         app:icon="@drawable/sampah"
                         android:backgroundTint="@color/amber"
                         app:layout_constraintBottom_toBottomOf="parent"

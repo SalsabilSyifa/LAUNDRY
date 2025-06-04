@@ -81,7 +81,7 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_alamat_pegawai_judul"
-            android:layout_width="90dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/tv_alamat"
             android:padding="3dp"
@@ -115,7 +115,7 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_nohp_pegawai_judul"
-            android:layout_width="90dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/tv_nohp"
             android:padding="3dp"
@@ -149,7 +149,7 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_terdaftar_pegawai_judul"
-            android:layout_width="90dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/tv_terdaftar"
             android:padding="3dp"
@@ -182,7 +182,7 @@
         android:orientation="horizontal">
     <TextView
             android:id="@+id/tv_cabang_pegawai_judul"
-            android:layout_width="90dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/tv_cabang"
             android:padding="3dp"

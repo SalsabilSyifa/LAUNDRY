@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        loadGreetingAndUsername()
+
+
         cv_layanan = findViewById(R.id.cv_layanan)
         cv_pegawai = findViewById(R.id.cv_pegawai)
         cv_pelanggan = findViewById(R.id.cv_pelanggan)
@@ -90,8 +93,8 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.iv_logout).setOnClickListener {
             getSharedPreferences("users", MODE_PRIVATE).edit().clear().apply()
-            Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, activity_login::class.java))
+            Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show()
             finish()
         }
 
@@ -106,12 +109,27 @@ class MainActivity : AppCompatActivity() {
     private fun getGreetingMessage(): String {
         val currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
         return when (currentHour) {
-            in 5..11 -> "Selamat Pagi, Zenith"
-            in 12..14 -> "Selamat Siang, Zenith"
-            in 15..17 -> "Selamat Sore, Zenith"
-            else -> "Selamat Malam, Zenith"
+            in 5..11 -> "Selamat Pagi,"
+            in 12..14 -> "Selamat Siang,"
+            in 15..17 -> "Selamat Sore,"
+            else -> "Selamat Malam,"
         }
     }
+    private fun loadGreetingAndUsername() {
+        val sharedPref = getSharedPreferences("users", MODE_PRIVATE)
+        val username = sharedPref.getString("username", "Pengguna")
+
+        val tvSapaan = findViewById<TextView>(R.id.greeting)
+        val tvUsername = findViewById<TextView>(R.id.tv_username)
+
+        tvSapaan.text = getGreetingMessage()
+        tvUsername.text = username
+    }
+    override fun onResume() {
+        super.onResume()
+        loadGreetingAndUsername() // ⬅️ refresh username setiap kembali ke MainActivity
+    }
+
 
     private fun getCurrentDate(): String {
         val calendar = Calendar.getInstance()

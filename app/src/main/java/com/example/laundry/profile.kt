@@ -60,9 +60,15 @@ class profile : AppCompatActivity() {
                 .child(newNoHp)
                 .setValue(userMap)
                 .addOnSuccessListener {
+                    // Simpan username baru ke SharedPreferences
+                    val prefs = getSharedPreferences("users", MODE_PRIVATE)
+                    prefs.edit().putString("username", newUsername).apply()
+
                     Toast.makeText(this, "Berhasil diperbarui", Toast.LENGTH_SHORT).show()
+                    finish()
                 }
         }
+
     }
 
 }

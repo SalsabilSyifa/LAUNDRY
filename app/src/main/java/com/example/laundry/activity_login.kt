@@ -99,9 +99,16 @@ class activity_login : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     val savedPassword = snapshot.child("password").getValue(String::class.java)
+                    val usernameDb = snapshot.child("username").getValue(String::class.java)
                     if (savedPassword == password) {
                         val prefs = getSharedPreferences("users", MODE_PRIVATE)
-                        prefs.edit().putString("nohp", nohp).apply()
+
+                        prefs.edit().apply {
+                            putString("nohp", nohp)
+                            putString("username", usernameDb) // <== Tambahan penting
+                            apply()
+                        }
+
 
                         startActivity(Intent(this@activity_login, MainActivity::class.java))
                         finish()

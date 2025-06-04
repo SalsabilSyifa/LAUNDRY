@@ -32,7 +32,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="konfirmasi Data"
+                android:text="@string/konfirmasidata"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:gravity="center"
@@ -100,7 +100,7 @@
                 android:id="@+id/tvTRANSAKSI_LayananTambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Layanan Tambahan"
+                android:text="@string/layanantambahan"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp" />
@@ -146,7 +146,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total Bayar"
+                    android:text="@string/totalbayar"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
 
@@ -178,7 +178,7 @@
                     android:id="@+id/btnBatal"
                     android:layout_width="140dp"
                     android:layout_height="50dp"
-                    android:text="Batal"
+                    android:text="@string/batal"
                     android:textColor="#FFFFFF"
                     android:backgroundTint="#FFC107" />
 
@@ -191,7 +191,7 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:text="Pembayaran"
+                    android:text="@string/pembayaran"
                     android:textColor="#FFFFFF"
                     android:backgroundTint="#4CAF50" />
             </LinearLayout>

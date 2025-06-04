@@ -119,7 +119,7 @@
             android:id="@+id/btn_update"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="UPDATE"
+            android:text="@string/btedit"
             android:textAllCaps="true"
             android:layout_marginTop="40dp"
             android:textColor="#FFFFFF"

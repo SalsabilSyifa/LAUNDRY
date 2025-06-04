@@ -40,7 +40,7 @@
                         android:id="@+id/tvTRANSAKSI_DATA_pelanggan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Data Pelanggan"
+                        android:text="@string/datapelanggan"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
@@ -49,7 +49,7 @@
                         android:id="@+id/tvTRANSAKSI_DATA_pelanggan_nama"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nama Pelanggan:"
+                        android:text="@string/transaksi_namapelanggan"
                         android:textSize="18sp"
                         android:layout_marginTop="8dp"/>
 
@@ -75,7 +75,7 @@
                         android:id="@+id/tvTRANSAKSI_layanan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Layanan Utama"
+                        android:text="@string/layananutama"
                         android:textSize="20sp"
                         android:textStyle="bold"/>
 
@@ -126,7 +126,7 @@
                 android:id="@+id/tvTRANSAKSI_LayananTambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Layanan Tambahan"
+                android:text="@string/layanantambahan"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginStart="8dp"
@@ -144,7 +144,7 @@
                     android:id="@+id/rvTRANSAKSI_LayananTambahan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/card_pilih_layanan_tambahan"/>
+                    tools:listitem="@layout/card_tambahan2"/>
             </androidx.core.widget.NestedScrollView>
 
             <!-- CardView Bawah -->

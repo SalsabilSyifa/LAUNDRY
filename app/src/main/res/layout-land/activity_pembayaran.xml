@@ -55,7 +55,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ID Transaksi" />
+                    android:text="@string/idtransaksi" />
 
                 <TextView
                     android:id="@+id/id_transaksi_pembayaran"
@@ -76,7 +76,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Tanggal" />
+                    android:text="@string/tanggal" />
 
                 <TextView
                     android:id="@+id/tv_tanggal_pembayaran"
@@ -97,7 +97,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Pesanan" />
+                    android:text="@string/pesanan" />
 
                 <TextView
                     android:id="@+id/tv_namapelanggan"
@@ -118,7 +118,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Karyawan" />
+                    android:text="@string/pegawai" />
 
                 <TextView
                     android:id="@+id/tv_namapegawa"
@@ -175,7 +175,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subtotal Tambahan" />
+                        android:text="@string/subtotaltambahan" />
 
                     <TextView
                         android:id="@+id/tv_subtotal_hargatambahan"
@@ -224,7 +224,7 @@
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
-                    android:text="Kirim WhatsApp"
+                    android:text="@string/kirimwa"
                     android:textColor="#FFFFFF"
                     android:backgroundTint="#00C853"
                     android:layout_marginEnd="8dp" />
@@ -234,7 +234,7 @@
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
-                    android:text="Cetak"
+                    android:text="@string/cetak"
                     android:textColor="#FFFFFF"
                     android:backgroundTint="#03A9F4"
                     android:layout_marginStart="8dp"/>
@@ -257,7 +257,7 @@
             android:id="@+id/tvTambahan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rincian Tambahan"
+            android:text="@string/rinciantambahan"
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />
 

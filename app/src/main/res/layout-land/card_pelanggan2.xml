@@ -81,7 +81,7 @@
 
         <TextView
             android:id="@+id/tv_nohp_judul"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:layout_height="match_parent"
             android:padding="3dp"
             android:text="@string/tv_nohp"
@@ -114,7 +114,7 @@
         android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_terdaftar_judul"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="@string/tv_terdaftar"
         android:padding="3dp"
@@ -147,7 +147,7 @@
         android:orientation="horizontal">
     <TextView
         android:id="@+id/tv_alamat_judul"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="@string/tv_alamat"
         android:padding="3dp"

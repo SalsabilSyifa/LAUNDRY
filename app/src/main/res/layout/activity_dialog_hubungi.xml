@@ -14,7 +14,7 @@
             android:id="@+id/tvHubungi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hubungi"
+            android:text="@string/card_pelanggan_hubungi"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
@@ -48,10 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="WhatsApp"
-                android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:layout_marginBottom="12dp"
-                android:backgroundTint="#F44336"
+                android:backgroundTint="@color/green"
                 android:paddingVertical="12dp" />
 
             <Button
@@ -69,11 +68,11 @@
         <!-- Tombol Batal -->
         <TextView
             android:id="@+id/buttonBatal"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="Batal"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:text="@string/batal"
             android:textSize="20dp"
-            android:textColor="#3F51B5"
+            android:textColor="@color/red"
             android:textStyle="bold"
             android:clickable="true"
             android:focusable="true"

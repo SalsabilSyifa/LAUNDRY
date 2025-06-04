@@ -29,7 +29,7 @@
                 android:id="@+id/tvTRANSAKSI_DATA_pelanggan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Data Pelanggan"
+                android:text="@string/datapelanggan"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"/>
@@ -64,7 +64,7 @@
                 android:id="@+id/tvTRANSAKSI_layanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Layanan Utama"
+                android:text="@string/layananutama"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -98,7 +98,7 @@
                 android:id="@+id/tvTRANSAKSI_LayananTambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Layanan Tambahan"
+                android:text="@string/layanantambahan"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"/>
