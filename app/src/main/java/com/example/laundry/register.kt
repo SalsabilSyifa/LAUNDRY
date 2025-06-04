@@ -6,37 +6,34 @@ import android.text.InputType
 import android.view.MotionEvent
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
-class activity_login : AppCompatActivity() {
-    private lateinit var etNoHp: EditText
-    private lateinit var etPassword: EditText
-    private lateinit var btnMasuk: Button
-    private lateinit var tvRegister: TextView
+class register : AppCompatActivity() {
     private var isPasswordVisible = false
+    private lateinit var etPassword: EditText  // Dideklarasikan di luar agar bisa diakses fungsi lain
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
 
-        etNoHp = findViewById(R.id.et_nohp)
+        val etNama = findViewById<EditText>(R.id.et_username)
+        val etNoHp = findViewById<EditText>(R.id.et_nohp)
         etPassword = findViewById(R.id.et_password)
-        btnMasuk = findViewById(R.id.bt_Masuk)
-        tvRegister = findViewById(R.id.tv_register)
+        val btnRegister = findViewById<Button>(R.id.bt_daftar)
 
-        // Toggle password dengan klik ikon di dalam EditText
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
         etPassword.setOnTouchListener { _, event ->
             val drawableEnd = etPassword.compoundDrawablesRelative[2]
             if (drawableEnd != null && event.action == MotionEvent.ACTION_UP) {
@@ -52,19 +49,31 @@ class activity_login : AppCompatActivity() {
             false
         }
 
-        btnMasuk.setOnClickListener {
+        btnRegister.setOnClickListener {
+            val nama = etNama.text.toString()
             val nohp = etNoHp.text.toString()
             val password = etPassword.text.toString()
 
-            if (nohp.isEmpty() || password.isEmpty()) {
+            if (nama.isEmpty() || nohp.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Isi semua field", Toast.LENGTH_SHORT).show()
             } else {
-                loginUser(nohp, password)
-            }
-        }
+                val user = mapOf(
+                    "nama" to nama,
+                    "password" to password
+                )
 
-        tvRegister.setOnClickListener {
-            startActivity(Intent(this, register::class.java))
+                FirebaseDatabase.getInstance().getReference("users")
+                    .child(nohp)
+                    .setValue(user)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, activity_login::class.java))
+                        finish()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Gagal daftar", Toast.LENGTH_SHORT).show()
+                    }
+            }
         }
     }
 
@@ -72,10 +81,8 @@ class activity_login : AppCompatActivity() {
         isPasswordVisible = !isPasswordVisible
 
         val iconRes = if (isPasswordVisible) R.drawable.ic_visibility else R.drawable.ic_visibility_off
-
-        // Load drawable dan atur ukuran secara manual
         val drawable = ContextCompat.getDrawable(this, iconRes)
-        drawable?.setBounds(0, 0, 48, 48) // Ubah ukuran di sini (width x height dalam pixel)
+        drawable?.setBounds(0, 0, 48, 48) // Sesuaikan ukuran ikon
 
         etPassword.setCompoundDrawablesRelative(
             null, null,
@@ -89,30 +96,5 @@ class activity_login : AppCompatActivity() {
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
 
         etPassword.setSelection(etPassword.text.length)
-    }
-
-
-    private fun loginUser(nohp: String, password: String) {
-        val ref = FirebaseDatabase.getInstance().getReference("users")
-
-        ref.child(nohp).addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    val savedPassword = snapshot.child("password").getValue(String::class.java)
-                    if (savedPassword == password) {
-                        startActivity(Intent(this@activity_login, MainActivity::class.java))
-                        finish()
-                    } else {
-                        Toast.makeText(this@activity_login, "Password salah", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    Toast.makeText(this@activity_login, "User tidak ditemukan", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@activity_login, "Database error", Toast.LENGTH_SHORT).show()
-            }
-        })
     }
 }

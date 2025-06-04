@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".register">
+
+    <!-- Header / Background Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/bg_login1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="30dp" />
+
+        <TextView
+            android:id="@+id/sub_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silahkan login untuk melanjutkan"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="30dp" />
+    </LinearLayout>
+
+    <!-- Form Section -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:background="@drawable/edittext_border"
+                android:padding="12dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_nohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nohp_login"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp" />
+
+            <EditText
+                android:id="@+id/et_nohp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nohp_login"
+                android:background="@drawable/edittext_border"
+                android:padding="12dp"
+                android:inputType="phone"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/password_login"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp" />
+
+            <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:background="@drawable/edittext_border"
+            android:padding="12dp"
+            android:inputType="textPassword"
+            android:drawableEnd="@drawable/ic_visibility_off" />
+
+            <Button
+                android:id="@+id/bt_daftar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Daftar"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/amber"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="50dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
