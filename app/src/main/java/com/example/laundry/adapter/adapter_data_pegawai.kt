@@ -43,7 +43,6 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
             val dialog = AlertDialog.Builder(context)
                 .setView(dialogView)
                 .create()
-            dialog.window?.setDimAmount(0.6f)
             // Aksi WhatsApp
             dialogView.findViewById<Button>(R.id.buttonHubungiWA).setOnClickListener {
                 val nomor = item.nohppegawai
@@ -83,7 +82,6 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
             val dialog = AlertDialog.Builder(context)
                 .setView(dialogView)
                 .create()
-            dialog.window?.setDimAmount(0.6f)
 
             val btnEdit = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pegawai_edit)
             val btnHapus = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pegawai_hapus)
