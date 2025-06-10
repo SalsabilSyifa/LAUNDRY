@@ -57,7 +57,7 @@ class activity_login : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (nohp.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Isi semua field", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.isidulu), Toast.LENGTH_SHORT).show()
             } else {
                 loginUser(nohp, password)
             }

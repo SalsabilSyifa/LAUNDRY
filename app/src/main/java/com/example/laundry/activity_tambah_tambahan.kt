@@ -47,14 +47,14 @@ class activity_tambah_tambahan : AppCompatActivity() {
         val harga = et_tambahan_harga.text.toString()
 
         if ( namatambahan.isEmpty()){
-            et_tambah_tambahan.error = "tambahan tidak boleh kosong"
-            Toast.makeText(this, "tambahan tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            et_tambah_tambahan.error = getString(R.string.validasitambahan)
+            Toast.makeText(this, getString(R.string.validasitambahan), Toast.LENGTH_SHORT).show()
             et_tambah_tambahan.requestFocus()
             return
         }
         if ( harga.isEmpty()){
-            et_tambahan_harga.error = "harga tidak boleh kosong"
-            Toast.makeText(this, "harga tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            et_tambahan_harga.error = getString(R.string.validasi_harga_layanan)
+            Toast.makeText(this, (R.string.validasi_harga_layanan), Toast.LENGTH_SHORT).show()
             et_tambahan_harga.requestFocus()
             return
         }
@@ -71,7 +71,7 @@ class activity_tambah_tambahan : AppCompatActivity() {
         )
         tambahanBaru.setValue(data)
             .addOnSuccessListener {
-                Toast.makeText(this,"sukses simpan tambahan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,getString(R.string.validasitambahansukses), Toast.LENGTH_SHORT).show()
 
                 val resultIntent = Intent()
                 resultIntent.putExtra("tambahan_id",tambahanId)

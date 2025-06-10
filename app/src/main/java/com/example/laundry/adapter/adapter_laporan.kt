@@ -115,7 +115,7 @@ class adapter_laporan(
 
             "Sudah Dibayar" -> {
                 holder.tvStatus.text = "Sudah Dibayar"
-                holder.tvStatus.setBackgroundColor(context.getColor(R.color.blue))
+                holder.tvStatus.setBackgroundColor(context.getColor(R.color.blue_soft))
                 holder.tvStatus.setTextColor(context.getColor(R.color.white))
 
                 holder.btnAksi.visibility = View.VISIBLE

@@ -70,7 +70,7 @@ class Activity_transaksi : AppCompatActivity() {
         }
         btnProses.setOnClickListener {
             if (namaPelanggan.isEmpty() || namaLayanan.isEmpty()) {
-                Toast.makeText(this, "Lengkapi data pelanggan dan layanan terlebih dahulu", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.validasiproses), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -92,11 +92,6 @@ class Activity_transaksi : AppCompatActivity() {
 
             startActivity(intent)
         }
-
-
-
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -127,11 +122,12 @@ class Activity_transaksi : AppCompatActivity() {
         rvTRANSAKSI_LayananTambahan.adapter = adapter
         rvTRANSAKSI_LayananTambahan.layoutManager = LinearLayoutManager(this)
 
-        tvTRANSAKSI_DATA_pelanggan_nama.text = "Nama Pelanggan : $namaPelanggan"
-        tvTRANSAKSI_DATA_pelanggan_nohp.text = "No HP : $nohp"
+        tvTRANSAKSI_DATA_pelanggan_nama.text = ": $namaPelanggan"
+        tvTRANSAKSI_DATA_pelanggan_nohp.text = ": $nohp"
 
-        tvTRANSAKSI_layanan_nama.text = "Nama Layanan : $namaLayanan"
-        tvTRANSAKSI_layanan_harga.text = "Harga : $hargaLayanan"
+        tvTRANSAKSI_layanan_nama.text = ": $namaLayanan"
+        tvTRANSAKSI_layanan_harga.text = ": $hargaLayanan"
+
 
 
         btnTambahan.setOnClickListener {
@@ -150,10 +146,13 @@ class Activity_transaksi : AppCompatActivity() {
                     namaPelanggan = data.getStringExtra("nama").toString()
                     nohp = data.getStringExtra("nohp").toString()
 
-                    tvTRANSAKSI_DATA_pelanggan_nama.text = "Nama Pelanggan : $namaPelanggan"
-                    tvTRANSAKSI_DATA_pelanggan_nohp.text = "No HP : $nohp"
+                    tvTRANSAKSI_DATA_pelanggan_nama.text = ": $namaPelanggan"
+                    tvTRANSAKSI_DATA_pelanggan_nohp.text = ": $nohp"
 
-                    Toast.makeText(this, "Pelanggan Dipilih: $namaPelanggan", Toast.LENGTH_SHORT).show()
+
+                    val pesan = getString(R.string.pelanggandipilih, namaPelanggan)
+                    Toast.makeText(this, pesan, Toast.LENGTH_SHORT).show()
+
 
                 }
 
@@ -163,10 +162,11 @@ class Activity_transaksi : AppCompatActivity() {
                     hargaLayanan = data.getStringExtra("tv_harga").toString()
 
 
-                    tvTRANSAKSI_layanan_nama.text = "Nama Layanan : $namaLayanan"
-                    tvTRANSAKSI_layanan_harga.text = "Harga : $hargaLayanan"
+                    tvTRANSAKSI_layanan_nama.text = ": $namaLayanan"
+                    tvTRANSAKSI_layanan_harga.text = ": $hargaLayanan"
 
-                    Toast.makeText(this, "Layanan Dipilih: $namaLayanan", Toast.LENGTH_SHORT).show()
+                    val pesan = getString(R.string.layanandipilih, namaLayanan)
+                    Toast.makeText(this, pesan, Toast.LENGTH_SHORT).show()
                 }
                 pilihLayananTambahan -> {
                     tv_nama_tambahan2 = data.getStringExtra("nama_tambahan").toString()
@@ -186,22 +186,10 @@ class Activity_transaksi : AppCompatActivity() {
 
                     dataList.add(tambahan)
                     adapter.notifyItemInserted(dataList.size - 1)
-                    Toast.makeText(this, "Tambahan Dipilih: $namaTambahan", Toast.LENGTH_SHORT).show()
+                    val pesan = getString(R.string.tambahandipilih, namaTambahan)
+                    Toast.makeText(this, pesan, Toast.LENGTH_SHORT).show()
                 }
 
-            }
-        } else if (resultCode == RESULT_CANCELED) {
-            when (requestCode) {
-                pilihPelanggan -> {
-                    Toast.makeText(this, "Batal Memilih Pelanggan", Toast.LENGTH_SHORT).show()
-                }
-
-                pilihLayanan -> {
-                    Toast.makeText(this, "Batal Memilih Layanan", Toast.LENGTH_SHORT).show()
-                }
-                pilihLayananTambahan -> {
-                    Toast.makeText(this, "Batal Memilih Tambahan", Toast.LENGTH_SHORT).show()
-                }
             }
         }
     }

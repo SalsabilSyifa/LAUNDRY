@@ -64,7 +64,7 @@ class TambahPelanggan : AppCompatActivity() {
 
         if (id_pelanggan.isNotEmpty()) {
             isEdit = true
-            tv_tambah_pengguna.text = "Edit Pelanggan"
+            tv_tambah_pengguna.text = getString(R.string.editpengguna)
             bt_simpan.text = "Edit"
             mati()
             database.getReference("pelanggan").child(id_pelanggan).get()
@@ -83,8 +83,8 @@ class TambahPelanggan : AppCompatActivity() {
                 }
         } else {
             isEdit = false
-            tv_tambah_pengguna.text = "Tambah Pelanggan"
-            bt_simpan.text = "Simpan"
+            tv_tambah_pengguna.text = getString(R.string.tambah_pelanggan)
+            bt_simpan.text = getString(R.string.tambah_pelanggan_simpan)
             hidup()
             et_namalengkap.requestFocus()
         }
@@ -116,7 +116,7 @@ class TambahPelanggan : AppCompatActivity() {
         pelangganRef.updateChildren(updateData).addOnSuccessListener {
             Toast.makeText(
                 this@TambahPelanggan,
-                "Data Pelanggan Berhasil Diperbarui",
+                getString(R.string.databerhasildiperbarui),
                 Toast.LENGTH_SHORT
             ).show()
             finish()
@@ -153,21 +153,22 @@ class TambahPelanggan : AppCompatActivity() {
         }
 
         if (!nohp.matches(Regex("^[0-9]+$"))) {
-            et_nohp.error = "Nomor HP harus berupa angka"
-            Toast.makeText(this, "Nomor HP harus berupa angka", Toast.LENGTH_SHORT).show()
+            et_nohp.error = getString(R.string.validasi_nohp_pelanggan)
+            Toast.makeText(this, getString(R.string.validasi_nohp_pelanggan), Toast.LENGTH_SHORT).show()
             et_nohp.requestFocus()
             return
         }
 
-        if (bt_simpan.text.equals("Simpan")) {
+        if (bt_simpan.text.toString() == getString(R.string.tambah_pelanggan_simpan)) {
             simpan(terdaftar)
-        }else if(bt_simpan.text.equals("Edit")){
+        } else if (bt_simpan.text.toString() == getString(R.string.edit)) {
             hidup()
             et_namalengkap.requestFocus()
-            bt_simpan.text="Perbarui"
-        }else if (bt_simpan.text.equals("Perbarui")) {
+            bt_simpan.text = getString(R.string.perbarui)
+        } else if (bt_simpan.text.toString() == getString(R.string.perbarui)) {
             update()
         }
+
 
     }
 
@@ -184,7 +185,7 @@ class TambahPelanggan : AppCompatActivity() {
 
         pelangganBaru.setValue(data)
             .addOnSuccessListener {
-                Toast.makeText(this, "Pelanggan berhasil disimpan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.validasipelanggansukses), Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener {

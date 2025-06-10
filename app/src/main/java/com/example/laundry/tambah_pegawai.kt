@@ -61,8 +61,8 @@ class tambah_pegawai : AppCompatActivity() {
 
         if(id_pegawai.isNotEmpty()){
             isEdit = true
-            tv_tambah_pegawai.text = "Edit Pegawai"
-            bt_simpan_pegawai.text = "Edit"
+            tv_tambah_pegawai.text = getString(R.string.edit_pegawai)
+            bt_simpan_pegawai.text = getString(R.string.edit)
             mati()
             database.getReference("pegawai").child(id_pegawai).get()
                 .addOnSuccessListener { snapshot ->
@@ -79,8 +79,8 @@ class tambah_pegawai : AppCompatActivity() {
                 }
         }else {
             isEdit = false
-            tv_tambah_pegawai.text = "Tambah Pegawai"
-            bt_simpan_pegawai.text = "Simpan"
+            tv_tambah_pegawai.text = getString(R.string.tambah_pegawai)
+            bt_simpan_pegawai.text = getString(R.string.tambah_pegawai_simpan)
             hidup()
             et_namalengkap_pegawai.requestFocus()
         }
@@ -108,7 +108,7 @@ class tambah_pegawai : AppCompatActivity() {
         updateData["nohppegawai"]= et_nohp_pegawai.text.toString()
         updateData["cabangpegawai"]= et_namacabang_pegawai.text.toString()
         pegawaiRef.updateChildren(updateData).addOnSuccessListener {
-            Toast.makeText(this@tambah_pegawai, "Data Pegawai Berhasil Diperbarui",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@tambah_pegawai, getString(R.string.databerhasildiperbarui),Toast.LENGTH_SHORT).show()
             finish()
         }.addOnFailureListener{
             Toast.makeText(this@tambah_pegawai, "Data Pegawai Gagal Diperbarui",Toast.LENGTH_SHORT).show()
@@ -137,8 +137,8 @@ class tambah_pegawai : AppCompatActivity() {
                 return
             }
              if (!nohp.matches(Regex("^[0-9]+$"))) {
-                 et_nohp_pegawai.error = "Nomor HP harus berupa angka"
-                 Toast.makeText(this, "Nomor HP harus berupa angka", Toast.LENGTH_SHORT).show()
+                 et_nohp_pegawai.error = getString(R.string.validasi_nohp_pelanggan)
+                 Toast.makeText(this, getString(R.string.validasi_nohp_pelanggan), Toast.LENGTH_SHORT).show()
                  et_nohp_pegawai.requestFocus()
                 return
             }
@@ -148,13 +148,13 @@ class tambah_pegawai : AppCompatActivity() {
                 et_namacabang_pegawai.requestFocus()
                 return
         }
-        if (bt_simpan_pegawai.text.equals("Simpan")) {
+        if (bt_simpan_pegawai.text.equals(getString(R.string.tambah_pegawai_simpan))) {
             simpan(terdaftar)
-        }else if(bt_simpan_pegawai.text.equals("Edit")){
+        }else if(bt_simpan_pegawai.text.equals(getString(R.string.edit))){
             hidup()
             et_namalengkap_pegawai.requestFocus()
-            bt_simpan_pegawai.text="Perbarui"
-        }else if (bt_simpan_pegawai.text.equals("Perbarui")) {
+            bt_simpan_pegawai.text=getString(R.string.perbarui)
+        }else if (bt_simpan_pegawai.text.equals(getString(R.string.perbarui))) {
             update()
         }
 
@@ -175,7 +175,7 @@ class tambah_pegawai : AppCompatActivity() {
 
         pegawaiBaru.setValue(data)
             .addOnSuccessListener {
-                Toast.makeText(this, "Pegawai berhasil disimpan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.validasipegawaisukses), Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener{

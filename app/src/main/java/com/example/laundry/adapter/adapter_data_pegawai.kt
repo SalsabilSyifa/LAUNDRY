@@ -43,7 +43,7 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
             val dialog = AlertDialog.Builder(context)
                 .setView(dialogView)
                 .create()
-
+            dialog.window?.setDimAmount(0.6f)
             // Aksi WhatsApp
             dialogView.findViewById<Button>(R.id.buttonHubungiWA).setOnClickListener {
                 val nomor = item.nohppegawai
@@ -80,6 +80,11 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
             dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_terdaftar_isi).text = item.terdaftarpegawai
             dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_cabang_isi).text = item.cabangpegawai
 
+            val dialog = AlertDialog.Builder(context)
+                .setView(dialogView)
+                .create()
+            dialog.window?.setDimAmount(0.6f)
+
             val btnEdit = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pegawai_edit)
             val btnHapus = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pegawai_hapus)
 
@@ -96,28 +101,23 @@ class adapter_data_pegawai (private val listPegawai: ArrayList<modelpegawai>) :
             }
 
             btnHapus.setOnClickListener {
-                Toast.makeText(context, "Hapus ${item.namapegawai}", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+                listener?.onDeleteClick(item)
             }
-
-            val dialog = AlertDialog.Builder(context)
-                .setView(dialogView)
-                .create()
 
             dialog.show()
         }
 
+    }
 
-        holder.cvcardpegawai.setOnClickListener {
-            val intent = Intent(appContext, tambah_pegawai::class.java)
-            intent.putExtra("judul", "Edit Pegawai")
-            intent.putExtra("id", item.id_pegawai)
-            intent.putExtra("namapegawai", item.namapegawai)
-            intent.putExtra("nohppegawai", item.nohppegawai)
-            intent.putExtra("alamatpegawai", item.alamatpegawai)
-            intent.putExtra("cabangpegawai", item.cabangpegawai)
-            appContext.startActivity(intent)
+    private var listener: OnItemClickListener? = null
 
-        }
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
+
+    interface OnItemClickListener {
+        fun onDeleteClick(pegawai: modelpegawai)
     }
 
     override fun getItemCount(): Int {

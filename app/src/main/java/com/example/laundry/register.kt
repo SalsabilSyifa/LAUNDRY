@@ -55,7 +55,7 @@ class register : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (nama.isEmpty() || nohp.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Isi semua field", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.isidulu), Toast.LENGTH_SHORT).show()
             } else {
                 val user = mapOf(
                     "username" to nama,
@@ -66,8 +66,8 @@ class register : AppCompatActivity() {
                     .child(nohp)
                     .setValue(user)
                     .addOnSuccessListener {
-                        Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, activity_login::class.java))
+                        Toast.makeText(this, getString(R.string.registerberhasil), Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, MainActivity::class.java))
                         finish()
                     }
                     .addOnFailureListener {

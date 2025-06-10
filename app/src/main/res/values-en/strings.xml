@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">LAUNDRY</string>
     <string name="card_pelanggan_id">Customer ID</string>
-    <string name="card_pelanggan_nama">Customer Name</string>
+    <string name="card_pelanggan_nama">Customer Name %1$s</string>
     <string name="card_pelanggan_nohp">No Handphone</string>
     <string name="card_pelanggan_terdaftar">Registered</string>
     <string name="card_pelanggan_hubungi">Contact</string>
@@ -139,4 +139,38 @@
     <string name="hapus">Delete</string>
     <string name="detailpegawai">Employee Details</string>
     <string name="detailpelanggan">Customer Details</string>
+    <string name="editpengguna">Edit Customer</string>
+    <string name="perbarui">Update</string>
+    <string name="validasipelanggansukses">Customer successfully saved</string>
+    <string name="validasipegawaisukses">Employee successfully saved</string>
+    <string name="validasicabangsukses">Branch successfully saved</string>
+    <string name="validasilayanansukses">Service successfully saved</string>
+    <string name="validasitambahansukses">Additional successfully saved</string>
+    <string name="databerhasildiperbarui">Data has been successfully updated</string>
+    <string name="isidulu">Fill in all fields</string>
+    <string name="bayarnanti">Pay Later</string>
+    <string name="belumbayar">Not paid yet</string>
+    <string name="sudahdibayar">Already Paid</string>
+    <string name="selesai">Complete</string>
+    <string name="berhasildiperbarui">Successfully updated</string>
+    <string name="registerberhasil">Successfully Registered</string>
+    <string name="transaksiberhasildisimpan">Transaction Successfully Saved</string>
+    <string name="berhasillogin">Login Successfully</string>
+    <string name="validasiproses">First, complete the customer and service data.</string>
+    <string name="pelanggandipilih">Customer Selected: %1$s</string>
+    <string name="validasitambahan">The addition cannot be empty</string>
+    <string name="tunai">Cash</string>
+    <string name="pagi">Good Morning,</string>
+    <string name="siang">Good Afternoon,</string>
+    <string name="sore">Good Evening,</string>
+    <string name="malam">Good Night,</string>
+    <string name="berhasillogout">Logout Successfully</string>
+    <string name="layanandipilih">Service Selected: %1$s</string>
+    <string name="tambahandipilih">Additional Selected: %1$s</string>
+    <string name="berhasildihapus">Data has been successfully deleted</string>
+    <string name="ambilsekarang">Take Now</string>
+    <string name="diambilpada">Retrieved on %s</string>
+    <string name="bayarsekarang">Pay Now</string>
+    <string name="edit_pegawai">Edit Employee</string>
+    <string name="pembayaranberhasil">"Payment Succcessfully "</string>
 </resources>

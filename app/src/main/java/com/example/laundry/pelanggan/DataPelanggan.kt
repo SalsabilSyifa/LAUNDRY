@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -83,8 +84,30 @@ class DataPelanggan : AppCompatActivity() {
 
                         }
                     }
+                    val adapter = adapter_data_pelanggan(pelangganList)
+                    rv_data_pelanggan.adapter = adapter
 
-                    rv_data_pelanggan.adapter = adapter_data_pelanggan(pelangganList)
+                    adapter.setOnItemClickListener(object : adapter_data_pelanggan.OnItemClickListener {
+                        override fun onDeleteClick(pelanggan: modelpelanggan) {
+                            AlertDialog.Builder(this@DataPelanggan)
+                                .setTitle("Hapus Data")
+                                .setMessage("Yakin ingin menghapus ${pelanggan.nama}?")
+                                .setPositiveButton("Ya") { _, _ ->
+                                    // Hapus dari Firebase
+                                    FirebaseDatabase.getInstance().getReference("pelanggan")
+                                        .child(pelanggan.id_pelanggan!!)
+                                        .removeValue()
+                                        .addOnSuccessListener {
+                                            Toast.makeText(this@DataPelanggan, getString(R.string.berhasildihapus), Toast.LENGTH_SHORT).show()
+                                        }
+                                        .addOnFailureListener {
+                                            Toast.makeText(this@DataPelanggan, "Gagal menghapus data", Toast.LENGTH_SHORT).show()
+                                        }
+                                }
+                                .setNegativeButton("Batal", null)
+                                .show()
+                        }
+                    })
                 } else {
                     Toast.makeText(this@DataPelanggan, "Data kosong", Toast.LENGTH_SHORT).show()
                     Log.d("FirebaseData", "Data tidak ditemukan")
@@ -101,5 +124,6 @@ class DataPelanggan : AppCompatActivity() {
         })
     }
 
-    
+
+
 }

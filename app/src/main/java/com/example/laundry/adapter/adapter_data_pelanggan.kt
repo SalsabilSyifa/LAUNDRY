@@ -71,19 +71,20 @@ class adapter_data_pelanggan(private val listPelanggan: ArrayList<modelpelanggan
             val context = holder.itemView.context
             val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_mod_pelanggan, null)
 
-            // Isi data ke TextView di dalam layout
             dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_id_isi).text = item.id_pelanggan
             dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_nama_isi).text = item.nama
             dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_alamat_isi).text = item.alamat
             dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_nohp_isi).text = item.nohp
             dialogView.findViewById<TextView>(R.id.tv_dialog_mod_pelanggan_terdaftar_isi).text = item.terdaftar
 
-            // Tombol Sunting dan Hapus (jika kamu ingin kasih aksi)
+            val dialog = AlertDialog.Builder(context)
+                .setView(dialogView)
+                .create()
+
             val btEdit = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pelanggan_edit)
             val btHapus = dialogView.findViewById<Button>(R.id.bt_dialog_mod_pelanggan_hapus)
 
             btEdit.setOnClickListener {
-                // Tindakan edit, bisa buka activity edit misalnya
                 val intent = Intent(context, TambahPelanggan::class.java)
                 intent.putExtra("judul", "Edit Pelanggan")
                 intent.putExtra("id", item.id_pelanggan)
@@ -91,29 +92,28 @@ class adapter_data_pelanggan(private val listPelanggan: ArrayList<modelpelanggan
                 intent.putExtra("alamat", item.alamat)
                 intent.putExtra("nohp", item.nohp)
                 context.startActivity(intent)
-            }
-            btHapus.setOnClickListener {
-                // Tindakan hapus (bisa pakai callback atau show konfirmasi)
-                Toast.makeText(context, "Hapus ${item.nama}", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
             }
 
-            // Buat dan tampilkan dialog
-            val dialog = AlertDialog.Builder(context)
-                .setView(dialogView)
-                .create()
+            btHapus.setOnClickListener {
+                dialog.dismiss()
+                listener?.onDeleteClick(item)
+            }
 
             dialog.show()
         }
 
-        holder.cvcardpelanggan.setOnClickListener {
-            val intent = Intent(appContext, TambahPelanggan::class.java)
-            intent.putExtra("judul", "Edit Pelanggan")
-            intent.putExtra("id", item.id_pelanggan)
-            intent.putExtra("nama", item.nama)
-            intent.putExtra("alamat", item.alamat)
-            intent.putExtra("nohp", item.nohp)
-            appContext.startActivity(intent)
-        }
+
+    }
+
+    private var listener: OnItemClickListener? = null
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
+
+    interface OnItemClickListener {
+        fun onDeleteClick(pelanggan: modelpelanggan)
     }
 
     override fun getItemCount(): Int {

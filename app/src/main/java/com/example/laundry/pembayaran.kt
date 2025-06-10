@@ -128,7 +128,7 @@ class pembayaran : AppCompatActivity() {
             intent.data = Uri.parse("https://wa.me/?text=${Uri.encode(pesan)}")
             startActivity(intent)
         }
-        Toast.makeText(this, "Transaksi Sukses Disimpan", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.transaksiberhasildisimpan), Toast.LENGTH_SHORT).show()
 
     }
 

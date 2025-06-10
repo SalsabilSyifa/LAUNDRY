@@ -64,7 +64,7 @@ class profile : AppCompatActivity() {
                     val prefs = getSharedPreferences("users", MODE_PRIVATE)
                     prefs.edit().putString("username", newUsername).apply()
 
-                    Toast.makeText(this, "Berhasil diperbarui", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.berhasildiperbarui), Toast.LENGTH_SHORT).show()
                     finish()
                 }
         }

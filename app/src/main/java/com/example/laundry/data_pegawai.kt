@@ -81,6 +81,18 @@ class data_pegawai : AppCompatActivity() {
 
                     val adapter = adapter_data_pegawai(pegawaiList)
                     rv_data_pegawai.adapter = adapter
+                    adapter.setOnItemClickListener(object : adapter_data_pegawai.OnItemClickListener {
+                        override fun onDeleteClick(pegawai: modelpegawai) {
+                            val pegawaiId = pegawai.id_pegawai ?: return
+                            myRef.child(pegawaiId).removeValue()
+                                .addOnSuccessListener {
+                                    Toast.makeText(this@data_pegawai, getString(R.string.berhasildihapus), Toast.LENGTH_SHORT).show()
+                                }
+                                .addOnFailureListener {
+                                    Toast.makeText(this@data_pegawai, "Gagal menghapus data", Toast.LENGTH_SHORT).show()
+                                }
+                        }
+                    })
 
                 } else {
                     Toast.makeText(this@data_pegawai, "Data kosong", Toast.LENGTH_SHORT).show()

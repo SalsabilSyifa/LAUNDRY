@@ -78,8 +78,8 @@ class activity_tambah_cabang : AppCompatActivity() {
                 }
         } else {
             isEdit = false
-            tv_tambah_cabang.text = "Tambah Cabang"
-            bt_simpan_cabang.text = "Simpan"
+            tv_tambah_cabang.text = getString(R.string.tambah_cabang)
+            bt_simpan_cabang.text = getString(R.string.tambah_pelanggan_simpan)
             hidup()
             et_namacabang.requestFocus()
         }
@@ -111,7 +111,7 @@ class activity_tambah_cabang : AppCompatActivity() {
         cabangRef.updateChildren(updateData).addOnSuccessListener {
             Toast.makeText(
                 this@activity_tambah_cabang,
-                "Data Cabang Berhasil Diperbarui",
+                getString(R.string.berhasildiperbarui),
                 Toast.LENGTH_SHORT
             ).show()
             finish()
@@ -145,19 +145,19 @@ class activity_tambah_cabang : AppCompatActivity() {
         }
 
         if (layanan.isEmpty()) {
-            et_layanan.error = "Layanan tidak boleh kosong"
-            Toast.makeText(this, "Layanan tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            et_layanan.error = getString(R.string.validasi_nama_layanan)
+            Toast.makeText(this, getString(R.string.validasi_nama_layanan), Toast.LENGTH_SHORT).show()
             et_layanan.requestFocus()
             return
         }
 
-        if (bt_simpan_cabang.text.equals("Simpan")) {
+        if (bt_simpan_cabang.text.equals(getString(R.string.tambah_pelanggan_simpan))) {
             simpan()
-        }else if(bt_simpan_cabang.text.equals("Edit")){
+        }else if(bt_simpan_cabang.text.equals(getString(R.string.edit))){
             hidup()
             et_namacabang.requestFocus()
-            bt_simpan_cabang.text="Perbarui"
-        }else if (bt_simpan_cabang.text.equals("Perbarui")) {
+            bt_simpan_cabang.text=getString(R.string.perbarui)
+        }else if (bt_simpan_cabang.text.equals(getString(R.string.perbarui))) {
             update()
         }
 
@@ -174,7 +174,7 @@ class activity_tambah_cabang : AppCompatActivity() {
 
         cabangBaru.setValue(data)
             .addOnSuccessListener {
-                Toast.makeText(this, "Cabang berhasil disimpan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.validasicabangsukses), Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener {

@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.iv_logout).setOnClickListener {
             getSharedPreferences("users", MODE_PRIVATE).edit().clear().apply()
             startActivity(Intent(this, activity_login::class.java))
-            Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.berhasillogout), Toast.LENGTH_SHORT).show()
             finish()
         }
 
@@ -109,10 +109,10 @@ class MainActivity : AppCompatActivity() {
     private fun getGreetingMessage(): String {
         val currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
         return when (currentHour) {
-            in 5..11 -> "Selamat Pagi,"
-            in 12..14 -> "Selamat Siang,"
-            in 15..17 -> "Selamat Sore,"
-            else -> "Selamat Malam,"
+            in 5..11 -> getString(R.string.pagi)
+            in 12..14 -> getString(R.string.siang)
+            in 15..17 -> getString(R.string.sore)
+            else -> getString(R.string.malam)
         }
     }
     private fun loadGreetingAndUsername() {
@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
 
                     val tanggal = tanggalFull.split(" ")[0] // Ambil "04-06-2025" saja
 
-                    if (status == "Selesai" && tanggal == today) {
+                    if (status == "Sudah Dibayar" && tanggal == today) {
                         val total = totalBayarStr.replace(".", "").toIntOrNull() ?: 0
                         totalPendapatan += total
                     }
@@ -176,7 +176,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Gagal mengambil data", Toast.LENGTH_SHORT).show()
             }
         })
-        Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.berhasillogin), Toast.LENGTH_SHORT).show()
 
     }
 

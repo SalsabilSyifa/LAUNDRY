@@ -8,7 +8,7 @@ data class modelLaporan (
     var tambahan: List<String> = listOf(),
     var totalBayar: String = "",
     var metodePembayaran: String = "",
-    var status: String = "",
+    var status: String? = null,
     var diambilPada: String? = null
 
 )
